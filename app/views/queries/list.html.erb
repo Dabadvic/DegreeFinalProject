@@ -1,0 +1,16 @@
+<% provide(:title, "Consultas") %>
+
+<div>
+	<div><%= @antes %></div>
+	<div>Resultado: <%= @ejecucionExterna %></div>
+	<div><%= @despues %></div>
+	<h3>Consultas</h3>
+	<% if @user.queries.any? %>
+		<h3>Realizadas: <%= @user.queries.count %></h3>
+		<table class="queries">
+			<%= render @queries %>
+		</table>
+	<% else %>
+		<h4>Ninguna consulta realizada</h4>
+	<% end %>
+</div>

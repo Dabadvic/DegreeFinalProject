@@ -1,0 +1,37 @@
+<% provide(:title, "Nueva consulta") %>
+
+<h1>Nueva consulta</h1>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for(@query, html: { multipart: true }) do |f| %>
+			<%= render 'shared/query_errors_messages' %>
+
+			<%= f.label :description, "Breve descripción" %>
+			<%= f.text_field :description, class: 'form-control' %>
+
+			<span class="fileuploader">
+				<%= f.file_field :queryfile, accept:".txt,.arff,.csv,.dat" %>
+			</span>
+
+			<label for="query_description">Clasificador</label>
+			<%= f.select(:algorithm) do %>
+				<% [['Apriori', "apriori"], ['CN2-SD', "cn2"]].each do |c| %>
+					<%= content_tag(:option, c.first, value: c.last) %>
+				<% end %>
+			<% end %>
+
+
+			<p>/* Demo */</p>
+
+			<label for="query_description">Filtro</label>
+			<select>
+				<option value="f1">Filtro 1</option>
+				<option value="f2">Filtro 2</option>
+				<option value="f3">Filtro 3</option>
+			</select> 
+
+			<%= f.submit "Crear consulta", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+<% provide(:title, "Consultas") %>
+
+<h1>Consulta</h1>
+<ul>
+	<li>Descripción: <%= @query.description %></li>
+	<li>Fecha de creación: <%= @query.created_at %></li>
+	<li>Estado: <%= @query.status %></li>
+	<li>Ruta: <%= File.dirname(@query.queryfile.current_path.to_s) if @query.queryfile? %></li>
+	<li>Archivo: <%= File.basename(@query.queryfile.to_s) if @query.queryfile? %></li>
+	<li>Tipo: <%= File.extname(@query.queryfile.to_s) if @query.queryfile? %> </li>
+	<li><% File.readlines(@resultado).each do |line| %>
+			<%= line %> <br>
+		<% end %>
+	</li>
+</ul>
+
+<%= link_to 'Atrás', queries_path %>

@@ -1,0 +1,10 @@
+<tr id="query-<%= query.id %>">
+	<td> <%= query.description %> </td>
+	<td>Iniciada <%= query.created_at %> </td>
+	<td> <%= query.status %> </td>
+	<td>Archivo: <%= query.queryfile if query.queryfile? %> </td>
+	<td> <%= query.algorithm %> </td>
+	<td><%= link_to "Ver", query %></td>
+	<td> <%= link_to "Eliminar consulta", query, method: :delete, 
+										data: { confirm: "¿Seguro que quieres borrar la consulta?" } %> </td>
+</tr>

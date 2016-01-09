@@ -1,0 +1,11 @@
+<% provide(:title, "Editar usuario") %>
+<h1>Actualiza tu perfil</h1>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for(@user) do |f| %>
+			<%= render 'fields', f: f %>
+			<%= f.submit "Guardar cambios", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+hospital:
+  description: "Small query about common cold"
+  created_at: <%= 10.minutes.ago %>
+  user: example
+
+finished:
+  description: "Finished query about whatever"
+  created_at: <%= 2.years.ago %>
+  status: 2
+  finished_at: <%= 20.minutes.ago %>
+  user: example

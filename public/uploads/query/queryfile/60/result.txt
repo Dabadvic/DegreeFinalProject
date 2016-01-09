@@ -1,0 +1,18 @@
+
+Rule 1: IF  outlook > 0.0 AND windy = 1.0 THEN play -> yes     [ 1.0 0.0]
+Rule 2: IF  humidity > 0.0 AND outlook <= 1.0 THEN play -> yes     [ 1.0 0.0]
+Rule 3: IF  outlook = 1.0 THEN play -> yes     [ 1.0 0.0]
+Rule 4: IF  humidity = 0.0 AND outlook <> 1.0 THEN play -> no     [ 0.2 0.8]
+Rule 5: IF  windy <> 1.0 AND outlook > 1.0 THEN play -> no     [ 0.0 1.0]
+
+####Average results for test data####
+Avg. Rule length: 5
+Avg. Number of attributes by rule: 1.8
+Avg. Coverage: 0.2857142857142857
+Avg. Support Completo: 1.0
+Avg. Significance: 3.9445451669210243
+Avg. Unusualness: 0.13268350218493394
+
+Accuracy Training: 1.0
+Accuracy Test: 1.0;
+  Time; 0
