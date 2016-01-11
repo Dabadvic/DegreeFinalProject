@@ -1,9 +1,0 @@
-algorithm = CN2 Algorithm for Subgroup Discovery
-inputData = "/home/david/Documentos/TFG/proyectoJruby/public/uploads/query/queryfile/62/weather.nominal.arff" "/home/david/Documentos/TFG/proyectoJruby/public/uploads/query/queryfile/62/weather.nominal.arff" "/home/david/Documentos/TFG/proyectoJruby/public/uploads/query/queryfile/62/weather.nominal.arff"
-outputData = "/home/david/Documentos/TFG/proyectoJruby/public/uploads/query/queryfile/62/result.tra" "/home/david/Documentos/TFG/proyectoJruby/public/uploads/query/queryfile/62/result.tst" "/home/david/Documentos/TFG/proyectoJruby/public/uploads/query/queryfile/62/result.txt"
-
-Nu_Value = 0.5
-Percentage_Examples_To_Cover = 0.95
-Star_Size = 5
-Use_multiplicative_weights = YES
-Use_Disjunt_Selectors = NO

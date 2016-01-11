@@ -7,10 +7,15 @@
 	<li>Estado: <%= @query.status %></li>
 	<li>Algoritmo aplicado: <%= @query.algorithm %></li>
 	<li>Ruta: <%= File.dirname(@query.queryfile.current_path.to_s) if @query.queryfile? %></li>
-	<li>Archivo: <%= File.basename(@query.queryfile.to_s) if @query.queryfile? %></li>
+	<li>Archivo: <%= File.basename(@query.queryfile.to_s, ".*") if @query.queryfile? %></li>
 	<li>Tipo: <%= File.extname(@query.queryfile.to_s) if @query.queryfile? %> </li>
-	<li><% File.readlines(@resultado).each do |line| %>
-			<%= line %> <br>
+	<li><% if File.exist?(@resultado) %>
+			Resultado:
+			<% File.readlines(@resultado).each do |line| %>
+				<%= line %> <br>
+			<% end %>
+		<% else %>
+			No se encontró el resultado, ¿hubo un error?
 		<% end %>
 	</li>
 </ul>

@@ -24,7 +24,30 @@ class Algorithms
 			when "cn2"
 				toRet = cn2sd(file)
 				return toRet
+			when "mesdif"
+				toRet = mesdif(file)
+				return toRet
 		end
+	end
+
+	# Comprueba si hay que convertir el archivo a Keel, devolviendo la ubicación final del archivo en un string
+	def self.conversorKeel(file)
+		# Comprobación previa del fichero para realizar conversión o no
+		
+	  	case File.extname(file.to_s)
+	  	
+	  	when ".arff"
+	  		# Convertir a .dat de Keel
+	  		fileTrans = WekaToKeel.new();
+	  		fileInput = file.current_path.to_s
+	  		fileOutput = File.dirname(file.current_path) + "/" + File.basename(file.to_s, ".*").downcase + ".dat"
+	        fileTrans.Start(fileInput, fileOutput)
+	  	when ".dat"
+	  		#no hace nada
+	  		fileOutput = file.current_path.to_s
+	  	end
+
+	  	return fileOutput
 	end
 
 	# Función Apriori, aplica el alogirtmo apriori de Weka
@@ -47,27 +70,17 @@ class Algorithms
 
 	  end
 
-	  # Función CN2, aplica el algoritmo CN2-SD de Keel, NO REALIZA CONVERSIÓN A FORMATO KEEL
+	  # Función CN2, aplica el algoritmo CN2-SD de Keel
 	  def self.cn2sd(file)
-	  	sleep(2)
+	  	#sleep(5)
 
-	  	# Comprobación previa del fichero para realizar conversión o no
-	  	case File.extname(file.to_s)
-	  	
-	  	when ".arff"
-	  		# Convertir a .dat de Keel
-	  		fileTrans = WekaToKeel.new();
-	  		fileInput = file.current_path.to_s
-	  		fileOutput = File.dirname(file.current_path) + "/" + File.basename(file.to_s) + ".dat"
-	        fileTrans.Start(fileInput, fileOutput)
-	  	when ".dat"
-	  		#no hace nada
-	  		
-	  	end
+	  	# Comprobamos si hay que convertirlo, devolviendo un string con la ubicación final
+	  	convertedInput = conversorKeel(file)
 
 	  	# Se definen los parámetros del algoritmo
 	  	algorithm = "algorithm = CN2 Algorithm for Subgroup Discovery\n"
-	  	inputData = "inputData = " + "\"" + file.current_path + "\" " + "\"" + file.current_path + "\" " +"\"" + file.current_path + "\"\n"
+	  	#inputData = "inputData = " + "\"" + file.current_path + "\" " + "\"" + file.current_path + "\" " +"\"" + file.current_path + "\"\n"
+	  	inputData = "inputData = " + "\"" + convertedInput + "\" " + "\"" + convertedInput + "\" " +"\"" + convertedInput + "\"\n"
         output = File.dirname(file.current_path) + "/result"
         outputData = "outputData = " + "\"" + output + ".tra\" " + "\"" + output + ".tst\" " + "\"" + output + ".txt\"\n"
         
@@ -96,12 +109,76 @@ class Algorithms
         config_file.close
 
         # Ejecutar el comando para aplicar el algoritmo
-        comando = "java -jar /home/david/Documentos/TFG/proyectoJruby/app/controllers/libraries/CN2SD.jar " + configuracion
+        comando = "java -jar /home/david/proyectojruby/app/controllers/libraries/CN2SD.jar " + configuracion
 
         ejecucion = system( comando )
 
         if ejecucion == true
         	toRet = output + ".txt"
+        else
+        	toRet = "error"
+        end
+
+        return toRet
+	  end
+
+	  # Función MESDIF, aplica el algoritmo MESDIF-SD de Keel
+	  def self.mesdif(file)
+	  	#sleep(5)
+
+	  	# Comprobamos si hay que convertirlo, devolviendo un string con la ubicación final
+	  	convertedInput = conversorKeel(file)
+
+	  	# Se definen los parámetros del algoritmo
+	  	algorithm = "algorithm = MESDIF for Subgroup Discovery\n"
+	  	inputData = "inputData = " + "\"" + convertedInput + "\" " + "\"" + convertedInput + "\" " +"\"" + convertedInput + "\"\n"
+        output = File.dirname(file.current_path) + "/result"
+        outputData = "outputData = " + "\"" + output + "0.tra\" " + "\"" + output + "0.tst\" " + "\"" + output + "0e0.txt\" " + 
+        							   "\"" + output + "0e1.txt\" " + "\"" + output + "0e2.txt\" " + "\"" + output + "0e3.txt\"\n"
+        
+        rulesRep = "RulesRep = can\n"
+		nLabels = "nLabels = 3\n"
+		nEval = "nEval = 10000\n"
+		popLength = "popLength = 100\n"
+		crossProb = "crossProb = 0.6\n"
+		mutProb = "mutProb = 0.01\n"
+		eliteLength = "eliteLength = 3\n"
+		obj1 = "Obj1 = comp\n"
+		obj2 = "Obj2 = unus\n"
+		obj3 = "Obj3 = fcnf\n"
+		obj4 = "Obj4 = null\n"
+
+
+        # Preparar el archivo de configuración
+        configuracion = File.dirname(file.current_path) + "/configuracionMESDIF.txt"
+
+        config_file = open(configuracion, "w")
+
+        config_file.write(algorithm)
+        config_file.write(inputData)
+        config_file.write(outputData)
+        config_file.write("\n")
+        config_file.write(rulesRep)
+        config_file.write(nLabels)
+        config_file.write(nEval)
+        config_file.write(popLength)
+        config_file.write(crossProb)
+        config_file.write(mutProb)
+        config_file.write(eliteLength)
+        config_file.write(obj1)
+        config_file.write(obj2)
+        config_file.write(obj3)
+        config_file.write(obj4)
+
+        config_file.close
+
+        # Ejecutar el comando para aplicar el algoritmo
+        comando = "java -jar /home/david/proyectojruby/app/controllers/libraries/MESDIF.jar " + configuracion
+
+        ejecucion = system( comando )
+
+        if ejecucion == true
+        	toRet = output + "0e0.txt"
         else
         	toRet = "error"
         end
@@ -123,7 +200,7 @@ class QueriesController < ApplicationController
 			# Aplicar SD (En un futuro, añadir a lista de espera para SD)
 			@query.result = Algorithms.aplicar(@query.queryfile, @query.algorithm)
 			
-			# Actualizar la consulta?
+			# Actualizar la consulta? Habrá que pasar la consulta como parámetro luego
 			@query.save
 
 			redirect_to queries_path

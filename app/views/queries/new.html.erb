@@ -16,20 +16,10 @@
 
 			<label for="query_description">Clasificador</label>
 			<%= f.select(:algorithm) do %>
-				<% [['Apriori', "apriori"], ['CN2-SD', "cn2"]].each do |c| %>
+				<% [['Apriori', "apriori"], ['CN2-SD', "cn2"], ['MESDIF-SD', "mesdif"]].each do |c| %>
 					<%= content_tag(:option, c.first, value: c.last) %>
 				<% end %>
 			<% end %>
-
-
-			<p>/* Demo */</p>
-
-			<label for="query_description">Filtro</label>
-			<select>
-				<option value="f1">Filtro 1</option>
-				<option value="f2">Filtro 2</option>
-				<option value="f3">Filtro 3</option>
-			</select> 
 
 			<%= f.submit "Crear consulta", class: "btn btn-primary" %>
 		<% end %>
