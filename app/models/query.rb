@@ -5,7 +5,7 @@ class Query < ActiveRecord::Base
 
   mount_uploader :queryfile, QueryFileUploader
 
-  before_save :set_initial_status
+  before_create :set_initial_status
 
   validates :user_id, presence: true
   validates :description, presence: true

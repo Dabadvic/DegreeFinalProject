@@ -13,6 +13,24 @@ java_import "conversor.WekaToKeel"
 
 # Clase usada para contener los diferentes algoritmos
 class Algorithms
+	def self.queue
+    	:queries
+  	end
+
+  	def self.perform(query_id)
+  		puts 'Query: ' + query_id.to_s
+  		query = Query.find(query_id)
+  		puts 'Inicia algoritmo: ' + query.algorithm
+  		query.status = 1
+  		puts 'Estado: ' + query.status
+  		query.save
+  		sleep(10)
+  		query.result = aplicar(query.queryfile.current_path.to_s, query.algorithm)
+  		puts 'Finaliza un algoritmo'
+  		query.status = 2
+  		puts 'Estado: ' + query.status
+  		query.save
+  	end
 
 	# Aplica un algoritmo a un archivo y devuelve la ubicación del fichero resultado
 	def self.aplicar(file, algorithm)
@@ -34,17 +52,17 @@ class Algorithms
 	def self.conversorKeel(file)
 		# Comprobación previa del fichero para realizar conversión o no
 		
-	  	case File.extname(file.to_s)
+	  	case File.extname(file)
 	  	
 	  	when ".arff"
 	  		# Convertir a .dat de Keel
 	  		fileTrans = WekaToKeel.new();
-	  		fileInput = file.current_path.to_s
-	  		fileOutput = File.dirname(file.current_path) + "/" + File.basename(file.to_s, ".*").downcase + ".dat"
+	  		fileInput = file
+	  		fileOutput = File.dirname(file) + "/" + File.basename(file, ".*").downcase + ".dat"
 	        fileTrans.Start(fileInput, fileOutput)
 	  	when ".dat"
-	  		#no hace nada
-	  		fileOutput = file.current_path.to_s
+	  		# no hacer nada
+	  		fileOutput = file
 	  	end
 
 	  	return fileOutput
@@ -53,7 +71,7 @@ class Algorithms
 	# Función Apriori, aplica el alogirtmo apriori de Weka
 	  def self.apriori(file)
 	  	# Se leen los datos
-		reader = BufferedReader.new(FileReader.new(file.current_path))
+		reader = BufferedReader.new(FileReader.new(file))
         data = Instances.new(reader)
         reader.close()
 
@@ -81,7 +99,7 @@ class Algorithms
 	  	algorithm = "algorithm = CN2 Algorithm for Subgroup Discovery\n"
 	  	#inputData = "inputData = " + "\"" + file.current_path + "\" " + "\"" + file.current_path + "\" " +"\"" + file.current_path + "\"\n"
 	  	inputData = "inputData = " + "\"" + convertedInput + "\" " + "\"" + convertedInput + "\" " +"\"" + convertedInput + "\"\n"
-        output = File.dirname(file.current_path) + "/result"
+        output = File.dirname(file) + "/result"
         outputData = "outputData = " + "\"" + output + ".tra\" " + "\"" + output + ".tst\" " + "\"" + output + ".txt\"\n"
         
         nu_value = "Nu_Value = 0.5\n"
@@ -92,7 +110,7 @@ class Algorithms
 
 
         # Preparar el archivo de configuración
-        configuracion = File.dirname(file.current_path) + "/configuracionCN2.txt"
+        configuracion = File.dirname(file) + "/configuracionCN2.txt"
 
         config_file = open(configuracion, "w")
 
@@ -132,7 +150,7 @@ class Algorithms
 	  	# Se definen los parámetros del algoritmo
 	  	algorithm = "algorithm = MESDIF for Subgroup Discovery\n"
 	  	inputData = "inputData = " + "\"" + convertedInput + "\" " + "\"" + convertedInput + "\" " +"\"" + convertedInput + "\"\n"
-        output = File.dirname(file.current_path) + "/result"
+        output = File.dirname(file) + "/result"
         outputData = "outputData = " + "\"" + output + "0.tra\" " + "\"" + output + "0.tst\" " + "\"" + output + "0e0.txt\" " + 
         							   "\"" + output + "0e1.txt\" " + "\"" + output + "0e2.txt\" " + "\"" + output + "0e3.txt\"\n"
         
@@ -150,7 +168,7 @@ class Algorithms
 
 
         # Preparar el archivo de configuración
-        configuracion = File.dirname(file.current_path) + "/configuracionMESDIF.txt"
+        configuracion = File.dirname(file) + "/configuracionMESDIF.txt"
 
         config_file = open(configuracion, "w")
 
@@ -197,11 +215,8 @@ class QueriesController < ApplicationController
 		if @query.save
 			flash[:success] = "Nueva consulta creada con éxito"
 
-			# Aplicar SD (En un futuro, añadir a lista de espera para SD)
-			@query.result = Algorithms.aplicar(@query.queryfile, @query.algorithm)
-			
-			# Actualizar la consulta? Habrá que pasar la consulta como parámetro luego
-			@query.save
+			# Añade la consulta a la cola de espera y pasa el id para actualizarla al acabar
+			Resque.enqueue(Algorithms, @query.id)
 
 			redirect_to queries_path
 		else

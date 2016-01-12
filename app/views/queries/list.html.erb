@@ -1,9 +1,6 @@
 <% provide(:title, "Consultas") %>
 
 <div>
-	<div><%= @antes %></div>
-	<div>Resultado: <%= @ejecucionExterna %></div>
-	<div><%= @despues %></div>
 	<h3>Consultas</h3>
 	<% if @user.queries.any? %>
 		<h3>Realizadas: <%= @user.queries.count %></h3>

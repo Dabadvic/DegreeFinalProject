@@ -2,7 +2,7 @@
 	<td> <%= query.description %> </td>
 	<td>Iniciada <%= query.created_at %> </td>
 	<td> <%= query.status %> </td>
-	<td>Archivo: <%= query.queryfile if query.queryfile? %> </td>
+	<td>Archivo: <%= query.queryfile.current_path.to_s if query.queryfile? %> </td>
 	<td> <%= query.algorithm %> </td>
 	<td><%= link_to "Ver", query %></td>
 	<td> <%= link_to "Eliminar consulta", query, method: :delete, 

@@ -32,7 +32,12 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# Servidor JRuby
 gem "puma"
+
+# Uso de background jobs
+gem 'resque' 
+gem 'resque-web', require: 'resque_web'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
