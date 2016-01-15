@@ -16,8 +16,8 @@
 
 			<label for="query_description">Clasificador</label>
 			<%= f.select(:algorithm) do %>
-				<% [['Apriori', "apriori"], ['CN2-SD', "cn2"], ['MESDIF-SD', "mesdif"]].each do |c| %>
-					<%= content_tag(:option, c.first, value: c.last) %>
+				<% @options.each do |c| %>
+					<%= content_tag(:option, c.first, value: c.last, :disabled => (true if c.last == "no_dis" || c.last == "re_dis")) %>
 				<% end %>
 			<% end %>
 
