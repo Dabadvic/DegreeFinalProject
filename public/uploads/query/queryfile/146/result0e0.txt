@@ -1,0 +1,49 @@
+GENERATED RULE 0
+   Antecedent
+	Variable petallength = 0
+   Consecuent: Iris-setosa
+
+GENERATED RULE 1
+   Antecedent
+	Variable petallength = 0
+	Variable petalwidth = 0
+   Consecuent: Iris-setosa
+
+GENERATED RULE 2
+   Antecedent
+	Variable petalwidth = 0
+   Consecuent: Iris-setosa
+
+GENERATED RULE 0
+   Antecedent
+	Variable sepallength = 1
+	Variable sepalwidth = 2
+   Consecuent: Iris-versicolor
+
+GENERATED RULE 1
+   Antecedent
+	Variable sepalwidth = 2
+   Consecuent: Iris-versicolor
+
+GENERATED RULE 2
+   Antecedent
+	Variable petalwidth = 1
+   Consecuent: Iris-versicolor
+
+GENERATED RULE 0
+   Antecedent
+	Variable sepallength = 1
+	Variable sepalwidth = 1
+   Consecuent: Iris-virginica
+
+GENERATED RULE 1
+   Antecedent
+	Variable sepallength = 1
+   Consecuent: Iris-virginica
+
+GENERATED RULE 2
+   Antecedent
+	Variable sepallength = 1
+	Variable sepalwidth = 2
+   Consecuent: Iris-virginica
+

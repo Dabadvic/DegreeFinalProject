@@ -2,10 +2,10 @@
 |              Parameters Echo             |
 --------------------------------------------
 Algorithm name: mesdif for subgroup discovery
-Input file name training: /home/david/proyectojruby/public/uploads/query/queryfile/120/iris.dat
-Input file name test: /home/david/proyectojruby/public/uploads/query/queryfile/120/iris.dat
-Rules file name: /home/david/proyectojruby/public/uploads/query/queryfile/120/result0e0.txt
-Tracking file name: /home/david/proyectojruby/public/uploads/query/queryfile/120/result0e2.txt
+Input file name training: /home/david/proyectojruby/public/uploads/query/queryfile/145/iris.dat
+Input file name test: /home/david/proyectojruby/public/uploads/query/queryfile/145/iris.dat
+Rules file name: /home/david/proyectojruby/public/uploads/query/queryfile/145/result0e0.txt
+Tracking file name: /home/david/proyectojruby/public/uploads/query/queryfile/145/result0e2.txt
 Random generator seed: 0
 Selected class of the target variable: not established
 Number of labels for the continuous variables: 3

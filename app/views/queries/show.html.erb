@@ -4,20 +4,35 @@
 <ul>
 	<li>Descripción: <%= @query.description %></li>
 	<li>Fecha de creación: <%= @query.created_at %></li>
-	<li>Estado: <%= @query.status %></li>
+	<li>Estado: <%= @estado %></li>
+	<li>Discretizador aplicado: <%= @query.discretization %></li>
 	<li>Algoritmo aplicado: <%= @query.algorithm %></li>
 	<li>Ruta: <%= File.dirname(@query.queryfile.current_path.to_s) if @query.queryfile? %></li>
 	<li>Archivo: <%= File.basename(@query.queryfile.to_s, ".*") if @query.queryfile? %></li>
 	<li>Tipo: <%= File.extname(@query.queryfile.to_s) if @query.queryfile? %> </li>
-	<li><% if File.exist?(@resultado) %>
-			Resultado:
-			<% File.readlines(@resultado).each do |line| %>
+	
+	<table>
+		<% if File.exist?(@dis_file) %>
+			Datos discretizador: <br>
+			<% File.readlines(@dis_file).each do |line| %>
 				<%= line %> <br>
 			<% end %>
-		<% else %>
-			No se encontró el resultado, ¿hubo un error?
 		<% end %>
-	</li>
+	</table>
+
+	<% if @resultado != nil %>
+		<% case @query.algorithm %>
+			<% when "mesdif" %>
+				<%= render 'results_mesdif', resultado: @resultado %>
+			<% else %>
+				<%= render 'results', resultado: @resultado %>
+		<% end %>
+	<% else %>
+		No se encontró el resultado, ¿hubo un error?
+	<% end %>
+
+	
+
 </ul>
 
 <%= link_to 'Atrás', queries_path %>

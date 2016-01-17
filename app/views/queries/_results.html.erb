@@ -1,0 +1,10 @@
+<% @resultado.each do |file| %>
+	<table>
+		Archivo: <%= File.basename(file, ".*") %> <br>
+		<% if File.exist?(file) %>
+			<% File.readlines(file).each do |line| %>
+				<%= line %> <br>
+			<% end %>
+		<% end %>
+	</table>
+<% end %>

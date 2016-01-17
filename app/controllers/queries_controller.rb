@@ -36,6 +36,7 @@ class QueriesController < ApplicationController
 	  	@options = [['- Requieren discretizar:', "re_dis"], ['Apriori', "apriori"], ['CN2-SD', "cn2"], ['SD-Map', "sdmap"], 
 	  				['SD-Algorithm', "sd"], ['- No requieren discretizar:', "no_dis"], ['MESDIF', "mesdif"], 
 	  				['SDIGA', "sdiga"]]
+	  	@options_dis = [['Ninguno', "none"], ['Cluster Analysis', "cluster_analysis"]]
 	 end
 
 	def list
@@ -46,14 +47,25 @@ class QueriesController < ApplicationController
 	def show
 		@query = Query.find(params[:id])
 		if @query.result?
-			@resultado = @query.result
+			@resultado = eval(@query.result)
+		end
+		# Ubicación del fichero resultado de discretizar
+		@dis_file = File.dirname(@query.queryfile.current_path.to_s) + "/disresult.txt"
+
+		case @query.status
+		when "waiting"
+			@estado = "Esperando a ser atendida"
+		when "processing"
+			@estado = "En proceso de ejecución"
+		when "finished"
+			@estado = "Consulta finalizada"
 		end
 	end
 
 	private
 
 	  def query_params
-	  	params.require(:query).permit(:description, :queryfile, :algorithm)
+	  	params.require(:query).permit(:description, :queryfile, :algorithm, :discretization)
 	  end
 
 end

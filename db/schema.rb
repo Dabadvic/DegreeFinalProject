@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160106150021) do
+ActiveRecord::Schema.define(version: 20160117162605) do
 
   create_table "queries", force: :cascade do |t|
     t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "status"
     t.datetime "finished_at"
-    t.string   "queryfile",   limit: 255
-    t.string   "result",      limit: 255
-    t.string   "algorithm",   limit: 255
+    t.string   "queryfile",      limit: 255
+    t.string   "result",         limit: 255
+    t.string   "algorithm",      limit: 255
+    t.string   "discretization", limit: 255
   end
 
   add_index "queries", ["user_id", "created_at"], name: "index_queries_on_user_id_and_created_at"

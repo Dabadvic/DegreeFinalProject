@@ -3,6 +3,7 @@
 require "java"
 require "libraries/weka.jar"
 require "libraries/conversorWeka2Keel.jar"
+require "discretizers"
 
 java_import "weka.associations.Apriori"
 
@@ -21,13 +22,21 @@ class Algorithms
 
   	def self.perform(query_id)
   		puts 'Query: ' + query_id.to_s
-  		query = Query.find(query_id)
+        query = Query.find(query_id)
+        file_path = query.queryfile.current_path.to_s
+
+        puts '¿Hay que aplicar discretizador?' + query.discretization
+        if query.discretization != "none"
+            puts 'Sí'
+            file_path = Discretizers.apply_discretizer(query.queryfile.current_path.to_s, query.discretization)
+        end
+  		
   		puts 'Inicia algoritmo: ' + query.algorithm
   		query.status = 1
   		puts 'Estado: ' + query.status
   		query.save
-  		query.result = aplicar(query.queryfile.current_path.to_s, query.algorithm)
-  		puts 'Finaliza un algoritmo'
+  		query.result = aplicar(file_path, query.algorithm)
+  		puts 'Finaliza algoritmo'
   		query.status = 2
   		puts 'Estado: ' + query.status
   		query.save
@@ -59,7 +68,7 @@ class Algorithms
 	end
 
     # Función auxiliar para escribir un archivo de configuración
-    def self.writeConfigFile(path, toWrite)
+    def self.writeFile(path, toWrite)
         config_file = open(path, "w")
         toWrite.each { |line| config_file.write(line) }
         config_file.close
@@ -99,7 +108,13 @@ class Algorithms
 		_model.buildAssociations(data)
 
 		# Obtenemos el resultado
-		toRet = _model.toString()
+		toWrite = Array.new
+        toWrite.push(_model.toString())
+
+        toRet = Array.new
+        toRet.push(File.dirname(file) + "/result0.txt")
+
+        writeFile(toRet[0], toWrite)
 
 		return toRet
 
@@ -111,6 +126,7 @@ class Algorithms
 	  	convertedInput = conversorKeel(file)
 
         toWrite = Array.new
+        toRet = Array.new
 
 	  	# Se definen los parámetros del algoritmo
 	  	toWrite.push("algorithm = CN2 Algorithm for Subgroup Discovery\n") 
@@ -127,15 +143,14 @@ class Algorithms
 
         # Preparar el archivo de configuración
         configuracion = File.dirname(file) + "/configuracionCN2.txt"
-        writeConfigFile(configuracion, toWrite)
+        writeFile(configuracion, toWrite)
 
         # Ejecutar el comando para aplicar el algoritmo
         comando = "java -jar /home/david/proyectojruby/app/jobs/libraries/CN2SD.jar " + configuracion
-
         ejecucion = system( comando )
 
         if ejecucion == true
-        	toRet = output + ".txt"
+            toRet.push(output + ".txt")
         else
         	toRet = "error"
         end
@@ -149,6 +164,7 @@ class Algorithms
 	  	convertedInput = conversorKeel(file)
 
         toWrite = Array.new
+        toRet = Array.new
 
 	  	# Se definen los parámetros del algoritmo
 	  	toWrite.push("algorithm = MESDIF for Subgroup Discovery\n")
@@ -172,15 +188,17 @@ class Algorithms
 
         # Preparar el archivo de configuración
         configuracion = File.dirname(file) + "/configuracionMESDIF.txt"
-        writeConfigFile(configuracion, toWrite)
+        writeFile(configuracion, toWrite)
 
         # Ejecutar el comando para aplicar el algoritmo
         comando = "java -jar /home/david/proyectojruby/app/jobs/libraries/MESDIF.jar " + configuracion
-
         ejecucion = system( comando )
 
         if ejecucion == true
-        	toRet = output + "0e0.txt"
+            toRet.push(output + "0e0.txt")
+            toRet.push(output + "0e1.txt")
+            toRet.push(output + "0e2.txt")
+            toRet.push(output + "0e3.txt")
         else
         	toRet = "error"
         end
@@ -194,6 +212,7 @@ class Algorithms
         convertedInput = conversorKeel(file)
 
         toWrite = Array.new
+        toRet = Array.new
 
         # Se definen los parámetros del algoritmo
         toWrite.push("algorithm = SDMap for Subgroup Discovery\n")
@@ -210,15 +229,17 @@ class Algorithms
 
         # Preparar el archivo de configuración
         configuracion = File.dirname(file) + "/configuracionSDMap.txt"
-        writeConfigFile(configuracion, toWrite)
+        writeFile(configuracion, toWrite)
 
         # Ejecutar el comando para aplicar el algoritmo
         comando = "java -jar /home/david/proyectojruby/app/jobs/libraries/SDMap.jar " + configuracion
-
         ejecucion = system( comando )
 
         if ejecucion == true
-            toRet = output + "0e0.txt"
+            toRet.push(output + "0e0.txt")
+            toRet.push(output + "0e1.txt")
+            toRet.push(output + "0e2.txt")
+            toRet.push(output + "0e3.txt")
         else
             toRet = "error"
         end
@@ -232,6 +253,7 @@ class Algorithms
         convertedInput = conversorKeel(file)
 
         toWrite = Array.new
+        toRet = Array.new
 
         # Se definen los parámetros del algoritmo
         toWrite.push("algorithm = SDAlgorithm for Subgroup Discovery\n")
@@ -248,15 +270,17 @@ class Algorithms
 
         # Preparar el archivo de configuración
         configuracion = File.dirname(file) + "/configuracionSDAlgorithm.txt"
-        writeConfigFile(configuracion, toWrite)
+        writeFile(configuracion, toWrite)
 
         # Ejecutar el comando para aplicar el algoritmo
         comando = "java -jar /home/david/proyectojruby/app/jobs/libraries/SDAlgorithm.jar " + configuracion
-
         ejecucion = system( comando )
 
         if ejecucion == true
-            toRet = output + "0e0.txt"
+            toRet.push(output + "0e0.txt")
+            toRet.push(output + "0e1.txt")
+            toRet.push(output + "0e2.txt")
+            toRet.push(output + "0e3.txt")
         else
             toRet = "error"
         end
@@ -270,6 +294,7 @@ class Algorithms
         convertedInput = conversorKeel(file)
 
         toWrite = Array.new
+        toRet = Array.new
 
         # Se definen los parámetros del algoritmo
         toWrite.push("algorithm = SD-SDIGA for Subgroup Discovery\n")
@@ -297,15 +322,19 @@ class Algorithms
 
         # Preparar el archivo de configuración
         configuracion = File.dirname(file) + "/configuracionSDIGA.txt"
-        writeConfigFile(configuracion, toWrite)
+        writeFile(configuracion, toWrite)
 
         # Ejecutar el comando para aplicar el algoritmo
         comando = "java -jar /home/david/proyectojruby/app/jobs/libraries/SDIGA.jar " + configuracion
-
         ejecucion = system( comando )
 
         if ejecucion == true
-            toRet = output + "0e0.txt"
+            toRet.push(output + "0e0.txt")
+            toRet.push(output + "0e1.txt")
+            toRet.push(output + "0e2.txt")
+            toRet.push(output + "0e3.txt")
+            toRet.push(output + "0e4.txt")
+            toRet.push(output + "0e5.txt")
         else
             toRet = "error"
         end

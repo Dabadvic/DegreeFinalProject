@@ -1,0 +1,44 @@
+<style>
+     table.equalDevide tr td { padding-left: 5px; padding-right: 5px; }
+     table.ex1 tr:nth-child(even) {background: #CCC}
+	 table.ex1 tr:nth-child(odd) {background: #FFF}
+</style>
+
+<% @resultado.each do |file| %>
+	Archivo: <%= File.basename(file, ".*") %>
+
+	
+		<!-- Hay que comprobar el archivo para ordenar la tabla -->
+		<% if File.basename(file, ".*") == "result0e0" %>
+		<table class="equalDevide ex1" style="border:1px solid black;">
+			<tr style="border-bottom: 1px solid black">
+				<td>Número de regla</td> 
+				<td>Antecedente(s)</td> 
+				<td>Consecuencia</td>
+			</tr>
+			<!-- Requiere un orden especial, por lo que se comprueba cada línea para realizar los cambios -->
+			<% if File.exist?(file) %>
+				<% File.readlines(file).each do |line| %>
+
+					<% if line.split(' ')[0] == "GENERATED" %>
+						<tr> <td><%= line.split(' ')[1] + " " + line.split(' ')[2] %></td>
+					<% elsif line.split(' ')[0] == "Antecedent" %>
+						<td>
+					<% elsif line.split(' ')[0] == "Variable" %>
+						<%= line %>
+					<% elsif line.split(' ')[0] == "Consecuent:" %>
+						</td><td><%= line %></td></tr>
+					<% end %>
+
+				<% end %>
+			<% end %>
+		<% else %>
+			<table class="equalDevide" style="border:1px solid black;">
+			<% if File.exist?(file) %>
+				<% File.readlines(file).each do |line| %>
+					<tr> <td> <%= line %> </td> </tr>
+				<% end %>
+			<% end %>
+		<% end %>
+	</table>
+<% end %>
