@@ -1,0 +1,37 @@
+table.tablas tr td{
+	padding-left: 5px; 
+	padding-right: 5px;
+}
+
+table.padded tr td { 
+	padding-left: 5px; 
+	padding-right: 5px; 
+	font-size: 16px; 
+	line-height: 1.5;
+}
+
+table.padded {
+	border:1px solid black;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+tr#cabecera {
+	border-bottom: 1px solid black;
+	background-color: #673AB7;
+	color: #FFF;
+	td {
+		border-right: 1px solid black;
+	}
+}
+
+td.borde_derecho {
+	border-right: 1px solid black;
+}
+
+table.ex1 tr:nth-child(even) {
+	background: #CCC
+}
+table.ex1 tr:nth-child(odd) {
+	background: #FFF
+}

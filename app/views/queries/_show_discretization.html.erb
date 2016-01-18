@@ -1,0 +1,8 @@
+<% if File.exist?(dis) %>
+	<table>
+		Datos discretizador: <br>
+		<% File.readlines(dis).each do |line| %>
+			<%= line %> <br>
+		<% end %>
+	</table>
+<% end %>

@@ -10,15 +10,17 @@
 	<li>Ruta: <%= File.dirname(@query.queryfile.current_path.to_s) if @query.queryfile? %></li>
 	<li>Archivo: <%= File.basename(@query.queryfile.to_s, ".*") if @query.queryfile? %></li>
 	<li>Tipo: <%= File.extname(@query.queryfile.to_s) if @query.queryfile? %> </li>
-	
-	<table>
-		<% if File.exist?(@dis_file) %>
-			Datos discretizador: <br>
-			<% File.readlines(@dis_file).each do |line| %>
-				<%= line %> <br>
-			<% end %>
+
+	<% if @query.discretization != "none" %>
+		<% case @query.discretization %>
+			<% when "cluster_analysis" %>
+				<%= render 'show_cluster_analysis', dis: @dis_file %>
+			<% else %>
+				<%= render '_show_discretization', dis: @dis_file %>
 		<% end %>
-	</table>
+	<% else %>
+		No se realizó discretización <br>
+	<% end %>
 
 	<% if @resultado != nil %>
 		<% case @query.algorithm %>
