@@ -14,9 +14,9 @@
 	<% if @query.discretization != "none" %>
 		<% case @query.discretization %>
 			<% when "cluster_analysis" %>
-				<%= render 'show_cluster_analysis', dis: @dis_file %>
+				<%= render 'queries/results/show_cluster_analysis', dis: @dis_file %>
 			<% else %>
-				<%= render '_show_discretization', dis: @dis_file %>
+				<%= render 'queries/results/show_discretization', dis: @dis_file %>
 		<% end %>
 	<% else %>
 		No se realizó discretización <br>
@@ -25,9 +25,11 @@
 	<% if @resultado != nil %>
 		<% case @query.algorithm %>
 			<% when "mesdif" %>
-				<%= render 'results_mesdif', resultado: @resultado %>
+				<%= render 'queries/results/mesdif', resultado: @resultado %>
+			<% when "sdmap" %>
+				<%= render 'queries/results/sdmap', resultado: @resultado %>
 			<% else %>
-				<%= render 'results', resultado: @resultado %>
+				<%= render 'queries/results/results', resultado: @resultado %>
 		<% end %>
 	<% else %>
 		No se encontró el resultado, ¿hubo un error?

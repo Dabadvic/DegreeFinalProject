@@ -1,0 +1,132 @@
+GENERATED RULE 0
+   Antecedent
+	Variable MAX.LENGTHASPECTRATIO = Label 0 	 (-24.5 2.0 28.5)
+	Variable SCATTERRATIO = Label 1 	 (112.0 188.5 265.0)
+	Variable ELONGATEDNESS = Label 0 	 (8.5 26.0 43.5)
+	Variable PR.AXISRECTANGULARITY = Label 1 	 (17.0 23.0 29.0)
+	Variable MAX.LENGTHRECTANGULARITY = Label 0 	 (83.0 118.0 153.0)
+	Variable SKEWNESSABOUT_MAJOR = Label 0 	 (21.0 59.0 97.0)
+	Variable SKEWNESSABOUT_MINOR = Label 0 	 (-11.0 0.0 11.0)
+	Variable KURTOSISABOUT_MINOR = Label 0 	 (161.0 176.0 191.0)
+   Consecuent: opel
+
+GENERATED RULE 1
+   Antecedent
+	Variable MAX.LENGTHASPECTRATIO = Label 0 	 (-24.5 2.0 28.5)
+	Variable SCATTERRATIO = Label 1 	 (112.0 188.5 265.0)
+	Variable PR.AXISRECTANGULARITY = Label 1 	 (17.0 23.0 29.0)
+	Variable MAX.LENGTHRECTANGULARITY = Label 0 	 (83.0 118.0 153.0)
+	Variable SKEWNESSABOUT_MAJOR = Label 0 	 (21.0 59.0 97.0)
+	Variable KURTOSISABOUT_MINOR = Label 1 	 (176.0 191.0 206.0)
+   Consecuent: opel
+
+GENERATED RULE 2
+   Antecedent
+	Variable MAX.LENGTHASPECTRATIO = Label 1 	 (2.0 28.5 55.0)
+	Variable SCATTERRATIO = Label 1 	 (112.0 188.5 265.0)
+	Variable ELONGATEDNESS = Label 0 	 (8.5 26.0 43.5)
+	Variable PR.AXISRECTANGULARITY = Label 1 	 (17.0 23.0 29.0)
+	Variable MAX.LENGTHRECTANGULARITY = Label 0 	 (83.0 118.0 153.0)
+	Variable SKEWNESSABOUT_MAJOR = Label 0 	 (21.0 59.0 97.0)
+   Consecuent: opel
+
+GENERATED RULE 0
+   Antecedent
+	Variable COMPACTNESS = Label 0 	 (50.0 73.0 96.0)
+	Variable PR.AXISASPECTRATIO = Label 0 	 (1.5 47.0 92.5)
+	Variable MAX.LENGTHASPECTRATIO = Label 0 	 (-24.5 2.0 28.5)
+	Variable SCATTERRATIO = Label 0 	 (35.5 112.0 188.5)
+	Variable ELONGATEDNESS = Label 0 	 (8.5 26.0 43.5)
+	Variable MAX.LENGTHRECTANGULARITY = Label 0 	 (83.0 118.0 153.0)
+	Variable SCALEDRADIUSOFGYRATION = Label 0 	 (29.5 109.0 188.5)
+	Variable KURTOSISABOUT_MAJOR = Label 0 	 (-20.5 0.0 20.5)
+	Variable KURTOSISABOUT_MINOR = Label 0 	 (161.0 176.0 191.0)
+	Variable HOLLOWSRATIO = Label 0 	 (166.0 181.0 196.0)
+   Consecuent: saab
+
+GENERATED RULE 1
+   Antecedent
+	Variable COMPACTNESS = Label 1 	 (73.0 96.0 119.0)
+	Variable PR.AXISASPECTRATIO = Label 0 	 (1.5 47.0 92.5)
+	Variable MAX.LENGTHASPECTRATIO = Label 0 	 (-24.5 2.0 28.5)
+	Variable SCALEDRADIUSOFGYRATION = Label 0 	 (29.5 109.0 188.5)
+	Variable KURTOSISABOUT_MINOR = Label 1 	 (176.0 191.0 206.0)
+   Consecuent: saab
+
+GENERATED RULE 2
+   Antecedent
+	Variable COMPACTNESS = Label 0 	 (50.0 73.0 96.0)
+	Variable PR.AXISASPECTRATIO = Label 0 	 (1.5 47.0 92.5)
+	Variable MAX.LENGTHASPECTRATIO = Label 0 	 (-24.5 2.0 28.5)
+	Variable SCATTERRATIO = Label 0 	 (35.5 112.0 188.5)
+	Variable SCALEDRADIUSOFGYRATION = Label 0 	 (29.5 109.0 188.5)
+	Variable KURTOSISABOUT_MINOR = Label 0 	 (161.0 176.0 191.0)
+	Variable HOLLOWSRATIO = Label 0 	 (166.0 181.0 196.0)
+   Consecuent: saab
+
+GENERATED RULE 0
+   Antecedent
+	Variable COMPACTNESS = Label 0 	 (50.0 73.0 96.0)
+	Variable CIRCULARITY = Label 1 	 (33.0 46.0 59.0)
+	Variable DISTANCECIRCULARITY = Label 0 	 (4.0 40.0 76.0)
+	Variable RADIUSRATIO = Label 1 	 (104.0 218.5 333.0)
+	Variable MAX.LENGTHRECTANGULARITY = Label 1 	 (118.0 153.0 188.0)
+	Variable SKEWNESSABOUT_MAJOR = Label 1 	 (59.0 97.0 135.0)
+	Variable KURTOSISABOUT_MAJOR = Label 0 	 (-20.5 0.0 20.5)
+	Variable HOLLOWSRATIO = Label 0 	 (166.0 181.0 196.0)
+   Consecuent: bus
+
+GENERATED RULE 1
+   Antecedent
+	Variable COMPACTNESS = Label 1 	 (73.0 96.0 119.0)
+	Variable MAX.LENGTHRECTANGULARITY = Label 1 	 (118.0 153.0 188.0)
+	Variable SKEWNESSABOUT_MAJOR = Label 1 	 (59.0 97.0 135.0)
+   Consecuent: bus
+
+GENERATED RULE 2
+   Antecedent
+	Variable CIRCULARITY = Label 1 	 (33.0 46.0 59.0)
+	Variable DISTANCECIRCULARITY = Label 0 	 (4.0 40.0 76.0)
+	Variable RADIUSRATIO = Label 1 	 (104.0 218.5 333.0)
+	Variable SCATTERRATIO = Label 0 	 (35.5 112.0 188.5)
+	Variable ELONGATEDNESS = Label 0 	 (8.5 26.0 43.5)
+	Variable PR.AXISRECTANGULARITY = Label 1 	 (17.0 23.0 29.0)
+	Variable MAX.LENGTHRECTANGULARITY = Label 0 	 (83.0 118.0 153.0)
+	Variable SKEWNESSABOUT_MAJOR = Label 1 	 (59.0 97.0 135.0)
+	Variable KURTOSISABOUT_MAJOR = Label 0 	 (-20.5 0.0 20.5)
+	Variable HOLLOWSRATIO = Label 0 	 (166.0 181.0 196.0)
+   Consecuent: bus
+
+GENERATED RULE 0
+   Antecedent
+	Variable COMPACTNESS = Label 1 	 (73.0 96.0 119.0)
+	Variable CIRCULARITY = Label 1 	 (33.0 46.0 59.0)
+	Variable PR.AXISRECTANGULARITY = Label 0 	 (11.0 17.0 23.0)
+	Variable MAX.LENGTHRECTANGULARITY = Label 1 	 (118.0 153.0 188.0)
+	Variable SCALEDVARIANCE_MINOR = Label 0 	 (-233.0 184.0 601.0)
+	Variable SCALEDRADIUSOFGYRATION = Label 1 	 (109.0 188.5 268.0)
+   Consecuent: van
+
+GENERATED RULE 1
+   Antecedent
+	Variable COMPACTNESS = Label 1 	 (73.0 96.0 119.0)
+	Variable CIRCULARITY = Label 0 	 (20.0 33.0 46.0)
+	Variable DISTANCECIRCULARITY = Label 0 	 (4.0 40.0 76.0)
+	Variable PR.AXISRECTANGULARITY = Label 0 	 (11.0 17.0 23.0)
+	Variable SCALEDVARIANCE_MINOR = Label 0 	 (-233.0 184.0 601.0)
+	Variable SCALEDRADIUSOFGYRATION = Label 0 	 (29.5 109.0 188.5)
+	Variable SKEWNESSABOUT_MINOR = Label 1 	 (0.0 11.0 22.0)
+	Variable KURTOSISABOUT_MAJOR = Label 0 	 (-20.5 0.0 20.5)
+   Consecuent: van
+
+GENERATED RULE 2
+   Antecedent
+	Variable COMPACTNESS = Label 1 	 (73.0 96.0 119.0)
+	Variable CIRCULARITY = Label 0 	 (20.0 33.0 46.0)
+	Variable PR.AXISRECTANGULARITY = Label 0 	 (11.0 17.0 23.0)
+	Variable SCALEDVARIANCE_MINOR = Label 0 	 (-233.0 184.0 601.0)
+	Variable SCALEDRADIUSOFGYRATION = Label 0 	 (29.5 109.0 188.5)
+	Variable SKEWNESSABOUT_MINOR = Label 1 	 (0.0 11.0 22.0)
+	Variable KURTOSISABOUT_MAJOR = Label 0 	 (-20.5 0.0 20.5)
+   Consecuent: van
+

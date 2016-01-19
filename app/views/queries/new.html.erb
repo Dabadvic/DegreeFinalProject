@@ -14,16 +14,20 @@
 				<%= f.file_field :queryfile, accept:".arff,.dat" %>
 			</span>
 
+			<% options_dis = [['Ninguno', "none"], ['Cluster Analysis', "cluster_analysis"]] %>
 			<label for="query_description">Discretizador</label>
 			<%= f.select(:discretization) do %>
-				<% @options_dis.each do |c| %>
+				<% options_dis.each do |c| %>
 					<%= content_tag(:option, c.first, value: c.last) %>
 				<% end %>
 			<% end %>
 
+			<% options = [['- Requieren discretizar:', "re_dis"], ['Apriori', "apriori"], ['CN2-SD', "cn2"], 
+							['SD-Map', "sdmap"], ['SD-Algorithm', "sd"], 
+							['- No requieren discretizar:', "no_dis"], ['MESDIF', "mesdif"], ['SDIGA', "sdiga"]] %>
 			<label for="query_description">Clasificador</label>
 			<%= f.select(:algorithm) do %>
-				<% @options.each do |c| %>
+				<% options.each do |c| %>
 					<%= content_tag(:option, c.first, value: c.last, :disabled => (true if c.last == "no_dis" || c.last == "re_dis")) %>
 				<% end %>
 			<% end %>

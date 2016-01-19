@@ -1,20 +1,26 @@
 <% @resultado.each do |file| %>
-
-		<!-- Hay que comprobar el archivo para ordenar la tabla -->
+		<!-- Compruebo el archivo para ordenar la tabla -->
 		<% if File.basename(file, ".*") == "result0e0" %>
-		<table class="padded ex1">
-			<tr id="cabecera">
-				<td>Número de regla</td> 
-				<td>Antecedente(s)</td> 
-				<td>Consecuencia</td>
-			</tr>
+		
 
 			<!-- Requiere un orden especial, por lo que se comprueba cada línea para realizar los cambios, tiene además variables que contiene todas las variables unidas por un AND, para poder retirar el último de la variables y no mostrar ningún AND de más -->
 			<% if File.exist?(file) %>
+				<h3>Reglas obtenidas: </h3>
+				<table class="padded ex1">
+					<tr id="cabecera">
+						<td>Número de regla</td> 
+						<td>Antecedente(s)</td> 
+						<td>Consecuencia</td>
+						<td>Class</td>
+					</tr>
 				<% variables = "" %>
+				<% clas_num = -1 %>
+				<% clas_name = "" %>
+				<% rule_num = -1 %>
 				<% File.readlines(file).each do |line| %>
 					<% if line.split(' ')[0] == "GENERATED" %>
-						<tr> <td class="borde_derecho"><%= line.split(' ')[1] + " " + line.split(' ')[2] %></td>
+						<% rule_num += 1 %>
+						<tr> <td class="borde_derecho"><%= line.split(' ')[1] + " " + rule_num.to_s %></td>
 					<% elsif line.split(' ')[0] == "Antecedent" %>
 						<td class="borde_derecho">
 					<% elsif line.split(' ')[0] == "Variable" %>
@@ -26,7 +32,12 @@
 
 						<%= variables.split(' ')[0...-1].join(' ') %>
 						<% variables = "" %>
-						</td><td><%= line.split(' ')[1] %></td></tr>
+						</td><td class="borde_derecho"><%= line.split(' ')[1] %></td>
+						<!-- Incluyo el número de la clase aquí -->
+						<% clas_num += 1 if clas_name != line.split(' ')[1] %>
+						<% clas_name = line.split(' ')[1] if clas_name != line.split(' ')[1] %>
+						<td><%= clas_num %></td>
+						</tr>
 					<% end %>
 
 				<% end %>
@@ -35,10 +46,11 @@
 		
 		<!-- Siguiente archivo a mostrar -->
 		<% elsif File.basename(file, ".*") == "result0e1" %>
-			<h4>Medidas de calidad (Quality measures):</h4>
-			<table class="padded ex1">
 			
 			<% if File.exist?(file) %>
+			<h3>Medidas de calidad (Quality measures):</h3>
+			<table class="padded ex1">
+				
 				<!-- Saco la primera línea 
 				<tr><td colspan="<%= File.readlines(file)[1].split(' ').length %>">
 					<%= File.readlines(file)[0] %>
@@ -61,14 +73,15 @@
 
 		<!-- Siguiente, otra tabla -->	
 		<% elsif File.basename(file, ".*") == "result0e3" %>
-			<table class="padded ex1">
 			
 			<% if File.exist?(file) %>
+				<h3>Más medidas de calidad: </h3>
+				<table class="padded ex1">
 				<!-- Saco todas las líneas -->
 				<% for i in 0..File.readlines(file).length-1 %>
 					<tr id="<%= "cabecera" if i==0 %>"> 
 					<% File.readlines(file)[i].split(' ').each do |word| %>
-						<td class="borde_derecho"> <%= word %> </td> 
+						<td class="borde_derecho"> <%= word != "Number" ? word : "Rule" %> </td> 
 					<% end %>
 					</tr>
 				<% end %>

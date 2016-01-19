@@ -1,0 +1,71 @@
+<% @resultado.each do |file| %>
+	<% if File.basename(file, ".*") == "result0e0" %>
+		<% if File.exist?(file) %>
+
+			<!-- Cabecera de la tabla -->
+			<h3>Reglas obtenidas: </h3>
+			<table class="padded ex1">
+				<tr id="cabecera">
+					<td>Regla</td> 
+					<td>Antecedente(s)</td> 
+					<td>Consecuencia</td>
+				</tr>
+
+				<!-- Requiere un orden especial, por lo que se comprueba cada línea para realizar los cambios -->
+				<% File.readlines(file).each do |line| %>
+					
+					<!-- Si es una regla, divido las pares de la misma -->
+					<% if line.split(' ')[0] == "Rule" %>
+						<tr> <td class="borde_derecho"><%= line.split(' ')[1].split(':').first %></td>
+						
+						<!-- Extraigo antecedentes -->
+						<% antecedentes = "" %>
+						<% i = 2 %>
+						<% while line.split(' ')[i] != "THEN" %>
+							<% antecedentes += line.split(' ')[i] + " " %>
+							<% i += 1 %>
+						<% end %>
+						<% i += 1 %>
+						<td class="borde_derecho"><%= antecedentes %></td>
+
+						<!-- Por último, la clase -->
+						<% consecuencia = "" %>
+						<% for j in i..line.split(' ').length-1 %>
+							<% consecuencia += line.split(' ')[j] + " " %>
+						<% end %>
+						<td class="borde_derecho"><%= consecuencia %></td>
+						</tr>
+
+					<% end %>
+				<% end %>
+			</table>
+		<% end %>
+
+	<!-- Siguiente archivo a mostrar -->
+	<% elsif File.basename(file, ".*") == "result0e1" %>
+		<% if File.exist?(file) %>
+			<h3>Medidas de calidad: </h3>
+			<table class="padded ex1">
+			<!-- Saco todas las líneas -->
+			<% for i in 0..File.readlines(file).length-1 %>
+				<tr id="<%= "cabecera" if i==0 %>"> 
+				<% File.readlines(file)[i].split(' ').each do |word| %>
+					<td class="borde_derecho"> <%= word %> </td> 
+				<% end %>
+				</tr>
+			<% end %>
+			</table>
+		<% end %>
+
+	<% else %>
+		<table>
+			<% if File.exist?(file) %>
+				Archivo: <%= File.basename(file, ".*") %> <br>
+				<% File.readlines(file).each do |line| %>
+					<%= line %> <br>
+				<% end %>
+			<% end %>
+		</table>
+
+	<% end %>
+<% end %>

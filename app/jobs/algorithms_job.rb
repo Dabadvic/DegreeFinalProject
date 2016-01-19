@@ -27,8 +27,9 @@ class Algorithms
 
         puts '¿Hay que aplicar discretizador?' + query.discretization
         if query.discretization != "none"
-            puts 'Sí'
-            file_path = Discretizers.apply_discretizer(query.queryfile.current_path.to_s, query.discretization)
+            puts 'Sí, comprobando si hay que convertir el archivo a .dat'
+            convertedInput = conversorKeel(file_path)
+            file_path = Discretizers.apply_discretizer(convertedInput, query.discretization)
         end
   		
   		puts 'Inicia algoritmo: ' + query.algorithm

@@ -1,0 +1,40 @@
+Rule 0: petallength = 0 AND sepallength = 0 THEN class = Iris-setosa
+[  1,00  0,00  0,00  ]
+
+
+Rule 1: sepallength = 0 THEN class = Iris-setosa
+[  1,00  0,00  0,00  ]
+
+
+Rule 2: petallength = 0 AND petalwidth = 0 AND sepallength = 0 THEN class = Iris-setosa
+[  1,00  0,00  0,00  ]
+
+
+Rule 3: petalwidth = 0 AND sepallength = 0 THEN class = Iris-setosa
+[  1,00  0,00  0,00  ]
+
+
+Rule 4: sepalwidth = 2 AND sepallength = 1 AND petallength = 1 AND petalwidth = 1 THEN class = Iris-versicolor
+[  0,00  1,00  0,00  ]
+
+
+Rule 5: sepalwidth = 2 AND sepallength = 1 AND petalwidth = 1 THEN class = Iris-versicolor
+[  0,00  1,00  0,00  ]
+
+
+Rule 6: sepalwidth = 2 AND sepallength = 1 AND petallength = 1 THEN class = Iris-versicolor
+[  0,00  1,00  0,00  ]
+
+
+Rule 7: sepallength = 1 AND petallength = 1 AND petalwidth = 1 THEN class = Iris-versicolor
+[  0,00  1,00  0,00  ]
+
+
+Rule 8: sepalwidth = 2 AND petallength = 1 AND petalwidth = 1 THEN class = Iris-versicolor
+[  0,00  1,00  0,00  ]
+
+
+Rule 9: sepallength = 1 AND petallength = 1 THEN class = Iris-versicolor
+[  0,00  1,00  0,00  ]
+
+

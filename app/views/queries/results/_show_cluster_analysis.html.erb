@@ -1,0 +1,92 @@
+<!-- Leo el fichero de datos -->
+<% if File.exist?(dis) %>
+	<h3>Datos discretizador:</h3>
+	<table class="tablas"> <tr>
+		<!-- Primero saco el nombre de los atributos (y por ende, cantidad de los mismos) -->
+		<% atributes = Array.new %>
+		<% File.readlines(File.dirname(dis) + "/distra.dat").each do |line| %>
+			<% atributes = line.split(' ')[1].split(',') if line.split(' ')[0] == "@inputs" %>
+		<% end %>
+
+		<!-- Cabecera del primer atributo -->
+		<% atribute_number = 0 %>
+		<td valign="top">
+		<table class="padded ex1">
+			<tr id="cabecera" class="center" ><td colspan="2"> 
+				<%= "Atributo " + atributes[atribute_number] %>
+			</td></tr>
+			<tr>
+				<td class="subcabecera">Etiqueta</td>
+				<td class="subcabecera">Rango</td>
+			</tr>
+
+		<% values = Array.new %>
+		<% File.readlines(dis).each do |line| %>
+			<% if line.split(' ')[0] == "Cut" %>
+				<% values.push(line.split(' ').last) %>
+			<% elsif line.split(' ')[0] == "Number" %>
+
+				<!-- Completo la tabla con los values -->
+				<% for i in 0..values.length %>
+					<tr>
+						<td><%= i %></td>
+						<td>
+							<% if i == 0 %>
+								<%= "(-∞, " + values[i].to_s + ")" %>
+							<% elsif i == values.length %>
+								<%= "[" + values[i-1].to_s + ", +∞)" %>
+							<% else %>
+								<%= "[" + values[i-1].to_s + ", " + values[i].to_s + ")" %>
+							<% end %>
+						</td>
+					</tr>
+				<% end %>
+
+				</table></td>
+
+				<!-- Reinicio el array de valores -->
+				<% values = Array.new %>
+				<% atribute_number += 1 %>
+
+				<!-- Si no es la última línea, creo una nueva tabla para el siguiente atributo -->
+				<% if atribute_number < atributes.length %>
+					<td valign="top">
+					<table class="padded ex1">
+					<tr id="cabecera" class="center" ><td colspan="2"> 
+						<%= "Atributo " + atributes[atribute_number] %>
+					</td></tr>
+					<tr>
+						<td class="subcabecera">Etiqueta</td>
+						<td class="subcabecera">Rango</td>
+					</tr>
+				<% end %>
+			<% end %>
+		<% end %>
+
+		<!-- Leo las filas, si la primera palabra es "Cut", forma parte del atributo, si es "Number" es que se ha llegado a otro atributo, hay que incrementar el valor de atribute_number y crear nueva tabla 
+		<% File.readlines(dis).each do |line| %>
+			<% if line.split(' ')[0] == "Cut" %>
+				<tr>
+					<td><%= line.split(' ')[2] %></td>
+					<td><%= line.split(' ').last %></td>
+				</tr>
+			<% elsif line.split(' ')[0] == "Number" %>
+				</table></td>
+				<% atribute_number += 1 %>
+
+				<!-- Si no es la última línea, creo una nueva tabla para el siguiente atributo ->
+				<% if atribute_number < atributes.length %>
+					<td>
+					<table class="padded ex1">
+					<tr id="cabecera" class="center" ><td colspan="2"> 
+						<%= "Atributo " + atributes[atribute_number] %>
+					</td></tr>
+					<tr>
+						<td class="subcabecera">Punto de corte</td>
+						<td class="subcabecera">Valor</td>
+					</tr>
+				<% end %>
+			<% end %>
+		<% end %> -->
+	</tr></table>
+<% end %>

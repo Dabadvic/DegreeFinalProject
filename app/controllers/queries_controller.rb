@@ -16,6 +16,7 @@ class QueriesController < ApplicationController
 			redirect_to queries_path
 		else
 	  		render 'new'
+	  		#render plain: "Error inesperado"
 	  	end
 	end
 
@@ -33,10 +34,6 @@ class QueriesController < ApplicationController
 
 	def new
 	  	@query = Query.new
-	  	@options = [['- Requieren discretizar:', "re_dis"], ['Apriori', "apriori"], ['CN2-SD', "cn2"], ['SD-Map', "sdmap"], 
-	  				['SD-Algorithm', "sd"], ['- No requieren discretizar:', "no_dis"], ['MESDIF', "mesdif"], 
-	  				['SDIGA', "sdiga"]]
-	  	@options_dis = [['Ninguno', "none"], ['Cluster Analysis', "cluster_analysis"]]
 	 end
 
 	def list

@@ -1,0 +1,213 @@
+--------------------------------------------
+|              Parameters Echo             |
+--------------------------------------------
+Algorithm name: mesdif for subgroup discovery
+Input file name training: /home/david/proyectojruby/public/uploads/query/queryfile/149/vehicle.dat
+Input file name test: /home/david/proyectojruby/public/uploads/query/queryfile/149/vehicle.dat
+Rules file name: /home/david/proyectojruby/public/uploads/query/queryfile/149/result0e0.txt
+Tracking file name: /home/david/proyectojruby/public/uploads/query/queryfile/149/result0e2.txt
+Random generator seed: 0
+Selected class of the target variable: not established
+Number of labels for the continuous variables: 3
+Number of evaluations: 10000
+Number of individuals in the Population: 100
+Number of individuals in the Elite Population: 3
+Cross probability: 0.6
+Mutation probability: 0.01
+Minimum confidence: 0.0
+Rules representation: CAN
+Objective 1: COMP
+Objective 2: UNUS
+Objective 3: FCNF
+
+--------------------------------------------
+|  Semantics for the continuous variables  |
+--------------------------------------------
+Fuzzy sets parameters for variable COMPACTNESS:
+	Label 0: 50.0 73.0 96.0
+	Label 1: 73.0 96.0 119.0
+	Label 2: 96.0 119.0 142.0
+Fuzzy sets parameters for variable CIRCULARITY:
+	Label 0: 20.0 33.0 46.0
+	Label 1: 33.0 46.0 59.0
+	Label 2: 46.0 59.0 72.0
+Fuzzy sets parameters for variable DISTANCECIRCULARITY:
+	Label 0: 4.0 40.0 76.0
+	Label 1: 40.0 76.0 112.0
+	Label 2: 76.0 112.0 148.0
+Fuzzy sets parameters for variable RADIUSRATIO:
+	Label 0: -10.5 104.0 218.5
+	Label 1: 104.0 218.5 333.0
+	Label 2: 218.5 333.0 447.5
+Fuzzy sets parameters for variable PR.AXISASPECTRATIO:
+	Label 0: 1.5 47.0 92.5
+	Label 1: 47.0 92.5 138.0
+	Label 2: 92.5 138.0 183.5
+Fuzzy sets parameters for variable MAX.LENGTHASPECTRATIO:
+	Label 0: -24.5 2.0 28.5
+	Label 1: 2.0 28.5 55.0
+	Label 2: 28.5 55.0 81.5
+Fuzzy sets parameters for variable SCATTERRATIO:
+	Label 0: 35.5 112.0 188.5
+	Label 1: 112.0 188.5 265.0
+	Label 2: 188.5 265.0 341.5
+Fuzzy sets parameters for variable ELONGATEDNESS:
+	Label 0: 8.5 26.0 43.5
+	Label 1: 26.0 43.5 61.0
+	Label 2: 43.5 61.0 78.5
+Fuzzy sets parameters for variable PR.AXISRECTANGULARITY:
+	Label 0: 11.0 17.0 23.0
+	Label 1: 17.0 23.0 29.0
+	Label 2: 23.0 29.0 35.0
+Fuzzy sets parameters for variable MAX.LENGTHRECTANGULARITY:
+	Label 0: 83.0 118.0 153.0
+	Label 1: 118.0 153.0 188.0
+	Label 2: 153.0 188.0 223.0
+Fuzzy sets parameters for variable SCALEDVARIANCE_MAJOR:
+	Label 0: 35.0 130.0 225.0
+	Label 1: 130.0 225.0 320.0
+	Label 2: 225.0 320.0 415.0
+Fuzzy sets parameters for variable SCALEDVARIANCE_MINOR:
+	Label 0: -233.0 184.0 601.0
+	Label 1: 184.0 601.0 1018.0
+	Label 2: 601.0 1018.0 1435.0
+Fuzzy sets parameters for variable SCALEDRADIUSOFGYRATION:
+	Label 0: 29.5 109.0 188.5
+	Label 1: 109.0 188.5 268.0
+	Label 2: 188.5 268.0 347.5
+Fuzzy sets parameters for variable SKEWNESSABOUT_MAJOR:
+	Label 0: 21.0 59.0 97.0
+	Label 1: 59.0 97.0 135.0
+	Label 2: 97.0 135.0 173.0
+Fuzzy sets parameters for variable SKEWNESSABOUT_MINOR:
+	Label 0: -11.0 0.0 11.0
+	Label 1: 0.0 11.0 22.0
+	Label 2: 11.0 22.0 33.0
+Fuzzy sets parameters for variable KURTOSISABOUT_MAJOR:
+	Label 0: -20.5 0.0 20.5
+	Label 1: 0.0 20.5 41.0
+	Label 2: 20.5 41.0 61.5
+Fuzzy sets parameters for variable KURTOSISABOUT_MINOR:
+	Label 0: 161.0 176.0 191.0
+	Label 1: 176.0 191.0 206.0
+	Label 2: 191.0 206.0 221.0
+Fuzzy sets parameters for variable HOLLOWSRATIO:
+	Label 0: 166.0 181.0 196.0
+	Label 1: 181.0 196.0 211.0
+	Label 2: 196.0 211.0 226.0
+
+
+--------------------------------------------
+|               Dataset Echo               |
+--------------------------------------------
+Number of examples: 846
+Number of variables: 18
+@relation vehicle
+@attribute COMPACTNESS real[73.0,119.0]
+@attribute CIRCULARITY real[33.0,59.0]
+@attribute DISTANCECIRCULARITY real[40.0,112.0]
+@attribute RADIUSRATIO real[104.0,333.0]
+@attribute PR.AXISASPECTRATIO real[47.0,138.0]
+@attribute MAX.LENGTHASPECTRATIO real[2.0,55.0]
+@attribute SCATTERRATIO real[112.0,265.0]
+@attribute ELONGATEDNESS real[26.0,61.0]
+@attribute PR.AXISRECTANGULARITY real[17.0,29.0]
+@attribute MAX.LENGTHRECTANGULARITY real[118.0,188.0]
+@attribute SCALEDVARIANCE_MAJOR real[130.0,320.0]
+@attribute SCALEDVARIANCE_MINOR real[184.0,1018.0]
+@attribute SCALEDRADIUSOFGYRATION real[109.0,268.0]
+@attribute SKEWNESSABOUT_MAJOR real[59.0,135.0]
+@attribute SKEWNESSABOUT_MINOR real[0.0,22.0]
+@attribute KURTOSISABOUT_MAJOR real[0.0,41.0]
+@attribute KURTOSISABOUT_MINOR real[176.0,206.0]
+@attribute HOLLOWSRATIO real[181.0,211.0]
+@attribute Class{opel,saab,bus,van}
+@inputs COMPACTNESS, CIRCULARITY, DISTANCECIRCULARITY, RADIUSRATIO, PR.AXISASPECTRATIO, MAX.LENGTHASPECTRATIO, SCATTERRATIO, ELONGATEDNESS, PR.AXISRECTANGULARITY, MAX.LENGTHRECTANGULARITY, SCALEDVARIANCE_MAJOR, SCALEDVARIANCE_MINOR, SCALEDRADIUSOFGYRATION, SKEWNESSABOUT_MAJOR, SKEWNESSABOUT_MINOR, KURTOSISABOUT_MAJOR, KURTOSISABOUT_MINOR, HOLLOWSRATIO
+@outputs Class
+
+
+--------------------------------------------
+|       Computation of the info gain       |
+--------------------------------------------
+Points for computation of the info gain:
+	Variable COMPACTNESS: 84.5  107.5  130.5  
+	Variable CIRCULARITY: 39.5  52.5  65.5  
+	Variable DISTANCECIRCULARITY: 58.0  94.0  130.0  
+	Variable RADIUSRATIO: 161.25  275.75  390.25  
+	Variable PR.AXISASPECTRATIO: 69.75  115.25  160.75  
+	Variable MAX.LENGTHASPECTRATIO: 15.25  41.75  68.25  
+	Variable SCATTERRATIO: 150.25  226.75  303.25  
+	Variable ELONGATEDNESS: 34.75  52.25  69.75  
+	Variable PR.AXISRECTANGULARITY: 20.0  26.0  32.0  
+	Variable MAX.LENGTHRECTANGULARITY: 135.5  170.5  205.5  
+	Variable SCALEDVARIANCE_MAJOR: 177.5  272.5  367.5  
+	Variable SCALEDVARIANCE_MINOR: 392.5  809.5  1226.5  
+	Variable SCALEDRADIUSOFGYRATION: 148.75  228.25  307.75  
+	Variable SKEWNESSABOUT_MAJOR: 78.0  116.0  154.0  
+	Variable SKEWNESSABOUT_MINOR: 5.5  16.5  27.5  
+	Variable KURTOSISABOUT_MAJOR: 10.25  30.75  51.25  
+	Variable KURTOSISABOUT_MINOR: 183.5  198.5  213.5  
+	Variable HOLLOWSRATIO: 188.5  203.5  218.5  
+Information Gain of the variables:
+	Variable COMPACTNESS: 0.36183107
+	Variable CIRCULARITY: 0.6933478
+	Variable DISTANCECIRCULARITY: 0.6145711
+	Variable RADIUSRATIO: 0.5766909
+	Variable PR.AXISASPECTRATIO: 0.19097555
+	Variable MAX.LENGTHASPECTRATIO: 0.036052704
+	Variable SCATTERRATIO: 0.5802572
+	Variable ELONGATEDNESS: 0.61866784
+	Variable PR.AXISRECTANGULARITY: 0.6122136
+	Variable MAX.LENGTHRECTANGULARITY: 0.56802654
+	Variable SCALEDVARIANCE_MAJOR: 0.6479933
+	Variable SCALEDVARIANCE_MINOR: 0.6730554
+	Variable SCALEDRADIUSOFGYRATION: 0.5047332
+	Variable SKEWNESSABOUT_MAJOR: 0.3485564
+	Variable SKEWNESSABOUT_MINOR: 0.5808611
+	Variable KURTOSISABOUT_MAJOR: 0.58568335
+	Variable KURTOSISABOUT_MINOR: 0.5525093
+	Variable HOLLOWSRATIO: 0.65030944
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 0:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10037
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 1:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10038
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 2:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10050
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 3:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10043
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------

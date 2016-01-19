@@ -30,8 +30,18 @@ td.borde_derecho {
 }
 
 table.ex1 tr:nth-child(even) {
-	background: #CCC
+	background: #CCC;
 }
 table.ex1 tr:nth-child(odd) {
-	background: #FFF
+	background: #FFF;
+}
+
+.center {
+	text-align: center;
+}
+
+.subcabecera {
+	border: 1px solid black;
+	background-color: #9575CD;
+	color: #FFF;
 }
