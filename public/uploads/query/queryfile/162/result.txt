@@ -1,0 +1,18 @@
+
+Rule 1: IF  petallength = 0.0 THEN class -> Iris-setosa     [ 1.0 0.0 0.0]
+Rule 2: IF  petallength = 1.0 THEN class -> Iris-versicolor     [ 0.0 1.0 0.0]
+Rule 3: IF  petallength > 0.0 AND sepallength = 1.0 THEN class -> Iris-versicolor     [ 0.0 0.7346938775510204 0.2653061224489796]
+Rule 4: IF  petallength > 0.0 AND sepalwidth <> 4.0 AND sepallength <> 3.0 THEN class -> Iris-versicolor     [ 0.0 0.5875 0.4125]
+Rule 5: IF  petalwidth = 2.0 AND petallength = 2.0 THEN class -> Iris-virginica     [ 0.0 0.2647058823529412 0.7352941176470589]
+
+####Average results for test data####
+Avg. Rule length: 5
+Avg. Number of attributes by rule: 1.8
+Avg. Coverage: 0.368
+Avg. Support Completo: 0.9866666666666667
+Avg. Significance: 72.53987779712664
+Avg. Unusualness: 0.14899793704450162
+
+Accuracy Training: 0.8533333333333334
+Accuracy Test: 0.8533333333333334;
+  Time; 0

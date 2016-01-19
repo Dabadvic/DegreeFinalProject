@@ -1,0 +1,30 @@
+Rule 1: IF  outlook <= rainy THEN play -> yes  
+[  0,64  0,36  ]
+
+Rule 2: IF  temperature <= cool THEN play -> yes  
+[  0,64  0,36  ]
+
+Rule 3: IF  humidity <= normal THEN play -> yes  
+[  0,64  0,36  ]
+
+Rule 4: IF  windy <= FALSE THEN play -> yes  
+[  0,64  0,36  ]
+
+Rule 5: IF  humidity = high AND outlook <> overcast THEN play -> no  
+[  0,20  0,80  ]
+
+Rule 6: IF  outlook <> overcast THEN play -> no  
+[  0,50  0,50  ]
+
+Rule 7: IF  humidity = high THEN play -> no  
+[  0,43  0,57  ]
+
+Rule 8: IF  temperature <= cool THEN play -> no  
+[  0,64  0,36  ]
+
+Rule 9: IF  windy <= FALSE THEN play -> no  
+[  0,64  0,36  ]
+
+
+
+Time: 0,021

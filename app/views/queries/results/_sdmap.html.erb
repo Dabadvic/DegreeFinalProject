@@ -15,14 +15,14 @@
 				<% File.readlines(file).each do |line| %>
 					
 					<!-- Si es una regla, divido las pares de la misma -->
-					<% if line.split(' ')[0] == "Rule" %>
-						<tr> <td class="borde_derecho"><%= line.split(' ')[1].split(':').first %></td>
+					<% if line.split[0] == "Rule" %>
+						<tr> <td class="borde_derecho"><%= line.split[1].split(':').first %></td>
 						
 						<!-- Extraigo antecedentes -->
 						<% antecedentes = "" %>
 						<% i = 2 %>
-						<% while line.split(' ')[i] != "THEN" %>
-							<% antecedentes += line.split(' ')[i] + " " %>
+						<% while line.split[i] != "THEN" %>
+							<% antecedentes += line.split[i] + " " %>
 							<% i += 1 %>
 						<% end %>
 						<% i += 1 %>
@@ -30,8 +30,8 @@
 
 						<!-- Por último, la clase -->
 						<% consecuencia = "" %>
-						<% for j in i..line.split(' ').length-1 %>
-							<% consecuencia += line.split(' ')[j] + " " %>
+						<% for j in i..line.split.length-1 %>
+							<% consecuencia += line.split[j] + " " %>
 						<% end %>
 						<td class="borde_derecho"><%= consecuencia %></td>
 						</tr>
@@ -49,7 +49,7 @@
 			<!-- Saco todas las líneas -->
 			<% for i in 0..File.readlines(file).length-1 %>
 				<tr id="<%= "cabecera" if i==0 %>"> 
-				<% File.readlines(file)[i].split(' ').each do |word| %>
+				<% File.readlines(file)[i].split.each do |word| %>
 					<td class="borde_derecho"> <%= word %> </td> 
 				<% end %>
 				</tr>

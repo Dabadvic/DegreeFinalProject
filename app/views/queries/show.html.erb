@@ -26,8 +26,14 @@
 		<% case @query.algorithm %>
 			<% when "mesdif" %>
 				<%= render 'queries/results/mesdif', resultado: @resultado %>
+			<% when "sdiga" %>
+				<%= render 'queries/results/mesdif', resultado: @resultado %>
 			<% when "sdmap" %>
 				<%= render 'queries/results/sdmap', resultado: @resultado %>
+			<% when "sd" %>
+				<%= render 'queries/results/sdmap', resultado: @resultado %>
+			<% when "cn2" %>
+				<%= render 'queries/results/cn2sd', resultado: @resultado %>
 			<% else %>
 				<%= render 'queries/results/results', resultado: @resultado %>
 		<% end %>

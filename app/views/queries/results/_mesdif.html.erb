@@ -18,24 +18,24 @@
 				<% clas_name = "" %>
 				<% rule_num = -1 %>
 				<% File.readlines(file).each do |line| %>
-					<% if line.split(' ')[0] == "GENERATED" %>
+					<% if line.split[0] == "GENERATED" %>
 						<% rule_num += 1 %>
-						<tr> <td class="borde_derecho"><%= line.split(' ')[1] + " " + rule_num.to_s %></td>
-					<% elsif line.split(' ')[0] == "Antecedent" %>
+						<tr> <td class="borde_derecho"><%= line.split[1] + " " + rule_num.to_s %></td>
+					<% elsif line.split[0] == "Antecedent" %>
 						<td class="borde_derecho">
-					<% elsif line.split(' ')[0] == "Variable" %>
-						<% for i in 1..line.split(' ').length-1 %>
-							<% variables += line.split(' ')[i] + " " %>
+					<% elsif line.split[0] == "Variable" %>
+						<% for i in 1..line.split.length-1 %>
+							<% variables += line.split[i] + " " %>
 						<% end %>
 						<% variables += " AND " %>
-					<% elsif line.split(' ')[0] == "Consecuent:" %>
+					<% elsif line.split[0] == "Consecuent:" %>
 
-						<%= variables.split(' ')[0...-1].join(' ') %>
+						<%= variables %></td>
 						<% variables = "" %>
-						</td><td class="borde_derecho"><%= line.split(' ')[1] %></td>
+						<td class="borde_derecho"><%= line.split[1] %></td>
 						<!-- Incluyo el número de la clase aquí -->
-						<% clas_num += 1 if clas_name != line.split(' ')[1] %>
-						<% clas_name = line.split(' ')[1] if clas_name != line.split(' ')[1] %>
+						<% clas_num += 1 if clas_name != line.split[1] %>
+						<% clas_name = line.split[1] if clas_name != line.split[1] %>
 						<td><%= clas_num %></td>
 						</tr>
 					<% end %>
@@ -50,16 +50,16 @@
 			<% if File.exist?(file) %>
 			<h3>Medidas de calidad (Quality measures):</h3>
 			<table class="padded ex1">
-				
+
 				<!-- Saco la primera línea 
-				<tr><td colspan="<%= File.readlines(file)[1].split(' ').length %>">
+				<tr><td colspan="<%= File.readlines(file)[1].split.length %>">
 					<%= File.readlines(file)[0] %>
 				</td></tr> -->
 
 				<!-- Saco el resto de líneas -->
 				<% for i in 1..File.readlines(file).length-1 %>
 					<tr id="<%= "cabecera" if i==1 %>"> 
-					<% File.readlines(file)[i].split(' ').each do |word| %>
+					<% File.readlines(file)[i].split.each do |word| %>
 						<td class="borde_derecho"> <%= word %> </td> 
 					<% end %>
 					</tr>
@@ -80,7 +80,7 @@
 				<!-- Saco todas las líneas -->
 				<% for i in 0..File.readlines(file).length-1 %>
 					<tr id="<%= "cabecera" if i==0 %>"> 
-					<% File.readlines(file)[i].split(' ').each do |word| %>
+					<% File.readlines(file)[i].split.each do |word| %>
 						<td class="borde_derecho"> <%= word != "Number" ? word : "Rule" %> </td> 
 					<% end %>
 					</tr>

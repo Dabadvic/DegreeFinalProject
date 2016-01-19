@@ -1,0 +1,9 @@
+algorithm = SDAlgorithm for Subgroup Discovery
+inputData = "/home/david/proyectojruby/public/uploads/query/queryfile/164/distra.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/164/distra.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/164/distra.dat"
+outputData = "/home/david/proyectojruby/public/uploads/query/queryfile/164/result0.tra" "/home/david/proyectojruby/public/uploads/query/queryfile/164/result0.tst" "/home/david/proyectojruby/public/uploads/query/queryfile/164/result0e0.txt" "/home/david/proyectojruby/public/uploads/query/queryfile/164/result0e1.txt" "/home/david/proyectojruby/public/uploads/query/queryfile/164/result0e2.txt" "/home/david/proyectojruby/public/uploads/query/queryfile/164/result0e3.txt"
+
+algorithm = SDAlgorithm
+g = 10
+minSupp = 0.1
+beamWidth = 5
+numRules = 0

@@ -1,0 +1,3 @@
+algorithm = Cluster Analysis Discretizer
+inputData = "/home/david/proyectojruby/public/uploads/query/queryfile/160/iris.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/160/iris.dat"
+outputData = "/home/david/proyectojruby/public/uploads/query/queryfile/160/distra.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/160/distst.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/160/disresult.txt"

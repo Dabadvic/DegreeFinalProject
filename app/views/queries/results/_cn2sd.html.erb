@@ -1,0 +1,92 @@
+<% @resultado.each do |file| %>
+	<% if File.exist?(file) %>
+		<!-- Cabecera de la tabla -->
+			<h3>Reglas obtenidas: </h3>
+			<table class="padded ex1">
+				<tr id="cabecera">
+					<td>Regla</td> 
+					<td>Antecedente(s)</td> 
+					<td>Consecuencia</td>
+
+					<!-- Saco la cantidad de clases consecuencia para indicar el porcentaje de pertenencia -->
+					<% classes_name = "" %>
+					<% classes = Array.new %>
+					<% File.readlines(File.dirname(file) + "/result.tst").each do |line| %>
+						<% classes_name = line.split[1] if line.split[0] == "@outputs" %>
+					<% end %>
+					<% File.readlines(File.dirname(file) + "/result.tst").each do |line| %>
+						<% classes = line.split[1] if line.split[0] == "@attribute" && line.split[1].start_with?(classes_name)  %>
+					<% end %>
+					<% classes = classes.split(/\{(.*?)\}/)[1].split(',') %>
+					<% classes.each do |clas| %>
+						<td><%= clas %></td>
+					<% end %>
+				</tr>
+
+				<!-- Primero cojo la tabla con las reglas, comprobando que todas las lineas empiezan por "Rule" -->
+				<% archivo = File.readlines(file) %>
+				<% line_num = 1 %>
+				<% while archivo[line_num].split[0] == "Rule" %>
+						<% line = archivo[line_num] %>
+						<tr> <td class="borde_derecho"><%= line.split[1].split(':').first %></td>
+						
+						<!-- Extraigo antecedentes -->
+						<% antecedentes = "" %>
+						<% i = 2 %>
+						<% while line.split[i] != "THEN" %>
+							<% antecedentes += line.split[i] + " " %>
+							<% i += 1 %>
+						<% end %>
+						<% i += 1 %>
+						<td class="borde_derecho"><%= antecedentes %></td>
+
+						<!-- Luego la clase -->
+						<% consecuencia = "" %>
+						<% while line.split[i] != "[" %>
+							<% consecuencia += line.split[i] + " " %>
+							<% i += 1 %>
+						<% end %>
+						<% i += 1 %>
+						<td class="borde_derecho"><%= consecuencia %></td>
+
+						<!-- Por último, el porcentaje de pertenencia a las clases -->
+						<% percent = line.split(/\[(.*?)\]/)[1].split %>
+						<% percent.each do |per| %>
+							<td class="borde_derecho"><%= (per.to_f * 100).round(4).to_s + "%" %></td>
+						<% end %>
+						</tr>
+						<% line_num += 1 %>
+
+				<% end %>
+				<% line_num += 1 %>
+
+			</table>
+
+			<!-- Ahora toca la tabla con las medias (Average) -->
+			<h3>Medias de los resultados: </h3>
+			<table class="padded ex1">
+				<tr id="cabecera">
+					<td>Resultado</td>
+					<td>Media</td>
+				</tr>
+				<% for i in line_num..archivo.length-1 %>
+					<% line = archivo[line_num] %>
+					<% if line.split[0] == "Avg." %>
+						<% sub_line = line.split %>
+						<% num = sub_line.pop %>
+						<tr>
+							<td class="borde_derecho"><%= sub_line.join(' ') %></td>
+							<td><%= num.to_f.round(4) %></td>
+						</tr>
+					<% elsif line.split[0] == "Accuracy" %>
+						<tr>
+							<td class="borde_derecho"><%= line.split[0] + " " + line.split[1] %></td>
+							<td><%= line.split.last.to_f.round(4) %></td>
+						</tr>
+					<% end %>
+					<% line_num += 1 %>
+				<% end %>
+
+			</table>
+	<% end %>
+<% end %>
