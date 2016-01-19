@@ -147,7 +147,7 @@ class Algorithms
         writeFile(configuracion, toWrite)
 
         # Ejecutar el comando para aplicar el algoritmo
-        comando = "java -jar /home/david/proyectojruby/app/jobs/libraries/CN2SD.jar " + configuracion
+        comando = "java -jar " + Rails.root.to_s + "/app/jobs/libraries/CN2SD.jar " + configuracion
         ejecucion = system( comando )
 
         if ejecucion == true
@@ -192,7 +192,7 @@ class Algorithms
         writeFile(configuracion, toWrite)
 
         # Ejecutar el comando para aplicar el algoritmo
-        comando = "java -jar /home/david/proyectojruby/app/jobs/libraries/MESDIF.jar " + configuracion
+        comando = "java -jar " + Rails.root.to_s + "/app/jobs/libraries/MESDIF.jar " + configuracion
         ejecucion = system( comando )
 
         if ejecucion == true
@@ -233,7 +233,7 @@ class Algorithms
         writeFile(configuracion, toWrite)
 
         # Ejecutar el comando para aplicar el algoritmo
-        comando = "java -jar /home/david/proyectojruby/app/jobs/libraries/SDMap.jar " + configuracion
+        comando = "java -jar " + Rails.root.to_s + "/app/jobs/libraries/SDMap.jar " + configuracion
         ejecucion = system( comando )
 
         if ejecucion == true
@@ -274,7 +274,7 @@ class Algorithms
         writeFile(configuracion, toWrite)
 
         # Ejecutar el comando para aplicar el algoritmo
-        comando = "java -jar /home/david/proyectojruby/app/jobs/libraries/SDAlgorithm.jar " + configuracion
+        comando = "java -jar " + Rails.root.to_s + "/app/jobs/libraries/SDAlgorithm.jar " + configuracion
         ejecucion = system( comando )
 
         if ejecucion == true
@@ -326,7 +326,7 @@ class Algorithms
         writeFile(configuracion, toWrite)
 
         # Ejecutar el comando para aplicar el algoritmo
-        comando = "java -jar /home/david/proyectojruby/app/jobs/libraries/SDIGA.jar " + configuracion
+        comando = "java -jar " + Rails.root.to_s + "/app/jobs/libraries/SDIGA.jar " + configuracion
         ejecucion = system( comando )
 
         if ejecucion == true
