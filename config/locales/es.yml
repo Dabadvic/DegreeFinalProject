@@ -1,0 +1,6 @@
+es:
+  hello: "Hola mundo"
+
+  time:
+    formats:
+      short: "%H:%M:%S , %d de %B %Y"

@@ -30,7 +30,9 @@
 						<% variables += " AND " %>
 					<% elsif line.split[0] == "Consecuent:" %>
 
-						<%= variables %></td>
+						<% variables = variables.split %>
+						<% variables.pop %>
+						<%= variables.join(" ") %></td>
 						<% variables = "" %>
 						<td class="borde_derecho"><%= line.split[1] %></td>
 						<!-- Incluyo el número de la clase aquí -->

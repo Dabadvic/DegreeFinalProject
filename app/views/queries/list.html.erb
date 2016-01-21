@@ -1,10 +1,18 @@
 <% provide(:title, "Consultas") %>
 
 <div>
-	<h3>Consultas</h3>
+	<h1>Consultas</h1>
 	<% if @user.queries.any? %>
-		<h3>Realizadas: <%= @user.queries.count %></h3>
-		<table class="queries">
+		<h2>Realizadas: <%= @user.queries.count %></h2>
+		<table class="queries ex1 padded" align="center">
+			<tr id="cabecera">
+				<td>Descripción</td>
+				<td>Fecha de creación</td>
+				<td>Estado</td>
+				<td>Nombre del archivo</td>
+				<td>Algoritmo</td>
+				<td colspan='2'></td>
+			</tr>
 			<%= render @queries %>
 		</table>
 	<% else %>
