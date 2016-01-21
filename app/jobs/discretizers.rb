@@ -26,7 +26,7 @@ class Discretizers
         writeConfigFile(configuracion, toWrite)
 
 		# Ejecutar el comando
-		comando = "java -jar   /home/david/proyectojruby/app/jobs/libraries/Disc-ClusterAnalysis.jar " + configuracion
+		comando = "java -jar " + Rails.root.to_s + "/app/jobs/libraries/Disc-ClusterAnalysis.jar " + configuracion
 		ejecucion = system( comando )
 
 		if ejecucion == true

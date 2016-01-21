@@ -16,4 +16,4 @@
 /*.war
 
 # Ignorar los archivos de configuración de entorno, ya que contienen info sensible
-config/environments/**
+/config/environments/*
