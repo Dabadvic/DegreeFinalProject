@@ -1,3 +1,19 @@
 <% provide(:title, "Help") %>
 <h1>Ayuda</h1>
-<p>Página de ayuda del proyecto</p>
+
+<h3>Funcionamiento básico de la página:</h3>
+<div class="instructions_div">
+	<ul class="instructions">
+		<li>Primero necesitas registrarte, que puedes hacerlo en el apartado "Log in" haciendo clic en "Registrate aquí".</li>
+		<li>Una vez registrado, recibirás un correo con el enlace de activación para activar tu cuenta.</li>
+		<li>Ya activada, podrás iniciar sesión introduciendo tus credenciales.</li>
+		<li>Con tu sesión iniciada, podrás realizar consultas sobre conjuntos de datos en formato Weka (<i>.arff</i>) o Keel (<i>.dat</i>), si no tienes muy claro qué formatos son, puedes consultar los siguientes enlaces con más información:</li>
+			<ul>
+				<li><a class="underline" href="https://weka.wikispaces.com/ARFF" target="_blank">Sobre el formato <i>.arff</i> de Weka</a></li>
+				<li><a class="underline" href="http://sci2s.ugr.es/keel/dataFiles.php" target="_blank">Sobre el formato <i>.dat</i> de Keel</a></li>
+			</ul>
+		<li>Tus consultas se añadirán a la lista de espera para ser ejecutadas, en el apartado "Consultas" podrás comprobar el estado de las mismas, junto con los datos relacionados a las mismas.</li>
+	</ul>
+</div>
+
+<div class="pregunta"><p>Si tienes alguna duda, <%= link_to "pregunta", about_path %>.</p></div>

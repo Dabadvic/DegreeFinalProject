@@ -1,9 +1,9 @@
 <% @resultado.each do |file| %>
-	<% if File.exist?(file) %>
-		<table>
-			Archivo: <%= File.basename(file, ".*") %> <br>
+	<% if File.exist?(file) %>		
+		<table class="padded ex1">
+			<% line_num = 0 %>
 			<% File.readlines(file).each do |line| %>
-				<%= line %> <br>
+				<tr><td><%= line.split %></td></tr>
 			<% end %>
 		</table>
 	<% end %>

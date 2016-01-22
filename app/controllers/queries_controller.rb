@@ -21,9 +21,10 @@ class QueriesController < ApplicationController
 	end
 
 	def destroy	
-		# Se borra también la carpeta y archivos relacionados
+		# Se borra también la carpeta, el background job y archivos relacionados
 		query = Query.find(params[:id])
 		direccion = File.dirname(query.queryfile.current_path.to_s)
+		Resque::Job.destroy('queries', 'Algorithms', query.id)
 
 		query.destroy
 		FileUtils.rm_rf(direccion)

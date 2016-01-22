@@ -63,7 +63,6 @@ h2 {
 }
 
 p {
-	font-size: 1.1em;
 	line-height: 1.7em;
 }
 
@@ -144,6 +143,13 @@ table.menu {
 
 a.underline {
 	text-decoration: underline;
+	color: blue;
+	&:visited {
+		color:blue;
+	}
+	&:hover {
+		color: white;
+	}
 }
 
 td.selected {
@@ -193,10 +199,10 @@ footer {
 
 footer a {
 	color: #555;
-}
 
-footer a:hoover {
-	color: #222;
+	&:hoover {
+		color: #222;
+	}
 }
 
 footer small {

@@ -3,4 +3,4 @@ es:
 
   time:
     formats:
-      short: "%H:%M:%S , %d de %B %Y"
+      short: "%H:%M:%S , %d/%M/%Y"

@@ -1,0 +1,51 @@
+<% @resultado.each do |file| %>
+	<% if File.exist?(file) %>
+		<% lines = File.readlines(file) %>
+		
+		<!-- Primero busco y saco las reglas obtenidas -->
+		<h3>Reglas obtenidas: </h3>
+		<table class="padded ex1">
+			<% line_num = 0 %>
+			<% while lines[line_num].split[0] != "Best" %>
+				<% line_num += 1 %>
+			<% end %>
+			<% line_num += 2 %>
+
+			<tr id="cabecera">
+				<td>Num. de Regla</td>
+				<td>Antecedente(s)</td>
+				<td>Consecuencia</td>
+				<td>Confianza</td>
+			</tr>
+			<% for i in line_num..lines.length-1 %>
+				<% linea = lines[i].split %>
+				<tr>
+					<td><%= linea.shift %></td>
+
+					<!-- Se cogen los antecedentes -->
+					<% ant = "" %>
+					<% while is_number?(linea[0]) == false %>
+						<% ant = ant + linea.shift.split('=').join(' = ') + " AND " %>
+					<% end %>
+					<% ant = ant.split %>
+					<% ant.pop %>
+					<td><%= ant.join(' ') %></td>
+
+					<!-- Ahora la consecuencia -->
+					<% linea.shift(2) %>
+					<td><%= linea.shift.split('=').join(' = ') %></td>
+
+					<!-- Y la confianza -->
+					<td><%= linea.pop %></td>
+				</tr>
+			<% end %>
+		</table>
+
+		<h3>Otros datos: </h3>
+		<table class="padded">
+			<% for i in 3..line_num-3 %>
+				<tr><td><%= lines[i] %></td></tr>
+			<% end %>
+		</table>
+	<% end %>
+<% end %>

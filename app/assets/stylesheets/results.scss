@@ -1,6 +1,6 @@
 table.tablas tr td{
-	padding-left: 5px; 
-	padding-right: 5px;
+	padding-left: 0px; 
+	padding-right: 10px;
 }
 
 table.padded tr td { 
@@ -30,7 +30,7 @@ td.borde_derecho {
 }
 
 table.ex1 tr:nth-child(even) {
-	background: #CCC;
+	background: #E0E0E0;
 }
 table.ex1 tr:nth-child(odd) {
 	background: #FFF;

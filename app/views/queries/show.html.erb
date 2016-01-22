@@ -1,16 +1,25 @@
 <% provide(:title, "Consultas") %>
 
 <h1>Consulta</h1>
-<ul>
-	<li>Descripción: <%= @query.description %></li>
-	<li>Fecha de creación: <%= @query.created_at %></li>
-	<li>Estado: <%= @estado %></li>
-	<li>Discretizador aplicado: <%= @query.discretization %></li>
-	<li>Algoritmo aplicado: <%= @query.algorithm %></li>
-	<li>Ruta: <%= File.dirname(@query.queryfile.current_path.to_s) if @query.queryfile? %></li>
-	<li>Archivo: <%= File.basename(@query.queryfile.to_s, ".*") if @query.queryfile? %></li>
-	<li>Tipo: <%= File.extname(@query.queryfile.to_s) if @query.queryfile? %> </li>
-
+<div id="descripcion">
+	<h3>Datos de la consulta: </h3>
+<table class="padded ex1">
+	<tr><td>Descripción: <%= @query.description %></td></tr>
+	<tr><td>Fecha de creación: <%= l @query.created_at, format: :short %></td></tr>
+	<tr><td>Estado: <%= @estado %></td></tr>
+	<tr><td>Discretizador aplicado: 
+		<% case @query.discretization %>
+			<% when "cluster_analysis" %>
+				<%= "Análisis cluster" %>
+			<% when "none" %>
+				<%= "Ninguno" %>
+		<% end %>
+	</td></tr>
+	<tr><td>Algoritmo aplicado: <%= @query.algorithm.upcase %></td></tr>
+	<tr><td>Archivo: <%= File.basename(@query.queryfile.to_s) if @query.queryfile? %></td></tr>
+</table>
+</div>
+<div>
 	<% if @query.discretization != "none" %>
 		<% case @query.discretization %>
 			<% when "cluster_analysis" %>
@@ -18,8 +27,6 @@
 			<% else %>
 				<%= render 'queries/results/show_discretization', dis: @dis_file %>
 		<% end %>
-	<% else %>
-		No se realizó discretización <br>
 	<% end %>
 
 	<% if @resultado != nil %>
@@ -34,15 +41,14 @@
 				<%= render 'queries/results/sdmap', resultado: @resultado %>
 			<% when "cn2" %>
 				<%= render 'queries/results/cn2sd', resultado: @resultado %>
+			<% when "apriori" %>
+				<%= render 'queries/results/apriori', resultado: @resultado %>
 			<% else %>
 				<%= render 'queries/results/results', resultado: @resultado %>
 		<% end %>
 	<% else %>
 		No se encontró el resultado, ¿hubo un error?
 	<% end %>
-
-	
-
-</ul>
+</div>
 
 <%= link_to 'Atrás', queries_path %>
