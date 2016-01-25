@@ -1,0 +1,76 @@
+GENERATED RULE 0
+   Antecedent
+	Variable n_read = Label 0 	 (-3.5 0.0 3.5)
+   Consecuent: SUSPENSO
+
+GENERATED RULE 1
+   Antecedent
+	Variable course = 29
+	Variable n_posts = Label 0 	 (-5.0 0.0 5.0)
+	Variable n_read = Label 0 	 (-3.5 0.0 3.5)
+	Variable n_messages_ap = 0
+   Consecuent: SUSPENSO
+
+GENERATED RULE 2
+   Antecedent
+	Variable course = 110
+	Variable n_read = Label 0 	 (-3.5 0.0 3.5)
+	Variable n_quiz = Label 0 	 (-6.5 0.0 6.5)
+   Consecuent: SUSPENSO
+
+GENERATED RULE 0
+   Antecedent
+	Variable n_read = Label 0 	 (-3.5 0.0 3.5)
+   Consecuent: NOTABLE
+
+GENERATED RULE 1
+   Antecedent
+	Variable n_assignment_s = Label 2 	 (6.5 13.0 19.5)
+	Variable n_read = Label 0 	 (-3.5 0.0 3.5)
+   Consecuent: NOTABLE
+
+GENERATED RULE 2
+   Antecedent
+	Variable course = 110
+	Variable n_assignment_s = Label 2 	 (6.5 13.0 19.5)
+	Variable n_read = Label 0 	 (-3.5 0.0 3.5)
+   Consecuent: NOTABLE
+
+GENERATED RULE 0
+   Antecedent
+	Variable n_assignment = Label 2 	 (6.5 13.0 19.5)
+	Variable n_read = Label 0 	 (-3.5 0.0 3.5)
+	Variable n_quiz_s = Label 0 	 (-4.0 0.0 4.0)
+   Consecuent: SOBRESALIENTE
+
+GENERATED RULE 1
+   Antecedent
+	Variable n_read = Label 0 	 (-3.5 0.0 3.5)
+   Consecuent: SOBRESALIENTE
+
+GENERATED RULE 2
+   Antecedent
+	Variable course = 46
+	Variable n_posts = Label 0 	 (-5.0 0.0 5.0)
+	Variable n_read = Label 0 	 (-3.5 0.0 3.5)
+	Variable n_messages_ap = 0
+   Consecuent: SOBRESALIENTE
+
+GENERATED RULE 0
+   Antecedent
+	Variable n_assignment = Label 0 	 (-6.5 0.0 6.5)
+	Variable n_messages_ap = 2
+   Consecuent: APROBADO
+
+GENERATED RULE 1
+   Antecedent
+	Variable n_assignment = Label 1 	 (0.0 6.5 13.0)
+   Consecuent: APROBADO
+
+GENERATED RULE 2
+   Antecedent
+	Variable n_assignment = Label 1 	 (0.0 6.5 13.0)
+	Variable n_assignment_s = Label 0 	 (-6.5 0.0 6.5)
+	Variable n_posts = Label 1 	 (0.0 5.0 10.0)
+   Consecuent: APROBADO
+

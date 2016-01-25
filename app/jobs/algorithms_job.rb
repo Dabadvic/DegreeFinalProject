@@ -41,6 +41,8 @@ class Algorithms
   		query.status = 2
   		puts 'Estado: ' + query.status
   		query.save
+
+        # Si estamos en la página de consultas, recargar al acabar
   	end
 
 	# Aplica un algoritmo a un archivo y devuelve la ubicación del fichero resultado

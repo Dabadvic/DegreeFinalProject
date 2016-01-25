@@ -1,0 +1,40 @@
+Rule 0: n_assignment = [0.0, 13.0] AND n_posts = [0.0, 10.0] AND n_read = [0.0, 7.0] AND n_quiz = [0.0, 13.0] AND n_quiz_a = [0.0, 9.0] AND n_messages_ap = 0 AND course = 29 THEN nota = SUSPENSO
+[  0,93  0,00  0,02  0,06  ]
+
+
+Rule 1: n_assignment = [0.0, 13.0] AND n_assignment_s = [0.0, 13.0] AND n_posts = [0.0, 10.0] AND n_read = [0.0, 7.0] AND n_quiz_a = [0.0, 9.0] AND n_messages_ap = 0 AND course = 29 THEN nota = SUSPENSO
+[  0,93  0,00  0,02  0,06  ]
+
+
+Rule 2: n_assignment_s = [0.0, 13.0] AND n_posts = [0.0, 10.0] AND n_read = [0.0, 7.0] AND n_quiz = [0.0, 13.0] AND n_quiz_a = [0.0, 9.0] AND n_messages_ap = 0 AND course = 29 THEN nota = SUSPENSO
+[  0,93  0,00  0,02  0,06  ]
+
+
+Rule 3: n_assignment = [0.0, 13.0] AND n_posts = [0.0, 10.0] AND n_read = [0.0, 7.0] AND n_quiz_s = [0.0, 8.0] AND n_messages_ap = 0 AND course = 29 THEN nota = SUSPENSO
+[  0,93  0,00  0,02  0,06  ]
+
+
+Rule 4: n_assignment = [0.0, 13.0] AND n_assignment_s = [0.0, 13.0] AND n_posts = [0.0, 10.0] AND n_read = [0.0, 7.0] AND n_quiz = [0.0, 13.0] AND n_quiz_a = [0.0, 9.0] AND n_messages_ap = 0 AND course = 29 THEN nota = SUSPENSO
+[  0,93  0,00  0,02  0,06  ]
+
+
+Rule 5: n_assignment_s = [0.0, 13.0] AND n_posts = [0.0, 10.0] AND n_read = [0.0, 7.0] AND n_quiz = [0.0, 13.0] AND n_messages_ap = 0 AND course = 29 THEN nota = SUSPENSO
+[  0,93  0,00  0,02  0,06  ]
+
+
+Rule 6: n_assignment = [0.0, 13.0] AND n_posts = [0.0, 10.0] AND n_read = [0.0, 7.0] AND n_quiz = [0.0, 13.0] AND n_messages_ap = 0 AND course = 29 THEN nota = SUSPENSO
+[  0,93  0,00  0,02  0,06  ]
+
+
+Rule 7: n_assignment = [0.0, 13.0] AND n_assignment_s = [0.0, 13.0] AND n_posts = [0.0, 10.0] AND n_read = [0.0, 7.0] AND n_quiz = [0.0, 13.0] AND n_messages_ap = 0 AND course = 29 THEN nota = SUSPENSO
+[  0,93  0,00  0,02  0,06  ]
+
+
+Rule 8: n_assignment_s = [0.0, 13.0] AND n_posts = [0.0, 10.0] AND n_read = [0.0, 7.0] AND n_quiz_a = [0.0, 9.0] AND n_messages_ap = 0 AND course = 29 THEN nota = SUSPENSO
+[  0,93  0,00  0,02  0,06  ]
+
+
+Rule 9: n_assignment = [0.0, 13.0] AND n_posts = [0.0, 10.0] AND n_read = [0.0, 7.0] AND n_quiz_a = [0.0, 9.0] AND n_messages_ap = 0 AND course = 29 THEN nota = SUSPENSO
+[  0,93  0,00  0,02  0,06  ]
+
+

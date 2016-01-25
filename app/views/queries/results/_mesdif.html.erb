@@ -1,3 +1,4 @@
+<% fitnes = Array.new %>
 <% @resultado.each do |file| %>
 		<!-- Compruebo el archivo para ordenar la tabla -->
 		<% if File.basename(file, ".*") == "result0e0" %>
@@ -50,25 +51,14 @@
 		<% elsif File.basename(file, ".*") == "result0e1" %>
 			
 			<% if File.exist?(file) %>
-			<h3>Medidas de calidad (Quality measures):</h3>
-			<table class="padded ex1">
 
-				<!-- Saco la primera línea 
-				<tr><td colspan="<%= File.readlines(file)[1].split.length %>">
-					<%= File.readlines(file)[0] %>
-				</td></tr> -->
-
-				<!-- Saco el resto de líneas -->
+				<!-- Saco la última columna con el fitness -->
 				<% for i in 1..File.readlines(file).length-1 %>
-					<tr id="<%= "cabecera" if i==1 %>"> 
-					<% File.readlines(file)[i].split.each do |word| %>
-						<td class="borde_derecho"> <%= word %> </td> 
-					<% end %>
-					</tr>
+					<% fitnes.push(File.readlines(file)[i].split.last) %>
 				<% end %>
-			<% end %>
+				<% fitnes.push("-") %>
 
-			</table>
+			<% end %>
 
 		<!-- Este me lo salto de momento -->	
 		<% elsif File.basename(file, ".*") == "result0e2" %>
@@ -77,7 +67,8 @@
 		<% elsif File.basename(file, ".*") == "result0e3" %>
 			
 			<% if File.exist?(file) %>
-				<h3>Más medidas de calidad: </h3>
+				<h3>Medidas de calidad (Quality measures): </h3>
+
 				<table class="padded ex1">
 				<!-- Saco todas las líneas -->
 				<% for i in 0..File.readlines(file).length-1 %>
@@ -85,6 +76,8 @@
 					<% File.readlines(file)[i].split.each do |word| %>
 						<td class="borde_derecho"> <%= word != "Number" ? word : "Rule" %> </td> 
 					<% end %>
+					<!-- Se añade el fitness -->
+					<td class="borde_derecho"><%= fitnes.shift %></td>
 					</tr>
 				<% end %>
 			<% end %>

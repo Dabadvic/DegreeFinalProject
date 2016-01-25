@@ -1,0 +1,138 @@
+--------------------------------------------
+|              Parameters Echo             |
+--------------------------------------------
+Algorithm name: mesdif for subgroup discovery
+Input file name training: /home/david/proyectojruby/public/uploads/query/queryfile/173/modif_nominal_st.dat
+Input file name test: /home/david/proyectojruby/public/uploads/query/queryfile/173/modif_nominal_st.dat
+Rules file name: /home/david/proyectojruby/public/uploads/query/queryfile/173/result0e0.txt
+Tracking file name: /home/david/proyectojruby/public/uploads/query/queryfile/173/result0e2.txt
+Random generator seed: 0
+Selected class of the target variable: not established
+Number of labels for the continuous variables: 3
+Number of evaluations: 10000
+Number of individuals in the Population: 100
+Number of individuals in the Elite Population: 3
+Cross probability: 0.6
+Mutation probability: 0.01
+Minimum confidence: 0.0
+Rules representation: CAN
+Objective 1: COMP
+Objective 2: UNUS
+Objective 3: FCNF
+
+--------------------------------------------
+|  Semantics for the continuous variables  |
+--------------------------------------------
+Fuzzy sets parameters for variable n_assignment:
+	Label 0: -6.5 0.0 6.5
+	Label 1: 0.0 6.5 13.0
+	Label 2: 6.5 13.0 19.5
+Fuzzy sets parameters for variable n_assignment_s:
+	Label 0: -6.5 0.0 6.5
+	Label 1: 0.0 6.5 13.0
+	Label 2: 6.5 13.0 19.5
+Fuzzy sets parameters for variable n_posts:
+	Label 0: -5.0 0.0 5.0
+	Label 1: 0.0 5.0 10.0
+	Label 2: 5.0 10.0 15.0
+Fuzzy sets parameters for variable n_read:
+	Label 0: -3.5 0.0 3.5
+	Label 1: 0.0 3.5 7.0
+	Label 2: 3.5 7.0 10.5
+Fuzzy sets parameters for variable n_quiz:
+	Label 0: -6.5 0.0 6.5
+	Label 1: 0.0 6.5 13.0
+	Label 2: 6.5 13.0 19.5
+Fuzzy sets parameters for variable n_quiz_a:
+	Label 0: -4.5 0.0 4.5
+	Label 1: 0.0 4.5 9.0
+	Label 2: 4.5 9.0 13.5
+Fuzzy sets parameters for variable n_quiz_s:
+	Label 0: -4.0 0.0 4.0
+	Label 1: 0.0 4.0 8.0
+	Label 2: 4.0 8.0 12.0
+
+
+--------------------------------------------
+|               Dataset Echo               |
+--------------------------------------------
+Number of examples: 292
+Number of variables: 9
+@relation final_nominal_st
+@attribute course {29,46,88,110,111}
+@attribute n_assignment integer [0, 13]
+@attribute n_assignment_s integer [0, 13]
+@attribute n_posts integer [0, 10]
+@attribute n_read integer [0, 7]
+@attribute n_quiz integer [0, 13]
+@attribute n_quiz_a integer [0, 9]
+@attribute n_quiz_s integer [0, 8]
+@attribute n_messages_ap {0,1,2}
+@attribute nota {SUSPENSO,NOTABLE,SOBRESALIENTE,APROBADO}
+@inputs course,n_assignment,n_assignment_s,n_posts,n_read,n_quiz,n_quiz_a,n_quiz_s,n_messages_ap
+@outputs nota
+
+
+--------------------------------------------
+|       Computation of the info gain       |
+--------------------------------------------
+Points for computation of the info gain:
+	Variable n_assignment: 3.25  9.75  16.25  
+	Variable n_assignment_s: 3.25  9.75  16.25  
+	Variable n_posts: 2.5  7.5  12.5  
+	Variable n_read: 1.75  5.25  8.75  
+	Variable n_quiz: 3.25  9.75  16.25  
+	Variable n_quiz_a: 2.25  6.75  11.25  
+	Variable n_quiz_s: 2.0  6.0  10.0  
+Information Gain of the variables:
+	Variable n_assignment: 0.572369
+	Variable n_assignment_s: 0.572369
+	Variable n_posts: 0.18807232
+	Variable n_read: 0.014935136
+	Variable n_quiz: 0.4459511
+	Variable n_quiz_a: 0.45779216
+	Variable n_quiz_s: 0.32553875
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 0:
+
+Genetic Algorithm execution finished
+	Number of Generations = 164
+	Number of Evaluations = 10041
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 1:
+
+Genetic Algorithm execution finished
+	Number of Generations = 164
+	Number of Evaluations = 10016
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 2:
+
+Genetic Algorithm execution finished
+	Number of Generations = 164
+	Number of Evaluations = 10035
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 3:
+
+Genetic Algorithm execution finished
+	Number of Generations = 164
+	Number of Evaluations = 10042
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------

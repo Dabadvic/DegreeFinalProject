@@ -1,7 +1,7 @@
 <% provide(:title, "Consultas") %>
 
 <h1>Consulta</h1>
-<div id="descripcion">
+<div id="descripcion" class="queries">
 	<h3>Datos de la consulta: </h3>
 <table class="padded ex1">
 	<tr><td>Descripción: <%= @query.description %></td></tr>
@@ -19,7 +19,7 @@
 	<tr><td>Archivo: <%= File.basename(@query.queryfile.to_s) if @query.queryfile? %></td></tr>
 </table>
 </div>
-<div>
+<div class="queries">
 	<% if @query.discretization != "none" %>
 		<% case @query.discretization %>
 			<% when "cluster_analysis" %>
