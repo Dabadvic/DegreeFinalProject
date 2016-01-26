@@ -26,12 +26,18 @@ Rails.application.routes.draw do
 
   get 'new_query' => 'queries#new'
 
+  match 'confirm' => 'queries#confirm', via: [:get, :post]
+
   resources :users
 
   resources :account_activations, only: [:edit]
 
   resources :password_resets, only: [:new, :create, :edit, :update]
 
-  resources :queries, only: [:show, :create, :destroy]
+  resources :queries, only: [:show, :create, :destroy, :confirm]
+
+  resources :queries, :new => { :confirm => :post }
+
+  # resources :queries, :new => { :confirm => :post }
 
 end

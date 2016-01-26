@@ -1,0 +1,46 @@
+<% provide(:title, "Confirmacion") %>
+
+<h1>Confirmación de la consulta</h1>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= render 'shared/query_errors_messages' %>
+		
+		<div>
+			<h3>Descripción: <%= @query.description %></h3>
+
+			<h3>Discretizador: <%= @query.discretization %></h3>
+
+			<h3>Algoritmo: <%= @query.algorithm.upcase %></h3>
+		</div>
+
+		<%= form_for(@query, html: { multipart: true }) do |f| %>
+
+			<%= f.hidden_field :description, :value => @query.description %>
+			<%= f.hidden_field :discretization, :value => @query.discretization %>
+			<%= f.hidden_field :algorithm, :value => @query.algorithm %>
+
+			<span class="fileuploader">
+				<%= f.file_field :queryfile, accept:".arff,.dat", class: "file", style: "margin-top:15px;padding:8px;" %>
+			</span>
+
+			<h3>Parámetros del algoritmo:</h3>
+
+			<% case @query.algorithm %>
+				<% when "cn2" %>
+					<%= render 'queries/options/cn2sd' %>
+				<% when "mesdif" %>
+					<%= render 'queries/options/mesdif' %>
+				<% when "sdmap" %>
+					<%= render 'queries/options/sdmap' %>
+				<% when "sdiga" %>
+					<%= render 'queries/options/sdiga' %>
+				<% when "sd" %>
+					<%= render 'queries/options/sd' %>
+			<% end %>
+
+			<%= f.submit "Confirmar", class: "btn btn-success" %>
+			<%= link_to "Atrás", new_query_path, class: "btn btn-danger", style: "margin-top:10px;width:100%;color:white;" %>
+		<% end %>
+	</div>
+</div>

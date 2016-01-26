@@ -20,8 +20,9 @@ class Algorithms
     	:queries
   	end
 
-  	def self.perform(query_id)
+  	def self.perform(query_id, options)
   		puts 'Query: ' + query_id.to_s
+        puts 'Options: ' + options.to_s
         query = Query.find(query_id)
         file_path = query.queryfile.current_path.to_s
 
@@ -35,8 +36,10 @@ class Algorithms
   		puts 'Inicia algoritmo: ' + query.algorithm
   		query.status = 1
   		puts 'Estado: ' + query.status
-  		query.save
-  		query.result = aplicar(file_path, query.algorithm)
+  		puts query.save
+        puts 'errores: ' + query.errors.full_messages.to_s
+        
+        query.result = aplicar(file_path, query.algorithm, options)
   		puts 'Finaliza algoritmo'
   		query.status = 2
   		puts 'Estado: ' + query.status
@@ -46,26 +49,26 @@ class Algorithms
   	end
 
 	# Aplica un algoritmo a un archivo y devuelve la ubicación del fichero resultado
-	def self.aplicar(file, algorithm)
+	def self.aplicar(file, algorithm, options)
 		# Aplicar SD (En un futuro, añadir a lista de espera para SD)
 		case algorithm
 			when "apriori"
 				toRet = apriori(file)
 				return toRet
 			when "cn2"
-				toRet = cn2sd(file)
+				toRet = cn2sd(file, options)
 				return toRet
 			when "mesdif"
-				toRet = mesdif(file)
+				toRet = mesdif(file, options)
 				return toRet
             when "sdmap"
-                toRet = sdmap(file)
+                toRet = sdmap(file, options)
                 return toRet
             when "sd"
-                toRet = sd(file)
+                toRet = sd(file, options)
                 return toRet
             when "sdiga"
-                toRet = sdiga(file)
+                toRet = sdiga(file, options)
                 return toRet
 		end
 	end
@@ -124,7 +127,7 @@ class Algorithms
 	  end
 
 	  # Función CN2, aplica el algoritmo CN2-SD de Keel
-	  def self.cn2sd(file)
+	  def self.cn2sd(file, options)
 	  	# Comprobamos si hay que convertirlo, devolviendo un string con la ubicación final
 	  	convertedInput = conversorKeel(file)
 
@@ -137,11 +140,11 @@ class Algorithms
         output = File.dirname(file) + "/result"
         toWrite.push("outputData = " + "\"" + output + ".tra\" " + "\"" + output + ".tst\" " + "\"" + output + ".txt\"\n")
         toWrite.push("\n")        
-        toWrite.push("Nu_Value = 0.5\n")
-        toWrite.push("Percentage_Examples_To_Cover = 0.95\n")
-        toWrite.push("Star_Size = 5\n")
-        toWrite.push("Use_multiplicative_weights = YES\n")
-        toWrite.push("Use_Disjunt_Selectors = NO")
+        toWrite.push("Nu_Value = " + options[0] + "\n")
+        toWrite.push("Percentage_Examples_To_Cover = " + options[1] + "\n")
+        toWrite.push("Star_Size = " + options[2] + "\n")
+        toWrite.push("Use_multiplicative_weights = " + options[3] + "\n")
+        toWrite.push("Use_Disjunt_Selectors = " + options[4])
 
 
         # Preparar el archivo de configuración
@@ -162,7 +165,7 @@ class Algorithms
 	  end
 
 	  # Función MESDIF, aplica el algoritmo MESDIF-SD de Keel
-	  def self.mesdif(file)
+	  def self.mesdif(file, options)
 	  	# Comprobamos si hay que convertirlo, devolviendo un string con la ubicación final
 	  	convertedInput = conversorKeel(file)
 
@@ -177,12 +180,12 @@ class Algorithms
         							   "\"" + output + "0e1.txt\" " + "\"" + output + "0e2.txt\" " + "\"" + output + "0e3.txt\"\n")
         toWrite.push("\n")
         toWrite.push("RulesRep = can\n")
-		toWrite.push("nLabels = 3\n")
-		toWrite.push("nEval = 10000\n")
-		toWrite.push("popLength = 100\n")
-		toWrite.push("crossProb = 0.6\n")
-		toWrite.push("mutProb = 0.01\n")
-		toWrite.push("eliteLength = 3\n")
+		toWrite.push("nLabels = "+ options[0] +"\n")
+		toWrite.push("nEval = "+ options[1] +"\n")
+		toWrite.push("popLength = "+ options[2] +"\n")
+		toWrite.push("crossProb = "+ options[3] +"\n")
+		toWrite.push("mutProb = "+ options[4] +"\n")
+		toWrite.push("eliteLength = "+ options[5] +"\n")
 		toWrite.push("Obj1 = comp\n")
 		toWrite.push("Obj2 = unus\n")
 		toWrite.push("Obj3 = fcnf\n")
@@ -210,7 +213,7 @@ class Algorithms
 	  end
 
       # Función sdmap, aplica el algoritmo SDMap-SD de Keel
-      def self.sdmap(file)
+      def self.sdmap(file, options)
         # Comprobamos si hay que convertirlo, devolviendo un string con la ubicación final
         convertedInput = conversorKeel(file)
 
@@ -224,9 +227,9 @@ class Algorithms
         toWrite.push("outputData = " + "\"" + output + "0.tra\" " + "\"" + output + "0.tst\" " + "\"" + output + "0e0.txt\" " + 
                                        "\"" + output + "0e1.txt\" " + "\"" + output + "0e2.txt\" " + "\"" + output + "0e3.txt\"\n")
         toWrite.push("\n")
-        toWrite.push("MinimumSupport = 0.1\n")
-        toWrite.push("MinimumConfidence = 0.8\n")
-        toWrite.push("RulesReturn = 10\n")
+        toWrite.push("MinimumSupport = "+ options[0] +"\n")
+        toWrite.push("MinimumConfidence = "+ options[1] +"\n")
+        toWrite.push("RulesReturn = "+ options[2] +"\n")
         toWrite.push("algorithm = SD-Map\n")
 
 
@@ -251,7 +254,7 @@ class Algorithms
       end
 
       # Función sd, aplica el algoritmo SD de Keel
-      def self.sd(file)
+      def self.sd(file, options)
         # Comprobamos si hay que convertirlo, devolviendo un string con la ubicación final
         convertedInput = conversorKeel(file)
 
@@ -266,10 +269,10 @@ class Algorithms
                                        "\"" + output + "0e1.txt\" " + "\"" + output + "0e2.txt\" " + "\"" + output + "0e3.txt\"\n")
         toWrite.push("\n")
         toWrite.push("algorithm = SDAlgorithm\n")
-        toWrite.push("g = 10\n")
-        toWrite.push("minSupp = 0.1\n")
-        toWrite.push("beamWidth = 5\n")
-        toWrite.push("numRules = 0\n")
+        toWrite.push("g = "+ options[0] +"\n")
+        toWrite.push("minSupp = "+ options[1] +"\n")
+        toWrite.push("beamWidth = "+ options[2] +"\n")
+        toWrite.push("numRules = "+ options[3] +"\n")
 
         # Preparar el archivo de configuración
         configuracion = File.dirname(file) + "/configuracionSDAlgorithm.txt"
@@ -292,7 +295,7 @@ class Algorithms
       end
 
       # Función sdiga, aplica el algoritmo SDIGA de Keel
-      def self.sdiga(file)
+      def self.sdiga(file, options)
         # Comprobamos si hay que convertirlo, devolviendo un string con la ubicación final
         convertedInput = conversorKeel(file)
 
@@ -308,19 +311,19 @@ class Algorithms
                                        "\"" + output + "0e4.txt\" " + "\"" +"\"" + output + "0e5.txt\"\n")
         toWrite.push("\n")
         toWrite.push("RulesRep = can\n")
-        toWrite.push("nLabels = 3\n")
-        toWrite.push("nEval = 10000\n")
-        toWrite.push("popLength = 100\n")
-        toWrite.push("crossProb = 0.6\n")
-        toWrite.push("mutProb = 0.01\n")
-        toWrite.push("minConf = 0.6\n")
-        toWrite.push("lSearch = yes\n")
+        toWrite.push("nLabels = "+ options[0] +"\n")
+        toWrite.push("nEval = "+ options[1] +"\n")
+        toWrite.push("popLength = "+ options[2] +"\n")
+        toWrite.push("crossProb = "+ options[3] +"\n")
+        toWrite.push("mutProb = "+ options[4] +"\n")
+        toWrite.push("minConf = "+ options[5] +"\n")
+        toWrite.push("lSearch = "+ options[6] +"\n")
         toWrite.push("Obj1 = comp\n")
         toWrite.push("Obj2 = fcnf\n")
         toWrite.push("Obj3 = unus\n")
-        toWrite.push("w1 = 0.4\n")
-        toWrite.push("w2 = 0.3\n")
-        toWrite.push("w3 = 0.3\n")
+        toWrite.push("w1 = "+ options[7] +"\n")
+        toWrite.push("w2 = "+ options[8] +"\n")
+        toWrite.push("w3 = "+ options[9] +"\n")
 
 
         # Preparar el archivo de configuración

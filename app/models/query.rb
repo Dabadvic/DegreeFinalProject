@@ -1,4 +1,7 @@
 class Query < ActiveRecord::Base
+  
+  attr_accessor :options
+
   belongs_to :user
 
   enum status: [:waiting, :processing, :finished]
@@ -7,9 +10,9 @@ class Query < ActiveRecord::Base
 
   before_create :set_initial_status
 
-  validates :user_id, presence: true
-  validates :description, presence: true
-  validates :queryfile, presence: true
+  validates :user_id,     presence: true
+  validates :description, presence: { message: "No puedes dejar la descripción en blanco" }
+  validates :queryfile,   presence: { message: "Tienes que elegir un archivo" }
 
   private
 

@@ -4,15 +4,12 @@
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
-		<%= form_for(@query, html: { multipart: true }) do |f| %>
+		<%= form_for @query, :url => confirm_path do |f| %>
 			<%= render 'shared/query_errors_messages' %>
 
-			<%= f.label :description, "Breve descripción" %>
+			<%= f.label :description, "Breve descripción (obligatorio)" %>
 			<%= f.text_field :description, class: 'form-control' %>
 
-			<span class="fileuploader">
-				<%= f.file_field :queryfile, accept:".arff,.dat" %>
-			</span>
 
 			<% options_dis = [['Ninguno', "none"], ['Cluster Analysis', "cluster_analysis"]] %>
 			<label for="query_description">Discretizador</label>

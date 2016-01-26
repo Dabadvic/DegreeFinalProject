@@ -8,16 +8,27 @@ class QueriesController < ApplicationController
 		@query = @user.queries.build(query_params)
 
 		if @query.save
-			flash[:success] = "Nueva consulta creada con éxito"
+			flash[:success] = "Nueva consulta creada con éxito " 
 
 			# Añade la consulta a la cola de espera y pasa el id para actualizarla al acabar
-			Resque.enqueue(Algorithms, @query.id)
+			Resque.enqueue(Algorithms, @query.id, @query.options)
 
 			redirect_to queries_path
 		else
-	  		render 'new'
+	  		render :confirm
 	  		#render plain: "Error inesperado"
 	  	end
+	end
+
+	def confirm
+		@query = Query.new(query_params)
+
+		@query.options = Array.new
+
+		if !@query.description?
+			flash.now[:danger] = "Tienes que introducir una descripción"
+			render :new
+		end
 	end
 
 	def destroy	
@@ -35,7 +46,7 @@ class QueriesController < ApplicationController
 
 	def new
 	  	@query = Query.new
-	 end
+	end
 
 	def list
 		@user = current_user
@@ -63,7 +74,7 @@ class QueriesController < ApplicationController
 	private
 
 	  def query_params
-	  	params.require(:query).permit(:description, :queryfile, :algorithm, :discretization)
+	  	params.require(:query).permit(:description, :queryfile, :algorithm, :discretization, :options => [])
 	  end
 
 end

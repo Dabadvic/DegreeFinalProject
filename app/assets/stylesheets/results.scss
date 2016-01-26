@@ -25,6 +25,12 @@ tr#cabecera {
 	}
 }
 
+td#cabecera {
+	border-bottom: 1px solid black;
+	background-color: #673AB7;
+	color: #FFF;
+}
+
 td.borde_derecho {
 	border-right: 1px solid black;
 }
