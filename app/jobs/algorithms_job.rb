@@ -40,6 +40,7 @@ class Algorithms
         puts 'errores: ' + query.errors.full_messages.to_s
         
         query.result = aplicar(file_path, query.algorithm, options)
+        query.send_finished_email
   		puts 'Finaliza algoritmo'
   		query.status = 2
   		puts 'Estado: ' + query.status

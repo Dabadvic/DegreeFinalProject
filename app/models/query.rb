@@ -14,6 +14,10 @@ class Query < ActiveRecord::Base
   validates :description, presence: { message: "No puedes dejar la descripción en blanco" }
   validates :queryfile,   presence: { message: "Tienes que elegir un archivo" }
 
+  def send_finished_email
+    QueryMailer.query_finished(self.user, self.id).deliver_now
+  end
+
   private
 
   # Sets the initial status

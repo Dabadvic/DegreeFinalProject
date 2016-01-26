@@ -9,11 +9,11 @@
 				  <%= link_to "Inicio", root_path %>
 				<% end %>
 
-				<%= content_tag :td, :class => (params[:action] == "list")? "selected" : "" do %>
+				<%= content_tag :td, :class => ((params[:action] == "list")||(params[:action] == "show"))? "selected" : "" do %>
 				  <%= link_to "Consultas", queries_path %>
 				<% end %>
 
-				<%= content_tag :td, :class => ((params[:action] == "new")&&
+				<%= content_tag :td, :class => (((params[:action] == "new")||(params[:action] == "confirm"))&&
 												(params[:controller] == "queries"))? "selected" : "" do %>
 				  <%= link_to "Nueva consulta", new_query_path %>
 				<% end %>

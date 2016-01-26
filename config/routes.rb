@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   match 'confirm' => 'queries#confirm', via: [:get, :post]
 
-  resources :users
+  resources :users, only: [:new, :create, :destroy, :update, :edit]
 
   resources :account_activations, only: [:edit]
 

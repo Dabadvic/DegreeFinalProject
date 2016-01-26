@@ -1,7 +1,8 @@
 require "algorithms_job"
 
 class QueriesController < ApplicationController
-	before_action :logged_in_user, only: [:create, :destroy, :list, :new]
+	before_action :logged_in_user, only: [:create, :confirm, :destroy, :list, :new, :show]
+	before_action :can_view, only: [:show]
 
 	def create
 		@user = current_user
@@ -76,5 +77,13 @@ class QueriesController < ApplicationController
 	  def query_params
 	  	params.require(:query).permit(:description, :queryfile, :algorithm, :discretization, :options => [])
 	  end
+
+	  # Confirms the user can see a query.
+	  	def can_view
+	  		@query = Query.find(params[:id])
+	    	@user = current_user
+
+	    	redirect_to(queries_path) unless @user.id == @query.user.id
+	  	end
 
 end
