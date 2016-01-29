@@ -13,6 +13,7 @@ java_import "java.io.FileReader"
 java_import "java.lang.System"
 
 java_import "conversor.WekaToKeel"
+java_import "conversor.KeelToWeka"
 
 # Clase usada para contener los diferentes algoritmos
 class Algorithms
@@ -37,7 +38,7 @@ class Algorithms
   		query.status = 1
   		puts 'Estado: ' + query.status
   		puts query.save
-        puts 'errores: ' + query.errors.full_messages.to_s
+        #puts 'errores: ' + query.errors.full_messages.to_s
         
         query.result = aplicar(file_path, query.algorithm, options)
         query.send_finished_email
@@ -53,8 +54,8 @@ class Algorithms
 	def self.aplicar(file, algorithm, options)
 		# Aplicar SD (En un futuro, añadir a lista de espera para SD)
 		case algorithm
-			when "apriori"
-				toRet = apriori(file)
+			when "apriorisd"
+				toRet = apriorisd(file, options)
 				return toRet
 			when "cn2"
 				toRet = cn2sd(file, options)
@@ -101,30 +102,60 @@ class Algorithms
 	  	return fileOutput
 	end
 
+    def self.conversorWeka(file)
+        # Comprobación previa del fichero para realizar conversión o no
+        
+        case File.extname(file)
+        
+        when ".arff"
+            # no hacer nada
+            fileOutput = file
+        when ".dat"
+            # Convertir a .dat de Keel
+            fileTrans = KeelToWeka.new();
+            fileInput = file
+            fileOutput = File.dirname(file) + "/" + File.basename(file, ".*").downcase + ".arff"
+            fileTrans.Start(fileInput, fileOutput)
+        end
+
+        return fileOutput
+    end
+
 	# Función Apriori, aplica el alogirtmo apriori de Weka
-	  def self.apriori(file)
-	  	# Se leen los datos
-		reader = BufferedReader.new(FileReader.new(file))
-        data = Instances.new(reader)
-        reader.close()
+	  def self.apriorisd(file, options)
+        # Comprobamos si hay que convertirlo, devolviendo un string con la ubicación final
+        convertedInput = conversorKeel(file)
 
-		# Algoritmo Apriori
-		_model = Apriori.new()
-		
-		# Se construye el modelo
-		_model.buildAssociations(data)
-
-		# Obtenemos el resultado
-		toWrite = Array.new
-        toWrite.push(_model.toString())
-
+        toWrite = Array.new
         toRet = Array.new
-        toRet.push(File.dirname(file) + "/result0.txt")
 
-        writeFile(toRet[0], toWrite)
+        # Se definen los parámetros del algoritmo
+        toWrite.push("algorithm = Apriori Algorithm for Subgroup Discovery\n") 
+        toWrite.push("inputData = " + "\"" + convertedInput + "\" " + "\"" + convertedInput + "\" " +"\"" + convertedInput + "\"\n")
+        output = File.dirname(file) + "/result"
+        toWrite.push("outputData = " + "\"" + output + ".tra\" " + "\"" + output + ".tst\" " + "\"" + output + ".txt\"\n")
+        toWrite.push("\n")        
+        toWrite.push("MinSupport = " + options[0] + "\n")
+        toWrite.push("MinConfidence = " + options[1] + "\n")
+        toWrite.push("Number_of_Rules = " + options[2] + "\n")
+        toWrite.push("Postpruning_type = SELECT_N_RULES_PER_CLASS\n")
 
-		return toRet
 
+        # Preparar el archivo de configuración
+        configuracion = File.dirname(file) + "/configuracionAprioriSD.txt"
+        writeFile(configuracion, toWrite)
+
+        # Ejecutar el comando para aplicar el algoritmo
+        comando = "java -jar " + Rails.root.to_s + "/app/jobs/libraries/aprioriSD.jar " + configuracion
+        ejecucion = system( comando )
+
+        if ejecucion == true
+            toRet.push(output + ".txt")
+        else
+            toRet = "error"
+        end
+
+        return toRet
 	  end
 
 	  # Función CN2, aplica el algoritmo CN2-SD de Keel

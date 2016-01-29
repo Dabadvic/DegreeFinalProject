@@ -41,13 +41,13 @@
 				<%= render 'queries/results/sdmap', resultado: @resultado %>
 			<% when "cn2" %>
 				<%= render 'queries/results/cn2sd', resultado: @resultado %>
-			<% when "apriori" %>
+			<% when "apriorisd" %>
 				<%= render 'queries/results/apriori', resultado: @resultado %>
 			<% else %>
 				<%= render 'queries/results/results', resultado: @resultado %>
 		<% end %>
 	<% else %>
-		No se encontró el resultado, ¿hubo un error?
+		No se encontró el resultado, puede que la consulta no haya finalizado o haya ocurrido un error.
 	<% end %>
 </div>
 

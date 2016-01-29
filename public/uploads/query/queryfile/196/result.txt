@@ -1,0 +1,20 @@
+
+Rule 1: IF  outlook =  1  THEN play -> yes  -- Support: 4 [ 4 0]
+Rule 2: IF  humidity =  1  AND windy =  1  THEN play -> yes  -- Support: 4 [ 4 0]
+Rule 3: IF  outlook =  2  AND windy =  1  THEN play -> yes  -- Support: 3 [ 3 0]
+Rule 4: IF  outlook =  0  AND humidity =  1  THEN play -> yes  -- Support: 2 [ 2 0]
+Rule 5: IF  temperature =  1  AND humidity =  1  THEN play -> yes  -- Support: 2 [ 2 0]
+Rule 6: IF  outlook =  0  AND humidity =  0  THEN play -> no  -- Support: 3 [ 0 3]
+Rule 7: IF  outlook =  2  AND windy =  0  THEN play -> no  -- Support: 2 [ 0 2]
+Rule 8: IF  outlook =  0  AND temperature =  0  THEN play -> no  -- Support: 2 [ 0 2]
+Rule 9: IF  outlook =  0  AND temperature =  1  AND windy =  1  THEN play -> no  -- Support: 1 [ 0 1]
+Rule 10: IF  temperature =  0  AND windy =  0  THEN play -> no  -- Support: 1 [ 0 1]
+
+#### Final Results (on test) ####
+Avg. Rule length: 10
+Avg. Number of attributes by rule: 2.0
+Avg. Coverage; 0.17142857142857143
+Avg. Significance; 3.1788132077632034
+Accuracy Training: 1.0
+Accuracy Test: 1.0
+ TIME (sec): 0

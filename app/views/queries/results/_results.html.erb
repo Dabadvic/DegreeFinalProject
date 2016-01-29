@@ -3,7 +3,7 @@
 		<table class="padded ex1">
 			<% line_num = 0 %>
 			<% File.readlines(file).each do |line| %>
-				<tr><td><%= line.split %></td></tr>
+				<tr><td><%= line %></td></tr>
 			<% end %>
 		</table>
 	<% end %>

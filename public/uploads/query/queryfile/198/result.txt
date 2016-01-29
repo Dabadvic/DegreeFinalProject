@@ -1,0 +1,19 @@
+
+Rule 1: IF  petalwidth =  0  THEN class -> Iris-setosa  -- Support: 50 [ 50 0 0]
+Rule 2: IF  petallength =  0  THEN class -> Iris-setosa  -- Support: 50 [ 50 0 0]
+Rule 3: IF  sepallength =  1  AND petalwidth =  0  THEN class -> Iris-setosa  -- Support: 34 [ 34 0 0]
+Rule 4: IF  petallength =  1  THEN class -> Iris-versicolor  -- Support: 29 [ 0 29 0]
+Rule 5: IF  petalwidth =  1  THEN class -> Iris-versicolor  -- Support: 28 [ 0 28 0]
+Rule 6: IF  sepalwidth =  2  AND petallength =  1  THEN class -> Iris-versicolor  -- Support: 27 [ 0 27 0]
+Rule 7: IF  petallength =  2  THEN class -> Iris-virginica  -- Support: 50 [ 0 21 50]
+Rule 8: IF  sepalwidth =  2  AND petallength =  2  THEN class -> Iris-virginica  -- Support: 36 [ 0 15 36]
+Rule 9: IF  sepallength =  2  AND petallength =  2  THEN class -> Iris-virginica  -- Support: 25 [ 0 9 25]
+
+#### Final Results (on test) ####
+Avg. Rule length: 9
+Avg. Number of attributes by rule: 1.4444444444444444
+Avg. Coverage; 0.277037037037037
+Avg. Significance; 70.49374059296285
+Accuracy Training: 0.86
+Accuracy Test: 0.86
+ TIME (sec): 0
