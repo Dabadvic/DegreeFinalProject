@@ -6,15 +6,17 @@ class User < ActiveRecord::Base
 	before_save :downcase_email
 	before_create :create_activation_digest
 
-	validates :name, presence: true, length: { maximum: 50 }
+	validates :name, presence: { message: "Tienes que introducir un nombre de usuario" }, 
+				length: { maximum: 50 }
 
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+[a-z]+\z/i
-	validates :email, presence: true, length: { maximum: 255 },
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	validates :email, presence: { message: "Tienes que introducir una dirección de correo" }, 
+					  length: { maximum: 255 },
 					  format: { with: VALID_EMAIL_REGEX },
 					  uniqueness: { case_sensitive: false }
 
 	has_secure_password
-	validates :password, length: { minimum: 6 }, allow_blank: true
+	validates :password, length: { minimum: 6, message: "El tamaño de la contraseña tiene que tener un mínimo de 6 caracteres" }, allow_blank: true
 
 	# Returns the hash digest of the given string.
 	def User.digest(string)

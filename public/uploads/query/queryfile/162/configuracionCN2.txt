@@ -1,9 +1,0 @@
-algorithm = CN2 Algorithm for Subgroup Discovery
-inputData = "/home/david/proyectojruby/public/uploads/query/queryfile/162/distra.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/162/distra.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/162/distra.dat"
-outputData = "/home/david/proyectojruby/public/uploads/query/queryfile/162/result.tra" "/home/david/proyectojruby/public/uploads/query/queryfile/162/result.tst" "/home/david/proyectojruby/public/uploads/query/queryfile/162/result.txt"
-
-Nu_Value = 0.5
-Percentage_Examples_To_Cover = 0.95
-Star_Size = 5
-Use_multiplicative_weights = YES
-Use_Disjunt_Selectors = NO

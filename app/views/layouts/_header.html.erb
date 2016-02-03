@@ -1,7 +1,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse" id="cabecera">
 	<div id="header" style="padding-left:0px">
 		<div id="title-container" style="padding-left:0px">
-			<h1 id="titulo">Aplicación web</h1>
+			<h1 id="titulo">Extracción de reglas</h1>
 		</div>
 		<table class="menu">
 			<tr>
@@ -10,12 +10,12 @@
 				<% end %>
 
 				<%= content_tag :td, :class => ((params[:action] == "list")||(params[:action] == "show"))? "selected" : "" do %>
-				  <%= link_to "Consultas", queries_path %>
+				  <%= link_to "Experimentos", queries_path %>
 				<% end %>
 
 				<%= content_tag :td, :class => (((params[:action] == "new")||(params[:action] == "confirm"))&&
 												(params[:controller] == "queries"))? "selected" : "" do %>
-				  <%= link_to "Nueva consulta", new_query_path %>
+				  <%= link_to "Nuevo experimento", new_query_path %>
 				<% end %>
 
 				<% if logged_in? %>

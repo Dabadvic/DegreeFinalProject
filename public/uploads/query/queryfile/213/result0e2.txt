@@ -1,0 +1,150 @@
+--------------------------------------------
+|              Parameters Echo             |
+--------------------------------------------
+Algorithm name: sd-sdiga for subgroup discovery
+Input file name training: /home/david/proyectojruby/public/uploads/query/queryfile/213/heart.dat
+Input file name test: /home/david/proyectojruby/public/uploads/query/queryfile/213/heart.dat
+Rules file name: /home/david/proyectojruby/public/uploads/query/queryfile/213/result0e0.txt
+Tracking file name: /home/david/proyectojruby/public/uploads/query/queryfile/213/result0e2.txt
+Random generator seed: 0
+Selected class of the target variable: not established
+Number of labels for the continuous variables: 3
+Number of evaluations: 10000
+Number of individuals in the Population: 100
+Cross probability: 0.6
+Mutation probability: 0.01
+Minimum confidence: 0.6
+Rules representation: CAN
+Objective 1: COMP(Weight: 0.4)
+Objective 2: FCNF(Weight: 0.3)
+Objective 3: UNUS(Weight: 0.3)
+Perform Local Search: true
+
+--------------------------------------------
+|  Semantics for the continuous variables  |
+--------------------------------------------
+Fuzzy sets parameters for variable Age:
+	Label 0: 5.0 29.0 53.0
+	Label 1: 29.0 53.0 77.0
+	Label 2: 53.0 77.0 101.0
+Fuzzy sets parameters for variable Sex:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable ChestPainType:
+	Label 0: -0.5 1.0 2.5
+	Label 1: 1.0 2.5 4.0
+	Label 2: 2.5 4.0 5.5
+Fuzzy sets parameters for variable RestBloodPressure:
+	Label 0: 41.0 94.0 147.0
+	Label 1: 94.0 147.0 200.0
+	Label 2: 147.0 200.0 253.0
+Fuzzy sets parameters for variable SerumCholestoral:
+	Label 0: -93.0 126.0 345.0
+	Label 1: 126.0 345.0 564.0
+	Label 2: 345.0 564.0 783.0
+Fuzzy sets parameters for variable FastingBloodSugar:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable ResElectrocardiographic:
+	Label 0: -1.0 0.0 1.0
+	Label 1: 0.0 1.0 2.0
+	Label 2: 1.0 2.0 3.0
+Fuzzy sets parameters for variable MaxHeartRate:
+	Label 0: 5.5 71.0 136.5
+	Label 1: 71.0 136.5 202.0
+	Label 2: 136.5 202.0 267.5
+Fuzzy sets parameters for variable ExerciseInduced:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Oldpeak:
+	Label 0: -31.0 0.0 31.0
+	Label 1: 0.0 31.0 62.0
+	Label 2: 31.0 62.0 93.0
+Fuzzy sets parameters for variable Slope:
+	Label 0: 0.0 1.0 2.0
+	Label 1: 1.0 2.0 3.0
+	Label 2: 2.0 3.0 4.0
+Fuzzy sets parameters for variable MajorVessels:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Thal:
+	Label 0: 1.0 3.0 5.0
+	Label 1: 3.0 5.0 7.0
+	Label 2: 5.0 7.0 9.0
+
+
+--------------------------------------------
+|               Dataset Echo               |
+--------------------------------------------
+Number of examples: 270
+Number of variables: 13
+@relation heart
+@attribute Age integer [29, 77]
+@attribute Sex integer [0, 1]
+@attribute ChestPainType integer [1, 4]
+@attribute RestBloodPressure integer [94, 200]
+@attribute SerumCholestoral integer [126, 564]
+@attribute FastingBloodSugar integer [0, 1]
+@attribute ResElectrocardiographic integer [0, 2]
+@attribute MaxHeartRate integer [71, 202]
+@attribute ExerciseInduced integer [0, 1]
+@attribute Oldpeak real [0.0, 62.0]
+@attribute Slope integer [1, 3]
+@attribute MajorVessels integer [0, 3]
+@attribute Thal integer [3, 7]
+@attribute Class {1, 2}
+@inputs Age, Sex, ChestPainType, RestBloodPressure, SerumCholestoral, FastingBloodSugar, ResElectrocardiographic, MaxHeartRate, ExerciseInduced, Oldpeak, Slope, MajorVessels, Thal
+@outputs Class
+
+
+--------------------------------------------
+|       Computation of the info gain       |
+--------------------------------------------
+Points for computation of the info gain:
+	Variable Age: 41.0  65.0  89.0  
+	Variable Sex: 0.25  0.75  1.25  
+	Variable ChestPainType: 1.75  3.25  4.75  
+	Variable RestBloodPressure: 120.5  173.5  226.5  
+	Variable SerumCholestoral: 235.5  454.5  673.5  
+	Variable FastingBloodSugar: 0.25  0.75  1.25  
+	Variable ResElectrocardiographic: 0.5  1.5  2.5  
+	Variable MaxHeartRate: 103.75  169.25  234.75  
+	Variable ExerciseInduced: 0.25  0.75  1.25  
+	Variable Oldpeak: 15.5  46.5  77.5  
+	Variable Slope: 1.5  2.5  3.5  
+	Variable MajorVessels: 0.75  2.25  3.75  
+	Variable Thal: 4.0  6.0  8.0  
+Information Gain of the variables:
+	Variable Age: 0.062339902
+	Variable Sex: 0.026392102
+	Variable ChestPainType: 0.14625895
+	Variable RestBloodPressure: 0.035719395
+	Variable SerumCholestoral: 0.007524848
+	Variable FastingBloodSugar: 0.02121842
+	Variable ResElectrocardiographic: 0.01622963
+	Variable MaxHeartRate: 0.055336714
+	Variable ExerciseInduced: 0.07311517
+	Variable Oldpeak: 0.05735445
+	Variable Slope: 0.11163944
+	Variable MajorVessels: 0.14113659
+	Variable Thal: 0.15275681
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 0:
+   # 3324 generations, 10001 evaluations
+	Rule not improved by Local search. Support = 0.92
+   # 3328 generations, 10003 evaluations
+	Rule not improved by Local search. Support = 0.8466667
+   # 3286 generations, 10003 evaluations
+	Rule not stored (low confidence or support)
+
+Class 1:
+   # 3320 generations, 10001 evaluations
+	Rule not improved by Local search. Support = 0.9916667

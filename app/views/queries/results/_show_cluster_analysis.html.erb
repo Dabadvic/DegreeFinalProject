@@ -62,31 +62,5 @@
 				<% end %>
 			<% end %>
 		<% end %>
-
-		<!-- Leo las filas, si la primera palabra es "Cut", forma parte del atributo, si es "Number" es que se ha llegado a otro atributo, hay que incrementar el valor de atribute_number y crear nueva tabla 
-		<% File.readlines(dis).each do |line| %>
-			<% if line.split(' ')[0] == "Cut" %>
-				<tr>
-					<td><%= line.split(' ')[2] %></td>
-					<td><%= line.split(' ').last %></td>
-				</tr>
-			<% elsif line.split(' ')[0] == "Number" %>
-				</table></td>
-				<% atribute_number += 1 %>
-
-				<!-- Si no es la última línea, creo una nueva tabla para el siguiente atributo ->
-				<% if atribute_number < atributes.length %>
-					<td>
-					<table class="padded ex1">
-					<tr id="cabecera" class="center" ><td colspan="2"> 
-						<%= "Atributo " + atributes[atribute_number] %>
-					</td></tr>
-					<tr>
-						<td class="subcabecera">Punto de corte</td>
-						<td class="subcabecera">Valor</td>
-					</tr>
-				<% end %>
-			<% end %>
-		<% end %> -->
 	</tr></table>
 <% end %>

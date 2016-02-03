@@ -1,28 +1,52 @@
-<% provide(:title, "Consultas") %>
+<% provide(:title, "Experimento") %>
 
-<h1>Consulta</h1>
+<h1>Experimento</h1>
 <div id="descripcion" class="queries">
-	<h3>Datos de la consulta: </h3>
-<table class="padded ex1">
-	<tr><td>Descripción: <%= @query.description %></td></tr>
-	<tr><td>Fecha de creación: <%= l @query.created_at, format: :short %></td></tr>
-	<tr><td>Estado: <%= @estado %></td></tr>
-	<tr><td>Discretizador aplicado: 
-		<% case @query.discretization %>
-			<% when "cluster_analysis" %>
-				<%= "Análisis cluster" %>
-			<% when "none" %>
-				<%= "Ninguno" %>
+
+<table class="tablas"><tr>
+
+<td valign="top">
+	<% error = true %>
+		<% @resultado.each do |file| %>
+			<% if File.exist?(file) %>
+				<% error = false %>
+			<% end %>
 		<% end %>
-	</td></tr>
-	<tr><td>Algoritmo aplicado: <%= @query.algorithm.upcase %></td></tr>
-	<tr><td>Archivo: <%= File.basename(@query.queryfile.to_s) if @query.queryfile? %></td></tr>
-</table>
+		<% if error %>
+			<h3>Ha ocurrido un <span style="color:red">error</span> utilizando estos datos:</h3>
+			<p>Prueba a repetir el experimento cambiando los parámetros.</p>
+		<% else %>
+			<h3>Datos del experimento: </h3>
+		<% end %>
+	<table class="padded ex1">
+		<tr><td>Descripción: <%= @query.description %></td></tr>
+		<tr><td>Fecha de creación: <%= l @query.created_at, format: :short %></td></tr>
+		<tr><td>Estado: <%= @estado %></td></tr>
+		<tr><td>Discretizador aplicado: 
+			<% case @query.discretization %>
+				<% when "cluster_analysis" %>
+					<%= "Análisis cluster" %>
+				<% when "fayyad" %>
+					<%= "Discretizador Fayyad" %>
+				<% when "none" %>
+					<%= "Ninguno" %>
+			<% end %>
+		</td></tr>
+		<tr><td>Algoritmo aplicado: <%= @query.algorithm.upcase %></td></tr>
+		<tr><td>Archivo: <%= File.basename(@query.queryfile.to_s) if @query.queryfile? %></td></tr>
+	</table>
+</td>
+<td valign="top">
+	<%= render 'config_file', config: @config_file %>
+</td>
+</tr></table>
 </div>
 <div class="queries">
 	<% if @query.discretization != "none" %>
 		<% case @query.discretization %>
 			<% when "cluster_analysis" %>
+				<%= render 'queries/results/show_cluster_analysis', dis: @dis_file %>
+			<% when "fayyad" %>
 				<%= render 'queries/results/show_cluster_analysis', dis: @dis_file %>
 			<% else %>
 				<%= render 'queries/results/show_discretization', dis: @dis_file %>
@@ -47,7 +71,7 @@
 				<%= render 'queries/results/results', resultado: @resultado %>
 		<% end %>
 	<% else %>
-		No se encontró el resultado, puede que la consulta no haya finalizado o haya ocurrido un error.
+		No se encontró el resultado, puede que el experimento no haya finalizado o haya ocurrido un error.
 	<% end %>
 </div>
 

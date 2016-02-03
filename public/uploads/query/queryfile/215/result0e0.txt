@@ -1,0 +1,20 @@
+GENERATED RULE 0
+   Antecedent
+	Variable FTI = Label 0 	 (-0.31800002 0.002 0.32200003)
+   Consecuent: 1
+
+GENERATED RULE 0
+   Antecedent
+	Variable FTI = Label 1 	 (0.002 0.32200003 0.642)
+   Consecuent: 2
+
+GENERATED RULE 0
+   Antecedent
+	Variable FTI = Label 1 	 (0.002 0.32200003 0.642)
+   Consecuent: 3
+
+GENERATED RULE 1
+   Antecedent
+	Variable TT4 = Label 1 	 (0.002 0.30100003 0.6)
+   Consecuent: 3
+

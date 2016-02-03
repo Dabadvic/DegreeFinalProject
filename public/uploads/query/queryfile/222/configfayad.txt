@@ -1,0 +1,3 @@
+algorithm = Fayyad Discretizer
+inputData = "/home/david/proyectojruby/public/uploads/query/queryfile/222/heart.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/222/heart.dat"
+outputData = "/home/david/proyectojruby/public/uploads/query/queryfile/222/distra.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/222/distst.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/222/disresult.txt"

@@ -1,0 +1,15 @@
+algorithm = MESDIF for Subgroup Discovery
+inputData = "/home/david/proyectojruby/public/uploads/query/queryfile/214/thyroid.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/214/thyroid.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/214/thyroid.dat"
+outputData = "/home/david/proyectojruby/public/uploads/query/queryfile/214/result0.tra" "/home/david/proyectojruby/public/uploads/query/queryfile/214/result0.tst" "/home/david/proyectojruby/public/uploads/query/queryfile/214/result0e0.txt" "/home/david/proyectojruby/public/uploads/query/queryfile/214/result0e1.txt" "/home/david/proyectojruby/public/uploads/query/queryfile/214/result0e2.txt" "/home/david/proyectojruby/public/uploads/query/queryfile/214/result0e3.txt"
+
+RulesRep = can
+nLabels = 3
+nEval = 10000
+popLength = 100
+crossProb = 0.6
+mutProb = 0.01
+eliteLength = 3
+Obj1 = comp
+Obj2 = unus
+Obj3 = fcnf
+Obj4 = null

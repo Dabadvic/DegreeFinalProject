@@ -1,0 +1,20 @@
+
+Rule 1: IF  MaxHeartRate =  29  THEN Class -> 1  -- Support: 11 [ 11 1]
+Rule 2: IF  ExerciseInduced =  1  AND MajorVessels =  1  AND Thal =  1  THEN Class -> 1  -- Support: 87 [ 87 9]
+Rule 3: IF  Sex =  1  AND ExerciseInduced =  1  AND Thal =  1  THEN Class -> 1  -- Support: 57 [ 57 5]
+Rule 4: IF  Slope =  1  AND MajorVessels =  1  AND Thal =  1  THEN Class -> 1  -- Support: 63 [ 63 5]
+Rule 5: IF  FastingBloodSugar =  1  AND ResElectrocardiographic =  1  AND ExerciseInduced =  1  AND Thal =  1  THEN Class -> 1  -- Support: 56 [ 56 6]
+Rule 6: IF  ChestPainType =  7  AND Slope =  3  AND Thal =  3  THEN Class -> 2  -- Support: 47 [ 2 47]
+Rule 7: IF  ChestPainType =  7  AND ExerciseInduced =  3  AND Slope =  3  THEN Class -> 2  -- Support: 48 [ 5 48]
+Rule 8: IF  ChestPainType =  7  AND MajorVessels =  4  THEN Class -> 2  -- Support: 35 [ 3 35]
+Rule 9: IF  ChestPainType =  7  AND MajorVessels =  3  THEN Class -> 2  -- Support: 28 [ 2 28]
+Rule 10: IF  ChestPainType =  7  AND ResElectrocardiographic =  3  AND Thal =  3  THEN Class -> 2  -- Support: 38 [ 1 38]
+
+#### Final Results (on test) ####
+Avg. Rule length: 10
+Avg. Number of attributes by rule: 2.7
+Avg. Coverage; 0.18851851851851853
+Avg. Significance; 42.60906416753319
+Accuracy Training: 0.8333333333333334
+Accuracy Test: 0.8333333333333334
+ TIME (sec): 3

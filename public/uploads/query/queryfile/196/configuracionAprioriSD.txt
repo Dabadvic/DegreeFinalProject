@@ -1,8 +1,0 @@
-algorithm = Apriori Algorithm for Subgroup Discovery
-inputData = "/home/david/proyectojruby/public/uploads/query/queryfile/196/weather.nominal.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/196/weather.nominal.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/196/weather.nominal.dat"
-outputData = "/home/david/proyectojruby/public/uploads/query/queryfile/196/result.tra" "/home/david/proyectojruby/public/uploads/query/queryfile/196/result.tst" "/home/david/proyectojruby/public/uploads/query/queryfile/196/result.txt"
-
-MinSupport = 0.03
-MinConfidence = 0.9
-Number_of_Rules = 5
-Postpruning_type = SELECT_N_RULES_PER_CLASS

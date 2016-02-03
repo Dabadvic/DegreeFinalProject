@@ -1,0 +1,9 @@
+<% if File.exist?(config) %>		
+	<table class="padded ex1">
+		<h3>Parámetros:</h3>
+		<% lines = File.readlines(config) %>
+		<% for i in 4..lines.length-1 %>
+			<tr><td><%= lines[i] %></td></tr>
+		<% end %>
+	</table>
+<% end %>

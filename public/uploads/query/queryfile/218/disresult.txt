@@ -1,0 +1,22 @@
+Cut point 0 of attribute 0 : 54.5
+Number of cut points of attribute 0 : 1
+Cut point 0 of attribute 1 : 0.5
+Number of cut points of attribute 1 : 1
+Cut point 0 of attribute 2 : 3.5
+Number of cut points of attribute 2 : 1
+Number of cut points of attribute 3 : 0
+Number of cut points of attribute 4 : 0
+Number of cut points of attribute 5 : 0
+Number of cut points of attribute 6 : 0
+Cut point 0 of attribute 7 : 147.5
+Number of cut points of attribute 7 : 1
+Cut point 0 of attribute 8 : 0.5
+Number of cut points of attribute 8 : 1
+Cut point 0 of attribute 9 : 17.0
+Number of cut points of attribute 9 : 1
+Cut point 0 of attribute 10 : 1.5
+Number of cut points of attribute 10 : 1
+Cut point 0 of attribute 11 : 0.5
+Number of cut points of attribute 11 : 1
+Cut point 0 of attribute 12 : 4.5
+Number of cut points of attribute 12 : 1

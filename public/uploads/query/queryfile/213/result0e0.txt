@@ -1,0 +1,17 @@
+GENERATED RULE 0
+   Antecedent
+	Variable Oldpeak = Label 0 	 (-31.0 0.0 31.0)
+	Variable MajorVessels = Label 0 	 (-1.5 0.0 1.5)
+   Consecuent: 1
+
+GENERATED RULE 1
+   Antecedent
+	Variable ExerciseInduced = Label 0 	 (-0.5 0.0 0.5)
+   Consecuent: 1
+
+GENERATED RULE 0
+   Antecedent
+	Variable SerumCholestoral = Label 1 	 (126.0 345.0 564.0)
+	Variable MaxHeartRate = Label 1 	 (71.0 136.5 202.0)
+   Consecuent: 2
+

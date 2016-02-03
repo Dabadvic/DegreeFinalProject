@@ -1,0 +1,224 @@
+--------------------------------------------
+|              Parameters Echo             |
+--------------------------------------------
+Algorithm name: mesdif for subgroup discovery
+Input file name training: /home/david/proyectojruby/public/uploads/query/queryfile/214/thyroid.dat
+Input file name test: /home/david/proyectojruby/public/uploads/query/queryfile/214/thyroid.dat
+Rules file name: /home/david/proyectojruby/public/uploads/query/queryfile/214/result0e0.txt
+Tracking file name: /home/david/proyectojruby/public/uploads/query/queryfile/214/result0e2.txt
+Random generator seed: 0
+Selected class of the target variable: not established
+Number of labels for the continuous variables: 3
+Number of evaluations: 10000
+Number of individuals in the Population: 100
+Number of individuals in the Elite Population: 3
+Cross probability: 0.6
+Mutation probability: 0.01
+Minimum confidence: 0.0
+Rules representation: CAN
+Objective 1: COMP
+Objective 2: UNUS
+Objective 3: FCNF
+
+--------------------------------------------
+|  Semantics for the continuous variables  |
+--------------------------------------------
+Fuzzy sets parameters for variable Age:
+	Label 0: -0.47000003 0.01 0.49
+	Label 1: 0.01 0.49 0.97
+	Label 2: 0.49 0.97 1.45
+Fuzzy sets parameters for variable Sex:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable On_thyroxine:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Query_on_thyroxine:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable On_antithyroid_medication:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Sick:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Pregnant:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Thyroid_surgery:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable I131_treatment:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Query_hypothyroid:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Query_hyperthyroid:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Lithium:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Goitre:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Tumor:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Hypopituitary:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Psych:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable TSH:
+	Label 0: -0.265 0.0 0.265
+	Label 1: 0.0 0.265 0.53
+	Label 2: 0.265 0.53 0.79499996
+Fuzzy sets parameters for variable T3:
+	Label 0: -0.089250006 5.0E-4 0.09025001
+	Label 1: 5.0E-4 0.09025001 0.18
+	Label 2: 0.09025001 0.18 0.26975003
+Fuzzy sets parameters for variable TT4:
+	Label 0: -0.29700002 0.002 0.30100003
+	Label 1: 0.002 0.30100003 0.6
+	Label 2: 0.30100003 0.6 0.89900005
+Fuzzy sets parameters for variable T4U:
+	Label 0: -0.09099999 0.017 0.125
+	Label 1: 0.017 0.125 0.233
+	Label 2: 0.125 0.233 0.341
+Fuzzy sets parameters for variable FTI:
+	Label 0: -0.31800002 0.002 0.32200003
+	Label 1: 0.002 0.32200003 0.642
+	Label 2: 0.32200003 0.642 0.962
+
+
+--------------------------------------------
+|               Dataset Echo               |
+--------------------------------------------
+Number of examples: 7200
+Number of variables: 21
+@relation thyroid
+@attribute Age real [0.01, 0.97]
+@attribute Sex integer [0, 1]
+@attribute On_thyroxine integer [0, 1]
+@attribute Query_on_thyroxine integer [0, 1]
+@attribute On_antithyroid_medication integer [0, 1]
+@attribute Sick integer [0, 1]
+@attribute Pregnant integer [0, 1]
+@attribute Thyroid_surgery integer [0, 1]
+@attribute I131_treatment integer [0, 1]
+@attribute Query_hypothyroid integer [0, 1]
+@attribute Query_hyperthyroid integer [0, 1]
+@attribute Lithium integer [0, 1]
+@attribute Goitre integer [0, 1]
+@attribute Tumor integer [0, 1]
+@attribute Hypopituitary integer [0, 1]
+@attribute Psych integer [0, 1]
+@attribute TSH real [0.0, 0.53]
+@attribute T3 real [0.0005, 0.18]
+@attribute TT4 real [0.0020, 0.6]
+@attribute T4U real [0.017, 0.233]
+@attribute FTI real [0.0020, 0.642]
+@attribute Class {1,2,3}
+@inputs Age, Sex, On_thyroxine, Query_on_thyroxine, On_antithyroid_medication, Sick, Pregnant, Thyroid_surgery, I131_treatment, Query_hypothyroid, Query_hyperthyroid, Lithium, Goitre, Tumor, Hypopituitary, Psych, TSH, T3, TT4, T4U, FTI
+@outputs Class
+
+
+--------------------------------------------
+|       Computation of the info gain       |
+--------------------------------------------
+Points for computation of the info gain:
+	Variable Age: 0.25  0.73  1.21  
+	Variable Sex: 0.25  0.75  1.25  
+	Variable On_thyroxine: 0.25  0.75  1.25  
+	Variable Query_on_thyroxine: 0.25  0.75  1.25  
+	Variable On_antithyroid_medication: 0.25  0.75  1.25  
+	Variable Sick: 0.25  0.75  1.25  
+	Variable Pregnant: 0.25  0.75  1.25  
+	Variable Thyroid_surgery: 0.25  0.75  1.25  
+	Variable I131_treatment: 0.25  0.75  1.25  
+	Variable Query_hypothyroid: 0.25  0.75  1.25  
+	Variable Query_hyperthyroid: 0.25  0.75  1.25  
+	Variable Lithium: 0.25  0.75  1.25  
+	Variable Goitre: 0.25  0.75  1.25  
+	Variable Tumor: 0.25  0.75  1.25  
+	Variable Hypopituitary: 0.25  0.75  1.25  
+	Variable Psych: 0.25  0.75  1.25  
+	Variable TSH: 0.1325  0.39749998  0.66249996  
+	Variable T3: 0.045375004  0.13512501  0.22487502  
+	Variable TT4: 0.15150002  0.45050004  0.74950004  
+	Variable T4U: 0.070999995  0.17899999  0.287  
+	Variable FTI: 0.16200002  0.48200005  0.80200005  
+Information Gain of the variables:
+	Variable Age: -0.1389966
+	Variable Sex: -0.2336511
+	Variable On_thyroxine: -0.122216165
+	Variable Query_on_thyroxine: -0.01177299
+	Variable On_antithyroid_medication: -0.009584099
+	Variable Sick: -0.02866739
+	Variable Pregnant: -0.010094851
+	Variable Thyroid_surgery: -0.010328114
+	Variable I131_treatment: -0.008306503
+	Variable Query_hypothyroid: -0.024899364
+	Variable Query_hyperthyroid: -0.052870452
+	Variable Lithium: -0.008466482
+	Variable Goitre: -0.0075671673
+	Variable Tumor: -0.017568171
+	Variable Hypopituitary: -1.2293458E-4
+	Variable Psych: -0.043008894
+	Variable TSH: 0.0235233
+	Variable T3: -0.00914371
+	Variable TT4: -0.098447084
+	Variable T4U: -0.033363134
+	Variable FTI: -0.064391196
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 0:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10031
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 1:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10054
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 2:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10029
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------

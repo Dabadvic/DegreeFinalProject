@@ -1,0 +1,40 @@
+Rule 0: RestBloodPressure = 0 AND SerumCholestoral = 0 AND ResElectrocardiographic = 0 AND Age = 1 AND MaxHeartRate = 0 AND MajorVessels = 1 AND ExerciseInduced = 1 THEN Class = 2
+[  0,07  0,93  ]
+
+
+Rule 1: SerumCholestoral = 0 AND ResElectrocardiographic = 0 AND Age = 1 AND MaxHeartRate = 0 AND MajorVessels = 1 AND ExerciseInduced = 1 THEN Class = 2
+[  0,07  0,93  ]
+
+
+Rule 2: RestBloodPressure = 0 AND ResElectrocardiographic = 0 AND Age = 1 AND MaxHeartRate = 0 AND MajorVessels = 1 AND ExerciseInduced = 1 THEN Class = 2
+[  0,07  0,93  ]
+
+
+Rule 3: SerumCholestoral = 0 AND FastingBloodSugar = 0 AND ResElectrocardiographic = 0 AND Age = 1 AND MaxHeartRate = 0 AND MajorVessels = 1 AND ExerciseInduced = 1 THEN Class = 2
+[  0,07  0,93  ]
+
+
+Rule 4: RestBloodPressure = 0 AND FastingBloodSugar = 0 AND ResElectrocardiographic = 0 AND Age = 1 AND MaxHeartRate = 0 AND MajorVessels = 1 AND ExerciseInduced = 1 THEN Class = 2
+[  0,07  0,93  ]
+
+
+Rule 5: FastingBloodSugar = 0 AND ResElectrocardiographic = 0 AND Age = 1 AND MaxHeartRate = 0 AND MajorVessels = 1 AND ExerciseInduced = 1 THEN Class = 2
+[  0,07  0,93  ]
+
+
+Rule 6: ResElectrocardiographic = 0 AND Age = 1 AND MaxHeartRate = 0 AND MajorVessels = 1 AND ExerciseInduced = 1 THEN Class = 2
+[  0,07  0,93  ]
+
+
+Rule 7: FastingBloodSugar = 0 AND Age = 1 AND MaxHeartRate = 0 AND MajorVessels = 1 AND ExerciseInduced = 1 THEN Class = 2
+[  0,07  0,93  ]
+
+
+Rule 8: RestBloodPressure = 0 AND SerumCholestoral = 0 AND Age = 1 AND MaxHeartRate = 0 AND MajorVessels = 1 AND ExerciseInduced = 1 THEN Class = 2
+[  0,07  0,93  ]
+
+
+Rule 9: SerumCholestoral = 0 AND Age = 1 AND MaxHeartRate = 0 AND MajorVessels = 1 AND ExerciseInduced = 1 THEN Class = 2
+[  0,07  0,93  ]
+
+

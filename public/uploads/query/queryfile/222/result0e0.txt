@@ -1,0 +1,33 @@
+Rule 1: IF  Thal = 0 AND Age <> 1 AND MajorVessels <> 1 AND Oldpeak <> 1 THEN Class -> 1  
+[  0,98  0,02  ]
+
+Rule 2: IF  Thal = 0 AND Age <> 1 AND MajorVessels <> 1 THEN Class -> 1  
+[  0,97  0,03  ]
+
+Rule 3: IF  Thal = 0 AND ChestPainType <> 1 AND Oldpeak <> 1 THEN Class -> 1  
+[  0,92  0,08  ]
+
+Rule 4: IF  Thal = 0 AND Age <> 1 AND MaxHeartRate <> 0 THEN Class -> 1  
+[  0,94  0,06  ]
+
+Rule 5: IF  Thal = 0 AND ChestPainType <> 1 AND MaxHeartRate <> 0 THEN Class -> 1  
+[  0,93  0,07  ]
+
+Rule 6: IF  MajorVessels = 1 AND ChestPainType = 1 AND Sex = 1 THEN Class -> 2  
+[  0,04  0,96  ]
+
+Rule 7: IF  MajorVessels = 1 AND ChestPainType = 1 THEN Class -> 2  
+[  0,07  0,93  ]
+
+Rule 8: IF  Thal > 0 AND ChestPainType = 1 THEN Class -> 2  
+[  0,13  0,87  ]
+
+Rule 9: IF  MajorVessels = 1 AND Sex = 1 THEN Class -> 2  
+[  0,17  0,83  ]
+
+Rule 10: IF  MajorVessels = 1 AND Age = 1 THEN Class -> 2  
+[  0,21  0,79  ]
+
+
+
+Time: 0,439

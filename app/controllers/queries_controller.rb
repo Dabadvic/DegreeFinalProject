@@ -17,7 +17,6 @@ class QueriesController < ApplicationController
 			redirect_to queries_path
 		else
 	  		render :confirm
-	  		#render plain: "Error inesperado"
 	  	end
 	end
 
@@ -59,8 +58,10 @@ class QueriesController < ApplicationController
 		if @query.result?
 			@resultado = eval(@query.result)
 		end
+
+		files_path = File.dirname(@query.queryfile.current_path.to_s)
 		# Ubicación del fichero resultado de discretizar
-		@dis_file = File.dirname(@query.queryfile.current_path.to_s) + "/disresult.txt"
+		@dis_file = files_path + "/disresult.txt"
 
 		case @query.status
 		when "waiting"
@@ -70,6 +71,24 @@ class QueriesController < ApplicationController
 		when "finished"
 			@estado = "Consulta finalizada"
 		end
+
+		case @query.algorithm
+		when "cn2"
+			@config_file = files_path + "/configuracionCN2.txt"
+		when "mesdif"
+			@config_file = files_path + "/configuracionMESDIF.txt"
+		when "sdmap"
+			@config_file = files_path + "/configuracionSDMap.txt"
+		when "sd"
+			@config_file = files_path + "/configuracionSDAlgorithm.txt"
+		when "sdiga"
+			@config_file = files_path + "/configuracionSDIGA.txt"
+		when "apriorisd"
+			@config_file = files_path + "/configuracionAprioriSD.txt"
+		else
+			@config_file = files_path + "/no_file.txt"
+		end
+			
 	end
 
 	private

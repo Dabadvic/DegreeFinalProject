@@ -6,6 +6,9 @@ class Discretizers
 			when "cluster_analysis"
 				toRet = cluster_analysis(path_to_file)
 				return toRet
+			when "fayyad"
+				toRet = fayyad(path_to_file)
+				return toRet
 		end
 	end
 
@@ -27,6 +30,36 @@ class Discretizers
 
 		# Ejecutar el comando
 		comando = "java -jar " + Rails.root.to_s + "/app/jobs/libraries/Disc-ClusterAnalysis.jar " + configuracion
+		ejecucion = system( comando )
+
+		if ejecucion == true
+        	toRet = output + "distra.dat"
+        else
+        	toRet = "error"
+        end
+
+        return toRet
+
+	end
+
+	# Función que aplica el algoritmo discretizador Fayyad para la discretización de un dataset
+	def self.fayyad(path_to_file)
+		toWrite = Array.new
+
+		# Definir parámetros
+		toWrite.push("algorithm = Fayyad Discretizer\n")
+		toWrite.push("inputData = \"" + path_to_file + "\" \"" + path_to_file + "\"\n")
+		output = File.dirname(path_to_file) + "/"
+		toWrite.push("outputData = \"" + output + "distra.dat\" " +
+						"\"" + output + "distst.dat\" " +
+						"\"" + output + "disresult.txt\"\n")
+
+		# Preparar el archivo de configuración
+        configuracion = output + "configfayad.txt"
+        writeConfigFile(configuracion, toWrite)
+
+		# Ejecutar el comando
+		comando = "java -jar " + Rails.root.to_s + "/app/jobs/libraries/Disc-Fayyad.jar " + configuracion
 		ejecucion = system( comando )
 
 		if ejecucion == true

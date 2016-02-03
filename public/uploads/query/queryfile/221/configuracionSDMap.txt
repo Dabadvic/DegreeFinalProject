@@ -1,0 +1,8 @@
+algorithm = SDMap for Subgroup Discovery
+inputData = "/home/david/proyectojruby/public/uploads/query/queryfile/221/distra.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/221/distra.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/221/distra.dat"
+outputData = "/home/david/proyectojruby/public/uploads/query/queryfile/221/result0.tra" "/home/david/proyectojruby/public/uploads/query/queryfile/221/result0.tst" "/home/david/proyectojruby/public/uploads/query/queryfile/221/result0e0.txt" "/home/david/proyectojruby/public/uploads/query/queryfile/221/result0e1.txt" "/home/david/proyectojruby/public/uploads/query/queryfile/221/result0e2.txt" "/home/david/proyectojruby/public/uploads/query/queryfile/221/result0e3.txt"
+
+MinimumSupport = 0.1
+MinimumConfidence = 0.8
+RulesReturn = 10
+algorithm = SD-Map

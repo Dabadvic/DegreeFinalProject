@@ -1,6 +1,6 @@
-<% provide(:title, "Nueva consulta") %>
+<% provide(:title, "Nuevo experimento") %>
 
-<h1>Nueva consulta</h1>
+<h1>Nuevo experimento</h1>
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
@@ -11,25 +11,48 @@
 			<%= f.text_field :description, class: 'form-control' %>
 
 
-			<% options_dis = [['Ninguno', "none"], ['Cluster Analysis', "cluster_analysis"]] %>
+			<% options_dis = [['Ninguno', "none"], ['Cluster Analysis', "cluster_analysis", {selected:true}], ['Discretizador Fayyad', "fayyad"]] %>
 			<label for="query_description">Discretizador</label>
-			<%= f.select(:discretization) do %>
-				<% options_dis.each do |c| %>
-					<%= content_tag(:option, c.first, value: c.last) %>
-				<% end %>
-			<% end %>
+			<%= f.select(:discretization, options_for_select(options_dis), {}, {:onchange => 'change_algorithms()'}) %>
 
-			<% options = [['- Requieren discretizar:', "re_dis"], ['AprioriSD', "apriorisd"], ['CN2-SD', "cn2"], 
+			<% options = [['- Requieren discretizar:', "re_dis", {disabled:true}], ['AprioriSD', "apriorisd"], ['CN2-SD', "cn2"], 
 							['SD-Map', "sdmap"], ['SD-Algorithm', "sd"], 
-							['- No requieren discretizar:', "no_dis"], ['MESDIF', "mesdif"], ['SDIGA', "sdiga"]] %>
+							['- No requieren discretizar:', "no_dis", {disabled:true}], ['MESDIF', "mesdif"], ['SDIGA', "sdiga"]] %>
 			<label for="query_description">Algoritmo</label>
-			<%= f.select(:algorithm) do %>
-				<% options.each do |c| %>
-					<%= content_tag(:option, c.first, value: c.last, :disabled => (true if c.last == "no_dis" || c.last == "re_dis")) %>
-				<% end %>
-			<% end %>
+			<%= f.select(:algorithm, options_for_select(options), {}, {:class => 'whatever'}) %>
 
-			<%= f.submit "Crear consulta", class: "btn btn-primary" %>
+			<%= f.submit "Crear experimento", class: "btn btn-primary" %>
 		<% end %>
 	</div>
 </div>
+
+<script type="text/javascript">
+// Función que cambia la disponibilidad de algoritmos
+function change_algorithms() {
+	var option_num = document.getElementById("query_discretization").options.selectedIndex;
+	var option_name = document.getElementById("query_discretization").options.item(option_num).value;
+
+	var algorithms = document.getElementById("query_algorithm").options;
+
+	if (option_name == "cluster_analysis") {
+		// Todas las opciones disponibles
+		algorithms[1].disabled = false;
+		algorithms[2].disabled = false;
+		algorithms[3].disabled = false;
+		algorithms[4].disabled = false;
+	} else if (option_name == "none") {
+		// Solo algunas disponibles -deshabilitar
+		algorithms[1].disabled = true;
+		algorithms[2].disabled = true;
+		algorithms[3].disabled = true;
+		algorithms[4].disabled = true;
+		algorithms.selectedIndex = 6
+	} else if (option_name == "fayyad") {
+		// Todas las opciones disponibles
+		algorithms[1].disabled = false;
+		algorithms[2].disabled = false;
+		algorithms[3].disabled = false;
+		algorithms[4].disabled = false;
+	};
+}
+</script>

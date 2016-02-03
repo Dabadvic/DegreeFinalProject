@@ -1,0 +1,38 @@
+GENERATED RULE 0
+   Antecedent
+	Variable Sex = Label 0 	 (-0.5 0.0 0.5)
+	Variable ResElectrocardiographic = Label 0 	 (-1.0 0.0 1.0)
+	Variable Slope = Label 0 	 (0.0 1.0 2.0)
+	Variable MajorVessels = Label 0 	 (-1.5 0.0 1.5)
+   Consecuent: 1
+
+GENERATED RULE 1
+   Antecedent
+	Variable ResElectrocardiographic = Label 0 	 (-1.0 0.0 1.0)
+	Variable MajorVessels = Label 0 	 (-1.5 0.0 1.5)
+   Consecuent: 1
+
+GENERATED RULE 2
+   Antecedent
+	Variable MajorVessels = Label 0 	 (-1.5 0.0 1.5)
+   Consecuent: 1
+
+GENERATED RULE 0
+   Antecedent
+	Variable Sex = Label 2 	 (0.5 1.0 1.5)
+	Variable MaxHeartRate = Label 0 	 (5.5 71.0 136.5)
+   Consecuent: 2
+
+GENERATED RULE 1
+   Antecedent
+	Variable Sex = Label 2 	 (0.5 1.0 1.5)
+	Variable RestBloodPressure = Label 2 	 (147.0 200.0 253.0)
+	Variable FastingBloodSugar = Label 0 	 (-0.5 0.0 0.5)
+	Variable MaxHeartRate = Label 0 	 (5.5 71.0 136.5)
+   Consecuent: 2
+
+GENERATED RULE 2
+   Antecedent
+	Variable Sex = Label 2 	 (0.5 1.0 1.5)
+   Consecuent: 2
+

@@ -48,6 +48,7 @@ class PasswordResetsController < ApplicationController
 
   # Before filters
 
+  # Gets the user that came to this page using the email
   def get_user
   	@user = User.find_by(email: params[:email])
   end

@@ -1,0 +1,20 @@
+
+Rule 1: IF  ChestPainType =  0  AND Thal =  0  THEN Class -> 1  -- Support: 91 [ 91 10]
+Rule 2: IF  Oldpeak =  0  AND MajorVessels =  0  AND Thal =  0  THEN Class -> 1  -- Support: 91 [ 91 9]
+Rule 3: IF  ChestPainType =  0  AND Oldpeak =  0  AND MajorVessels =  0  THEN Class -> 1  -- Support: 80 [ 80 8]
+Rule 4: IF  ChestPainType =  0  AND Slope =  0  THEN Class -> 1  -- Support: 75 [ 75 8]
+Rule 5: IF  MaxHeartRate =  1  AND MajorVessels =  0  AND Thal =  0  THEN Class -> 1  -- Support: 78 [ 78 7]
+Rule 6: IF  ChestPainType =  1  AND MajorVessels =  1  THEN Class -> 2  -- Support: 63 [ 5 63]
+Rule 7: IF  Slope =  1  AND MajorVessels =  1  THEN Class -> 2  -- Support: 60 [ 6 60]
+Rule 8: IF  ChestPainType =  1  AND ExerciseInduced =  1  AND Slope =  1  THEN Class -> 2  -- Support: 48 [ 5 48]
+Rule 9: IF  MajorVessels =  1  AND Thal =  1  THEN Class -> 2  -- Support: 59 [ 6 59]
+Rule 10: IF  Sex =  1  AND ChestPainType =  1  AND MaxHeartRate =  0  AND Slope =  1  THEN Class -> 2  -- Support: 47 [ 2 47]
+
+#### Final Results (on test) ####
+Avg. Rule length: 10
+Avg. Number of attributes by rule: 2.6
+Avg. Coverage; 0.28074074074074074
+Avg. Significance; 58.731712209513184
+Accuracy Training: 0.8629629629629629
+Accuracy Test: 0.8629629629629629
+ TIME (sec): 673

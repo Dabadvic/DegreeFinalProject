@@ -1,9 +1,9 @@
-<% provide(:title, "Consultas") %>
+<% provide(:title, "Experimentos") %>
 
 <div>
-	<h1>Consultas</h1>
+	<h1>Experimentos</h1>
 	<% if @user.queries.any? %>
-		<h2>Realizadas: <%= @user.queries.count %></h2>
+		<h2><%= pluralize(@user.queries.count, 'experimento') + " " + pluralize(@user.queries.count, 'realizado').split[1] %></h2>
 		<table class="queries ex1 padded" align="center">
 			<tr id="cabecera">
 				<td>Descripción</td>
@@ -16,6 +16,6 @@
 			<%= render @queries %>
 		</table>
 	<% else %>
-		<h4>Ninguna consulta realizada</h4>
+		<h4>Ningún experimento realizada</h4>
 	<% end %>
 </div>
