@@ -1,0 +1,46 @@
+Number of cut points of attribute 0 : 0
+Number of cut points of attribute 1 : 0
+Cut point 0 of attribute 2 : 0.5
+Number of cut points of attribute 2 : 1
+Number of cut points of attribute 3 : 0
+Number of cut points of attribute 4 : 0
+Number of cut points of attribute 5 : 0
+Number of cut points of attribute 6 : 0
+Number of cut points of attribute 7 : 0
+Number of cut points of attribute 8 : 0
+Cut point 0 of attribute 9 : 0.5
+Number of cut points of attribute 9 : 1
+Number of cut points of attribute 10 : 0
+Number of cut points of attribute 11 : 0
+Number of cut points of attribute 12 : 0
+Number of cut points of attribute 13 : 0
+Number of cut points of attribute 14 : 0
+Number of cut points of attribute 15 : 0
+Cut point 0 of attribute 16 : 0.00605
+Cut point 1 of attribute 16 : 0.0195
+Cut point 2 of attribute 16 : 0.0415
+Number of cut points of attribute 16 : 3
+Cut point 0 of attribute 17 : 0.00645
+Cut point 1 of attribute 17 : 0.00945
+Cut point 2 of attribute 17 : 0.0098
+Cut point 3 of attribute 17 : 0.0165
+Cut point 4 of attribute 17 : 0.0172
+Cut point 5 of attribute 17 : 0.0177
+Cut point 6 of attribute 17 : 0.02005
+Cut point 7 of attribute 17 : 0.0207
+Number of cut points of attribute 17 : 8
+Cut point 0 of attribute 18 : 0.033875
+Cut point 1 of attribute 18 : 0.0605
+Cut point 2 of attribute 18 : 0.0685
+Cut point 3 of attribute 18 : 0.0895
+Cut point 4 of attribute 18 : 0.1505
+Number of cut points of attribute 18 : 5
+Cut point 0 of attribute 19 : 0.0995
+Number of cut points of attribute 19 : 1
+Cut point 0 of attribute 20 : 0.013735
+Cut point 1 of attribute 20 : 0.0345
+Cut point 2 of attribute 20 : 0.064255
+Cut point 3 of attribute 20 : 0.08002000000000001
+Cut point 4 of attribute 20 : 0.097495
+Cut point 5 of attribute 20 : 0.14225
+Number of cut points of attribute 20 : 6

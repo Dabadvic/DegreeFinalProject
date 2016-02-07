@@ -1,0 +1,18 @@
+Rule 1: IF  TSH = 0 THEN Class -> 3  
+[  0,00  0,00  1,00  ]
+
+Rule 2: IF  T3 = 7 THEN Class -> 3  
+[  0,00  0,00  1,00  ]
+
+Rule 3: IF  FTI = 6 THEN Class -> 3  
+[  0,00  0,00  1,00  ]
+
+Rule 4: IF  TT4 > 4 THEN Class -> 3  
+[  0,00  0,00  1,00  ]
+
+Rule 5: IF  On_thyroxine = 1 THEN Class -> 3  
+[  0,02  0,00  0,98  ]
+
+
+
+Time: 2358,657

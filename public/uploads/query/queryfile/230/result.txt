@@ -1,0 +1,16 @@
+
+Rule 1: IF  TSH > 0.0 AND FTI <= 2.0 AND T3 <> 7.0 THEN Class -> 1     [ 0.9171270718232044 0.0 0.08287292817679558]
+Rule 2: IF  TSH > 0.0 AND FTI > 2.0 AND On_thyroxine <> 1.0 AND TT4 <= 4.0 AND T3 <> 7.0 THEN Class -> 2     [ 0.0 0.9658792650918635 0.03412073490813648]
+Rule 3: IF  TSH = 0.0 THEN Class -> 3     [ 0.0 0.0 1.0]
+
+####Average results for test data####
+Avg. Rule length: 3
+Avg. Number of attributes by rule: 3.0
+Avg. Coverage: 0.32643518518518516
+Avg. Support Completo: 0.9754166666666667
+Avg. Significance: 1409.291996416454
+Avg. Unusualness: 0.03582006543140217
+
+Accuracy Training: 0.9961111111111111
+Accuracy Test: 0.9961111111111111;
+  Time; 25786

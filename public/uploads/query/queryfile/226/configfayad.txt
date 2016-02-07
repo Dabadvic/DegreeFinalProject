@@ -1,0 +1,3 @@
+algorithm = Fayyad Discretizer
+inputData = "/home/david/proyectojruby/public/uploads/query/queryfile/226/dermatology.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/226/dermatology.dat"
+outputData = "/home/david/proyectojruby/public/uploads/query/queryfile/226/distra.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/226/distst.dat" "/home/david/proyectojruby/public/uploads/query/queryfile/226/disresult.txt"

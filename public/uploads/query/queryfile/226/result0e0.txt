@@ -1,0 +1,69 @@
+Rule 1: IF  Thinning > 0 AND Spongiosis <> 1 THEN Class -> 1  
+[  1,00  0,00  0,00  0,00  0,00  0,00  ]
+
+Rule 2: IF  Thinning > 0 AND Clubbing <> 0 THEN Class -> 1  
+[  1,00  0,00  0,00  0,00  0,00  0,00  ]
+
+Rule 3: IF  Thinning > 0 AND Fibrosis = 0 THEN Class -> 1  
+[  0,99  0,01  0,00  0,00  0,00  0,00  ]
+
+Rule 4: IF  Thinning > 0 THEN Class -> 1  
+[  0,98  0,01  0,00  0,00  0,01  0,00  ]
+
+Rule 5: IF  Clubbing > 0 THEN Class -> 1  
+[  0,96  0,00  0,00  0,00  0,03  0,02  ]
+
+Rule 6: IF  Spongiosis = 1 AND PNL_infiltrate <> 0 AND Erythema = 1 AND Granular_layer = 0 AND Koebner_phenomenon = 0 THEN Class -> 2  
+[  0,00  1,00  0,00  0,00  0,00  0,00  ]
+
+Rule 7: IF  Spongiosis = 1 AND PNL_infiltrate <> 0 AND Erythema = 1 AND Granular_layer = 0 THEN Class -> 2  
+[  0,00  0,97  0,00  0,03  0,00  0,00  ]
+
+Rule 8: IF  Spongiosis = 1 AND PNL_infiltrate <> 0 AND Erythema = 1 AND Koebner_phenomenon = 0 THEN Class -> 2  
+[  0,00  0,97  0,00  0,03  0,00  0,00  ]
+
+Rule 9: IF  Spongiosis = 1 AND PNL_infiltrate <> 0 AND Erythema = 1 THEN Class -> 2  
+[  0,00  0,95  0,00  0,05  0,00  0,00  ]
+
+Rule 10: IF  Spongiosis = 1 AND PNL_infiltrate <> 0 THEN Class -> 2  
+[  0,00  0,87  0,00  0,11  0,00  0,02  ]
+
+Rule 11: IF  Vacuolisation > 0 AND PNL_infiltrate = 0 THEN Class -> 3  
+[  0,00  0,00  1,00  0,00  0,00  0,00  ]
+
+Rule 12: IF  Melanin_incontinence > 0 THEN Class -> 3  
+[  0,00  0,00  1,00  0,00  0,00  0,00  ]
+
+Rule 13: IF  Polygonal_papules > 0 THEN Class -> 3  
+[  0,00  0,00  1,00  0,00  0,00  0,00  ]
+
+Rule 14: IF  Oral_mucosal > 0 THEN Class -> 3  
+[  0,00  0,00  1,00  0,00  0,00  0,00  ]
+
+Rule 15: IF  Vacuolisation > 0 THEN Class -> 3  
+[  0,01  0,00  0,99  0,00  0,00  0,00  ]
+
+Rule 16: IF  Spongiosis = 1 AND Koebner_phenomenon <> 0 AND Polygonal_papules = 0 THEN Class -> 4  
+[  0,00  0,03  0,00  0,97  0,00  0,00  ]
+
+Rule 17: IF  Spongiosis = 1 AND Koebner_phenomenon <> 0 AND Scaling <= 1 THEN Class -> 4  
+[  0,00  0,02  0,36  0,62  0,00  0,00  ]
+
+Rule 18: IF  Spongiosis = 1 AND Koebner_phenomenon <> 0 THEN Class -> 4  
+[  0,00  0,02  0,39  0,59  0,00  0,00  ]
+
+Rule 19: IF  Spongiosis = 1 AND Itching <> 1 THEN Class -> 4  
+[  0,00  0,29  0,06  0,48  0,01  0,16  ]
+
+Rule 20: IF  Fibrosis > 0 AND Koebner_phenomenon = 0 THEN Class -> 5  
+[  0,00  0,00  0,00  0,00  1,00  0,00  ]
+
+Rule 21: IF  Fibrosis > 0 THEN Class -> 5  
+[  0,00  0,00  0,04  0,00  0,96  0,00  ]
+
+Rule 22: IF  Scaling = 0 THEN Class -> 5  
+[  0,11  0,06  0,25  0,20  0,34  0,04  ]
+
+
+
+Time: 7,420

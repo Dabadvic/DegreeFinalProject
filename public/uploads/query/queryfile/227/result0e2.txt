@@ -1,0 +1,345 @@
+--------------------------------------------
+|              Parameters Echo             |
+--------------------------------------------
+Algorithm name: mesdif for subgroup discovery
+Input file name training: /home/david/proyectojruby/public/uploads/query/queryfile/227/dermatology.dat
+Input file name test: /home/david/proyectojruby/public/uploads/query/queryfile/227/dermatology.dat
+Rules file name: /home/david/proyectojruby/public/uploads/query/queryfile/227/result0e0.txt
+Tracking file name: /home/david/proyectojruby/public/uploads/query/queryfile/227/result0e2.txt
+Random generator seed: 0
+Selected class of the target variable: not established
+Number of labels for the continuous variables: 3
+Number of evaluations: 10000
+Number of individuals in the Population: 100
+Number of individuals in the Elite Population: 3
+Cross probability: 0.6
+Mutation probability: 0.01
+Minimum confidence: 0.0
+Rules representation: CAN
+Objective 1: COMP
+Objective 2: UNUS
+Objective 3: FCNF
+
+--------------------------------------------
+|  Semantics for the continuous variables  |
+--------------------------------------------
+Fuzzy sets parameters for variable Erythema:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Scaling:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Definite_borders:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Itching:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Koebner_phenomenon:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Polygonal_papules:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Follicular_papules:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Oral_mucosal:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Knee_and_elbow:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Scalp_involvement:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Family_history:
+	Label 0: -0.5 0.0 0.5
+	Label 1: 0.0 0.5 1.0
+	Label 2: 0.5 1.0 1.5
+Fuzzy sets parameters for variable Melanin_incontinence:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Eosinophils:
+	Label 0: -1.0 0.0 1.0
+	Label 1: 0.0 1.0 2.0
+	Label 2: 1.0 2.0 3.0
+Fuzzy sets parameters for variable PNL_infiltrate:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Fibrosis:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Exocytosis:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Acanthosis:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Hyperkeratosis:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Parakeratosis:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Clubbing:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Elongation:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Thinning:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Spongiform_pustule:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Munro_microabcess:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Focal_hypergranulosis:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Granular_layer:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Vacuolisation:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Spongiosis:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Saw-tooth_appearance:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Follicular_horn_plug:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Perifollicular_parakeratosis:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Inflammatory_monoluclear:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Band-like_infiltrate:
+	Label 0: -1.5 0.0 1.5
+	Label 1: 0.0 1.5 3.0
+	Label 2: 1.5 3.0 4.5
+Fuzzy sets parameters for variable Age:
+	Label 0: -37.5 0.0 37.5
+	Label 1: 0.0 37.5 75.0
+	Label 2: 37.5 75.0 112.5
+
+
+--------------------------------------------
+|               Dataset Echo               |
+--------------------------------------------
+Number of examples: 366
+Number of variables: 34
+@relation dermatology
+@attribute Erythema integer[0,3]
+@attribute Scaling integer[0,3]
+@attribute Definite_borders integer[0,3]
+@attribute Itching integer[0,3]
+@attribute Koebner_phenomenon integer[0,3]
+@attribute Polygonal_papules integer[0,3]
+@attribute Follicular_papules integer[0,3]
+@attribute Oral_mucosal integer[0,3]
+@attribute Knee_and_elbow integer[0,3]
+@attribute Scalp_involvement integer[0,3]
+@attribute Family_history integer[0,1]
+@attribute Melanin_incontinence integer[0,3]
+@attribute Eosinophils integer[0,2]
+@attribute PNL_infiltrate integer[0,3]
+@attribute Fibrosis integer[0,3]
+@attribute Exocytosis integer[0,3]
+@attribute Acanthosis integer[0,3]
+@attribute Hyperkeratosis integer[0,3]
+@attribute Parakeratosis integer[0,3]
+@attribute Clubbing integer[0,3]
+@attribute Elongation integer[0,3]
+@attribute Thinning integer[0,3]
+@attribute Spongiform_pustule integer[0,3]
+@attribute Munro_microabcess integer[0,3]
+@attribute Focal_hypergranulosis integer[0,3]
+@attribute Granular_layer integer[0,3]
+@attribute Vacuolisation integer[0,3]
+@attribute Spongiosis integer[0,3]
+@attribute Saw-tooth_appearance integer[0,3]
+@attribute Follicular_horn_plug integer[0,3]
+@attribute Perifollicular_parakeratosis integer[0,3]
+@attribute Inflammatory_monoluclear integer[0,3]
+@attribute Band-like_infiltrate integer[0,3]
+@attribute Age integer[0,75]
+@attribute Class {1,2,3,4,5,6}
+@inputs Erythema, Scaling, Definite_borders, Itching, Koebner_phenomenon, Polygonal_papules, Follicular_papules, Oral_mucosal, Knee_and_elbow, Scalp_involvement, Family_history, Melanin_incontinence, Eosinophils, PNL_infiltrate, Fibrosis, Exocytosis, Acanthosis, Hyperkeratosis, Parakeratosis, Clubbing, Elongation, Thinning, Spongiform_pustule, Munro_microabcess, Focal_hypergranulosis, Granular_layer, Vacuolisation, Spongiosis, Saw-tooth_appearance, Follicular_horn_plug, Perifollicular_parakeratosis, Inflammatory_monoluclear, Band-like_infiltrate, Age
+@output Class
+
+
+--------------------------------------------
+|       Computation of the info gain       |
+--------------------------------------------
+Points for computation of the info gain:
+	Variable Erythema: 0.75  2.25  3.75  
+	Variable Scaling: 0.75  2.25  3.75  
+	Variable Definite_borders: 0.75  2.25  3.75  
+	Variable Itching: 0.75  2.25  3.75  
+	Variable Koebner_phenomenon: 0.75  2.25  3.75  
+	Variable Polygonal_papules: 0.75  2.25  3.75  
+	Variable Follicular_papules: 0.75  2.25  3.75  
+	Variable Oral_mucosal: 0.75  2.25  3.75  
+	Variable Knee_and_elbow: 0.75  2.25  3.75  
+	Variable Scalp_involvement: 0.75  2.25  3.75  
+	Variable Family_history: 0.25  0.75  1.25  
+	Variable Melanin_incontinence: 0.75  2.25  3.75  
+	Variable Eosinophils: 0.5  1.5  2.5  
+	Variable PNL_infiltrate: 0.75  2.25  3.75  
+	Variable Fibrosis: 0.75  2.25  3.75  
+	Variable Exocytosis: 0.75  2.25  3.75  
+	Variable Acanthosis: 0.75  2.25  3.75  
+	Variable Hyperkeratosis: 0.75  2.25  3.75  
+	Variable Parakeratosis: 0.75  2.25  3.75  
+	Variable Clubbing: 0.75  2.25  3.75  
+	Variable Elongation: 0.75  2.25  3.75  
+	Variable Thinning: 0.75  2.25  3.75  
+	Variable Spongiform_pustule: 0.75  2.25  3.75  
+	Variable Munro_microabcess: 0.75  2.25  3.75  
+	Variable Focal_hypergranulosis: 0.75  2.25  3.75  
+	Variable Granular_layer: 0.75  2.25  3.75  
+	Variable Vacuolisation: 0.75  2.25  3.75  
+	Variable Spongiosis: 0.75  2.25  3.75  
+	Variable Saw-tooth_appearance: 0.75  2.25  3.75  
+	Variable Follicular_horn_plug: 0.75  2.25  3.75  
+	Variable Perifollicular_parakeratosis: 0.75  2.25  3.75  
+	Variable Inflammatory_monoluclear: 0.75  2.25  3.75  
+	Variable Band-like_infiltrate: 0.75  2.25  3.75  
+	Variable Age: 18.75  56.25  93.75  
+Information Gain of the variables:
+	Variable Erythema: 0.5782329
+	Variable Scaling: 0.42570138
+	Variable Definite_borders: 0.78224087
+	Variable Itching: 1.0994133
+	Variable Koebner_phenomenon: 0.9169607
+	Variable Polygonal_papules: 0.7253748
+	Variable Follicular_papules: 0.43602717
+	Variable Oral_mucosal: 0.6870017
+	Variable Knee_and_elbow: 0.8921596
+	Variable Scalp_involvement: 0.75493693
+	Variable Family_history: 0.36394668
+	Variable Melanin_incontinence: 0.7365141
+	Variable Eosinophils: 0.35913348
+	Variable PNL_infiltrate: 0.8440139
+	Variable Fibrosis: 0.6603862
+	Variable Exocytosis: 1.1416091
+	Variable Acanthosis: 0.577783
+	Variable Hyperkeratosis: 0.7426926
+	Variable Parakeratosis: 0.80125284
+	Variable Clubbing: 0.94372845
+	Variable Elongation: 1.219038
+	Variable Thinning: 0.9140924
+	Variable Spongiform_pustule: 0.4936831
+	Variable Munro_microabcess: 0.6009842
+	Variable Focal_hypergranulosis: 0.74270844
+	Variable Granular_layer: 0.642802
+	Variable Vacuolisation: 0.76223063
+	Variable Spongiosis: 1.1745429
+	Variable Saw-tooth_appearance: 0.7652693
+	Variable Follicular_horn_plug: 0.3351152
+	Variable Perifollicular_parakeratosis: 0.3475387
+	Variable Inflammatory_monoluclear: 0.53131866
+	Variable Band-like_infiltrate: 0.80879915
+	Variable Age: 0.7471479
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 0:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10050
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 1:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10023
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 2:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10022
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 3:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10053
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 4:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10049
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------
+
+Class 5:
+
+Genetic Algorithm execution finished
+	Number of Generations = 163
+	Number of Evaluations = 10043
+
+--------------------------------------------
+|             Execution results            |
+--------------------------------------------

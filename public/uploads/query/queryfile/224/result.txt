@@ -1,0 +1,20 @@
+
+Rule 1: IF  Clubbing > 0.0 AND Spongiosis <> 1.0 AND Elongation <> 0.0 THEN Class -> 1     [ 1.0 0.0 0.0 0.0 0.0 0.0]
+Rule 2: IF  Spongiosis = 1.0 AND Koebner_phenomenon = 0.0 AND Focal_hypergranulosis = 0.0 AND Fibrosis = 0.0 AND Follicular_papules = 0.0 AND Granular_layer = 0.0 THEN Class -> 2     [ 0.0 0.9482758620689655 0.0 0.05172413793103448 0.0 0.0]
+Rule 3: IF  PNL_infiltrate > 0.0 AND Clubbing = 0.0 AND Exocytosis <> 0.0 AND Granular_layer = 0.0 AND Munro_microabcess = 0.0 THEN Class -> 2     [ 0.0 0.9166666666666666 0.0 0.0625 0.0 0.020833333333333332]
+Rule 4: IF  Band-like_infiltrate > 0.0 AND PNL_infiltrate = 0.0 THEN Class -> 3     [ 0.0 0.0136986301369863 0.9863013698630136 0.0 0.0 0.0]
+Rule 5: IF  Elongation = 0.0 AND Band-like_infiltrate = 0.0 AND Follicular_papules = 0.0 AND Fibrosis = 0.0 AND Scaling <= 1.0 AND Spongiform_pustule = 0.0 AND Knee_and_elbow <> 1.0 AND Acanthosis = 0.0 AND Scalp_involvement = 0.0 AND Family_history = 0.0 THEN Class -> 4     [ 0.0 0.379746835443038 0.0 0.620253164556962 0.0 0.0]
+Rule 6: IF  Fibrosis > 0.0 AND Koebner_phenomenon = 0.0 THEN Class -> 5     [ 0.0 0.0 0.0 0.0 1.0 0.0]
+Rule 7: IF  Perifollicular_parakeratosis > 0.0 AND Follicular_papules <> 0.0 THEN Class -> 6     [ 0.0 0.0 0.0 0.0 0.0 1.0]
+
+####Average results for test data####
+Avg. Rule length: 7
+Avg. Number of attributes by rule: 4.285714285714286
+Avg. Coverage: 0.17135050741608118
+Avg. Support Completo: 0.9918032786885246
+Avg. Significance: 190.4634522080105
+Avg. Unusualness: 0.1506818536603806
+
+Accuracy Training: 0.9836065573770492
+Accuracy Test: 0.9836065573770492;
+  Time; 61

@@ -62,6 +62,20 @@
 
 			</table>
 
+			<!-- Calculo del soporte medio -->
+			<% avg_support = 0 %>
+			<% total_examples = 0 %>
+			<% if File.exist?(File.dirname(file) + "/result.tra") %>
+				<% File.readlines(File.dirname(file) + "/result.tra").each do |line| %>
+					<% if line.split[0][0] == "@" %>
+					<% else %>
+						<% avg_support += 1 if line.split[0] == line.split[1] %>
+						<% total_examples += 1 %>
+					<% end %>
+				<% end %>
+				<% avg_support = avg_support.to_f / total_examples %>
+			<% end %>
+
 			<!-- Ahora toca la tabla con las medias (Average) -->
 			<h3>Medias de los resultados: </h3>
 			<table class="padded ex1">
@@ -76,16 +90,22 @@
 						<% num = sub_line.pop %>
 						<tr>
 							<td class="borde_derecho"><%= sub_line.join(' ') %></td>
-							<td><%= num.to_f.round(4) %></td>
+							<td><%= num.to_f.round(5) %></td>
 						</tr>
 					<% elsif line.split[0] == "Accuracy" %>
 						<tr>
 							<td class="borde_derecho"><%= line.split[0] + " " + line.split[1] %></td>
-							<td><%= line.split.last.to_f.round(4) %></td>
+							<td><%= line.split.last.to_f.round(5) %></td>
 						</tr>
 					<% end %>
 					<% line_num += 1 %>
 				<% end %>
+
+				<!-- Añado el Avg.Support -->
+				<tr>
+					<td class="borde_derecho">Avg. Support</td>
+					<td><%= avg_support.round(5) %></td>
+				</tr>
 
 			</table>
 	<% end %>

@@ -1,0 +1,69 @@
+Cut point 0 of attribute 0 : 1.5
+Number of cut points of attribute 0 : 1
+Cut point 0 of attribute 1 : 1.5
+Cut point 1 of attribute 1 : 2.5
+Number of cut points of attribute 1 : 2
+Cut point 0 of attribute 2 : 1.5
+Number of cut points of attribute 2 : 1
+Cut point 0 of attribute 3 : 1.5
+Number of cut points of attribute 3 : 1
+Cut point 0 of attribute 4 : 0.5
+Number of cut points of attribute 4 : 1
+Cut point 0 of attribute 5 : 0.5
+Number of cut points of attribute 5 : 1
+Cut point 0 of attribute 6 : 0.5
+Number of cut points of attribute 6 : 1
+Cut point 0 of attribute 7 : 0.5
+Number of cut points of attribute 7 : 1
+Cut point 0 of attribute 8 : 0.5
+Number of cut points of attribute 8 : 1
+Cut point 0 of attribute 9 : 0.5
+Number of cut points of attribute 9 : 1
+Cut point 0 of attribute 10 : 0.5
+Number of cut points of attribute 10 : 1
+Cut point 0 of attribute 11 : 0.5
+Number of cut points of attribute 11 : 1
+Cut point 0 of attribute 12 : 0.5
+Number of cut points of attribute 12 : 1
+Cut point 0 of attribute 13 : 0.5
+Number of cut points of attribute 13 : 1
+Cut point 0 of attribute 14 : 0.5
+Number of cut points of attribute 14 : 1
+Cut point 0 of attribute 15 : 0.5
+Cut point 1 of attribute 15 : 1.5
+Number of cut points of attribute 15 : 2
+Cut point 0 of attribute 16 : 2.5
+Number of cut points of attribute 16 : 1
+Number of cut points of attribute 17 : 0
+Cut point 0 of attribute 18 : 1.5
+Number of cut points of attribute 18 : 1
+Cut point 0 of attribute 19 : 0.5
+Number of cut points of attribute 19 : 1
+Cut point 0 of attribute 20 : 0.5
+Number of cut points of attribute 20 : 1
+Cut point 0 of attribute 21 : 0.5
+Number of cut points of attribute 21 : 1
+Cut point 0 of attribute 22 : 0.5
+Number of cut points of attribute 22 : 1
+Cut point 0 of attribute 23 : 0.5
+Number of cut points of attribute 23 : 1
+Cut point 0 of attribute 24 : 0.5
+Number of cut points of attribute 24 : 1
+Cut point 0 of attribute 25 : 0.5
+Cut point 1 of attribute 25 : 1.5
+Number of cut points of attribute 25 : 2
+Cut point 0 of attribute 26 : 0.5
+Number of cut points of attribute 26 : 1
+Cut point 0 of attribute 27 : 0.5
+Number of cut points of attribute 27 : 1
+Cut point 0 of attribute 28 : 0.5
+Number of cut points of attribute 28 : 1
+Cut point 0 of attribute 29 : 0.5
+Number of cut points of attribute 29 : 1
+Cut point 0 of attribute 30 : 0.5
+Number of cut points of attribute 30 : 1
+Number of cut points of attribute 31 : 0
+Cut point 0 of attribute 32 : 1.5
+Number of cut points of attribute 32 : 1
+Cut point 0 of attribute 33 : 14.0
+Number of cut points of attribute 33 : 1

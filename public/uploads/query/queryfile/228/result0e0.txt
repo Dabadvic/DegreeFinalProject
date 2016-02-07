@@ -1,0 +1,63 @@
+GENERATED RULE 0
+   Antecedent
+	Variable Perifollicular_parakeratosis = Label 0 	 (-1.5 0.0 1.5)
+   Consecuent: 1
+
+GENERATED RULE 0
+   Antecedent
+	Variable Age = Label 1 	 (0.0 37.5 75.0)
+   Consecuent: 2
+
+GENERATED RULE 0
+   Antecedent
+	Variable Age = Label 1 	 (0.0 37.5 75.0)
+   Consecuent: 3
+
+GENERATED RULE 0
+   Antecedent
+	Variable Age = Label 0 	 (-37.5 0.0 37.5)
+   Consecuent: 4
+
+GENERATED RULE 0
+   Antecedent
+	Variable Inflammatory_monoluclear = Label 2 	 (1.5 3.0 4.5)
+   Consecuent: 5
+
+GENERATED RULE 0
+   Antecedent
+	Variable Erythema = Label 2 	 (1.5 3.0 4.5)
+	Variable Scaling = Label 0 	 (-1.5 0.0 1.5)
+	Variable Definite_borders = Label 1 	 (0.0 1.5 3.0)
+	Variable Itching = Label 1 	 (0.0 1.5 3.0)
+	Variable Koebner_phenomenon = Label 0 	 (-1.5 0.0 1.5)
+	Variable Polygonal_papules = Label 2 	 (1.5 3.0 4.5)
+	Variable Follicular_papules = Label 0 	 (-1.5 0.0 1.5)
+	Variable Oral_mucosal = Label 2 	 (1.5 3.0 4.5)
+	Variable Knee_and_elbow = Label 1 	 (0.0 1.5 3.0)
+	Variable Scalp_involvement = Label 2 	 (1.5 3.0 4.5)
+	Variable Family_history = Label 1 	 (0.0 0.5 1.0)
+	Variable Melanin_incontinence = Label 0 	 (-1.5 0.0 1.5)
+	Variable Eosinophils = Label 0 	 (-1.0 0.0 1.0)
+	Variable PNL_infiltrate = Label 1 	 (0.0 1.5 3.0)
+	Variable Fibrosis = Label 1 	 (0.0 1.5 3.0)
+	Variable Exocytosis = Label 0 	 (-1.5 0.0 1.5)
+	Variable Acanthosis = Label 2 	 (1.5 3.0 4.5)
+	Variable Hyperkeratosis = Label 2 	 (1.5 3.0 4.5)
+	Variable Parakeratosis = Label 0 	 (-1.5 0.0 1.5)
+	Variable Clubbing = Label 2 	 (1.5 3.0 4.5)
+	Variable Elongation = Label 2 	 (1.5 3.0 4.5)
+	Variable Thinning = Label 2 	 (1.5 3.0 4.5)
+	Variable Spongiform_pustule = Label 0 	 (-1.5 0.0 1.5)
+	Variable Munro_microabcess = Label 2 	 (1.5 3.0 4.5)
+	Variable Focal_hypergranulosis = Label 1 	 (0.0 1.5 3.0)
+	Variable Granular_layer = Label 1 	 (0.0 1.5 3.0)
+	Variable Vacuolisation = Label 2 	 (1.5 3.0 4.5)
+	Variable Spongiosis = Label 2 	 (1.5 3.0 4.5)
+	Variable Saw-tooth_appearance = Label 1 	 (0.0 1.5 3.0)
+	Variable Follicular_horn_plug = Label 2 	 (1.5 3.0 4.5)
+	Variable Perifollicular_parakeratosis = Label 0 	 (-1.5 0.0 1.5)
+	Variable Inflammatory_monoluclear = Label 0 	 (-1.5 0.0 1.5)
+	Variable Band-like_infiltrate = Label 2 	 (1.5 3.0 4.5)
+	Variable Age = Label 2 	 (37.5 75.0 112.5)
+   Consecuent: 6
+

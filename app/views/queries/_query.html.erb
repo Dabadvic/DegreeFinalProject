@@ -3,8 +3,8 @@
 	<td><%= l query.created_at, format: :short %> </td>
 	<td><%= query.status %> </td>
 	<td><%= File.basename(query.queryfile.to_s) if query.queryfile? %> </td>
-	<td><%= query.algorithm.upcase %> </td>
-	<td><%= link_to "Ver", query %></td>
-	<td><%= link_to "Eliminar consulta", query, method: :delete, 
+	<td><%= query.algorithm.upcase %></td>
+	<td><%= link_to "Ver experimento", query %></td>
+	<td><%= link_to "Eliminar", query, method: :delete, 
 										data: { confirm: "¿Seguro que quieres borrar la consulta?" } %> </td>
 </tr>

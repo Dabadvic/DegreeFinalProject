@@ -7,17 +7,17 @@
 
 <td valign="top">
 	<% error = true %>
-		<% @resultado.each do |file| %>
-			<% if File.exist?(file) %>
-				<% error = false %>
-			<% end %>
-		<% end %>
+	<% if @resultado != nil %>
+		<% @resultado.each { |file| error = false if File.exist?(file) } %>
 		<% if error %>
 			<h3>Ha ocurrido un <span style="color:red">error</span> utilizando estos datos:</h3>
 			<p>Prueba a repetir el experimento cambiando los parámetros.</p>
 		<% else %>
 			<h3>Datos del experimento: </h3>
 		<% end %>
+	<% else %>
+		<h3>Datos del experimento: </h3>
+	<% end %>
 	<table class="padded ex1">
 		<tr><td>Descripción: <%= @query.description %></td></tr>
 		<tr><td>Fecha de creación: <%= l @query.created_at, format: :short %></td></tr>
@@ -71,7 +71,7 @@
 				<%= render 'queries/results/results', resultado: @resultado %>
 		<% end %>
 	<% else %>
-		No se encontró el resultado, puede que el experimento no haya finalizado o haya ocurrido un error.
+		No se encontró el resultado, puede que el experimento no haya finalizado.
 	<% end %>
 </div>
 

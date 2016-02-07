@@ -9,7 +9,7 @@ class QueriesController < ApplicationController
 		@query = @user.queries.build(query_params)
 
 		if @query.save
-			flash[:success] = "Nueva consulta creada con éxito " 
+			flash[:success] = "Nuevo experimento creado con éxito " 
 
 			# Añade la consulta a la cola de espera y pasa el id para actualizarla al acabar
 			Resque.enqueue(Algorithms, @query.id, @query.options)
@@ -40,7 +40,7 @@ class QueriesController < ApplicationController
 		query.destroy
 		FileUtils.rm_rf(direccion)
 		
-		flash[:success] = "Consulta eliminada"
+		flash[:success] = "Experimento eliminado"
 		redirect_to request.referrer
 	end
 
@@ -57,6 +57,8 @@ class QueriesController < ApplicationController
 		@query = Query.find(params[:id])
 		if @query.result?
 			@resultado = eval(@query.result)
+		else
+			@resultado = nil
 		end
 
 		files_path = File.dirname(@query.queryfile.current_path.to_s)
@@ -65,11 +67,11 @@ class QueriesController < ApplicationController
 
 		case @query.status
 		when "waiting"
-			@estado = "Esperando a ser atendida"
+			@estado = "Esperando a ser atendido"
 		when "processing"
 			@estado = "En proceso de ejecución"
 		when "finished"
-			@estado = "Consulta finalizada"
+			@estado = "Experimento finalizado"
 		end
 
 		case @query.algorithm
