@@ -1,1 +1,1 @@
-*.rb linguist-language=Ruby
+public/* linguist-vendored=false
