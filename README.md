@@ -92,7 +92,7 @@ Remember to set up at least one worker (more info at [resque](https://github.com
 jruby -S rake resque:work QUEUE='*'
 ```
 
-Yendo a la dirección que nos indica, normalmente localhost:3000, podremos comprobar que funciona correctamente.
+We can go to the provided url, usually localhost:3000, where we can check that the application works locally.
 
 **Step 5**. Deploy the application. First I created a new file in:
 ```
